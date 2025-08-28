@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienestar Nortino - Distribuidor Autorizado</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Estilos personalizados -->
+    <style>
+        /* Usamos la fuente Inter para un look moderno */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Un fondo oscuro y elegante (slate-900) */
+            color: #f8fafc; /* Color de texto principal (slate-50) */
+        }
+
+        /* Animación para los botones y tarjetas de producto */
+        .hover-effect {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .hover-effect:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+        }
+        
+        /* Estilo para el menú móvil */
+        .mobile-menu {
+            transition: max-height 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Contenedor principal -->
+    <div class="min-h-screen">
+
+        <!-- Header y Menú de Navegación -->
+        <header class="bg-slate-800/80 backdrop-blur-sm sticky top-0 z-50 shadow-lg">
+            <nav class="container mx-auto px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <!-- Logo -->
+                    <a href="#" class="text-2xl font-bold text-white flex items-center">
+                        <img src="http://googleusercontent.com/file_content/1" alt="Logo Bienestar Nortino" class="h-10 mr-3">
+                        <span>Bienestar <span class="text-cyan-400">Nortino</span></span>
+                    </a>
+
+                    <!-- Menú para Desktop -->
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="#" class="text-gray-300 hover:text-cyan-400 transition-colors">Inicio</a>
+                        <a href="#" class="text-gray-300 hover:text-cyan-400 transition-colors">Productos</a>
+                        <a href="#" class="text-gray-300 hover:text-cyan-400 transition-colors">Sobre Nosotros</a>
+                        <a href="#" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded-lg transition-colors">Contacto</a>
+                    </div>
+
+                    <!-- Botón para Menú Móvil -->
+                    <div class="md:hidden">
+                        <button id="menu-btn" class="text-white focus:outline-none">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Menú desplegable para Móvil -->
+                <div id="mobile-menu" class="md:hidden mt-4 hidden">
+                    <a href="#" class="block py-2 px-4 text-sm text-gray-300 hover:bg-slate-700 rounded">Inicio</a>
+                    <a href="#" class="block py-2 px-4 text-sm text-gray-300 hover:bg-slate-700 rounded">Productos</a>
+                    <a href="#" class="block py-2 px-4 text-sm text-gray-300 hover:bg-slate-700 rounded">Sobre Nosotros</a>
+                    <a href="#" class="block py-2 px-4 text-sm text-gray-300 hover:bg-slate-700 rounded">Contacto</a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Sección Hero (Principal) -->
+        <main class="container mx-auto px-6 py-16 text-center">
+            <h1 class="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 uppercase tracking-wide mb-4">
+                Bienestar que Transforma
+            </h1>
+            <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-10">
+                Descubre nuestra selección de productos premium diseñados para potenciar tu energía, salud y vitalidad. Tu viaje hacia una mejor versión de ti comienza aquí.
+            </p>
+            <a href="#productos" class="bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-lg py-3 px-8 rounded-full hover-effect inline-block">
+                Explorar Productos
+            </a>
+        </main>
+
+        <!-- Sección de Productos -->
+        <section id="productos" class="py-20 bg-slate-900">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Nuestros Productos Estrella</h2>
+                    <p class="text-slate-400 mt-2">Fórmulas únicas para tus objetivos de bienestar.</p>
+                </div>
+
+                <!-- Grid de Productos -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    
+                    <!-- Producto 1: RENÖVA+ -->
+                    <div class="bg-slate-800 rounded-2xl overflow-hidden shadow-lg border border-pink-500/30 hover-effect flex flex-col">
+                        <div class="p-6 bg-gradient-to-br from-pink-500 to-purple-600">
+                             <img src="https://placehold.co/500x500/FFFFFF/db2777?text=RENÖVA%2B" alt="Producto RENÖVA+" class="w-full h-56 object-contain rounded-lg">
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <h3 class="text-2xl font-bold text-pink-400 mb-2">RENÖVA+</h3>
+                            <p class="text-slate-400 mb-6 flex-grow">Tu dosis diaria de juventud. Colágeno premium con Resveratrol y Q10 para una piel, cabello y uñas radiantes.</p>
+                            <a href="#" class="mt-auto text-center bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors w-full">Ver Más</a>
+                        </div>
+                    </div>
+
+                    <!-- Producto 2: 24BURN -->
+                    <div class="bg-slate-800 rounded-2xl overflow-hidden shadow-lg border border-lime-500/30 hover-effect flex flex-col">
+                         <div class="p-6 bg-gradient-to-br from-lime-400 to-green-600">
+                            <img src="https://placehold.co/500x500/FFFFFF/84cc16?text=24BURN" alt="Producto 24BURN" class="w-full h-56 object-contain rounded-lg">
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <h3 class="text-2xl font-bold text-lime-400 mb-2">24BURN</h3>
+                            <p class="text-slate-400 mb-6 flex-grow">El acelerador que tu metabolismo necesita. Activa tu mente y cuerpo mientras procesas calorías de forma inteligente.</p>
+                            <a href="#" class="mt-auto text-center bg-lime-500 hover:bg-lime-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors w-full">Ver Más</a>
+                        </div>
+                    </div>
+
+                    <!-- Producto 3: E-BOOST -->
+                    <div class="bg-slate-800 rounded-2xl overflow-hidden shadow-lg border border-orange-500/30 hover-effect flex flex-col">
+                        <div class="p-6 bg-gradient-to-br from-orange-500 to-amber-600">
+                            <img src="https://placehold.co/500x500/FFFFFF/FF5733?text=E-BOOST" alt="Producto E-BOOST" class="w-full h-56 object-contain rounded-lg">
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <h3 class="text-2xl font-bold text-orange-400 mb-2">E-BOOST</h3>
+                            <p class="text-slate-400 mb-6 flex-grow">Energía limpia y foco láser para dominar tu día. Sin el "bajón" de las bebidas tradicionales.</p>
+                            <a href="#" class="mt-auto text-center bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors w-full">Ver Más</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-slate-800 border-t border-slate-700">
+            <div class="container mx-auto px-6 py-8 text-center text-slate-400">
+                <p>&copy; 2024 Bienestar Nortino - Distribuidor Autorizado. Todos los derechos reservados.</p>
+                <p class="text-sm mt-2">Los productos no están destinados a diagnosticar, tratar, curar o prevenir ninguna enfermedad. Consulta a tu médico.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Script para el menú móvil -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>
