@@ -45,6 +45,7 @@
               'fwp-renova': '#e91e63', // Rosa para RENÖVA+
               'fwp-24burn': '#84cc16', // Verde para 24BURN
               'fwp-eboost': '#f97316', // Naranja para E-BOOST
+              'fwp-liv': '#26a69a',    // Teal para LIV (Nuevo)
               'fwp-dark': '#1f2937',   // Gris oscuro para texto y header
             }
           }
@@ -112,7 +113,8 @@
                 </div>
 
                 <!-- Grid de Productos -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- MODIFICADO: Cambiado a max-w-5xl, mx-auto y lg:grid-cols-2 para lograr diseño 2x2 centrado -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
 
                     <!-- Producto 1: RENÖVA+ -->
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col card-hover-effect">
@@ -150,6 +152,18 @@
                         </div>
                     </div>
 
+                    <!-- Producto 4: LIV (Nuevo) -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col card-hover-effect">
+                        <div class="p-2 bg-teal-50">
+                            <img src="Imagenes/LIV.png" alt="Producto LIV" class="w-full h-64 object-contain">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-2xl font-bold mb-2 text-fwp-liv">LIV</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">Ligereza que fluye. Sinergia de fibras y probióticos que prolonga la saciedad, mejora la digestión y equilibra tu flora intestinal.</p>
+                            <a href="http://www.bienestarnortino.com/liv" target="_blank" class="mt-auto w-full text-center bg-fwp-liv text-white font-semibold py-3 px-6 rounded-lg hover:bg-opacity-90 transition-colors">Ver más</a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -174,4 +188,3 @@
     </script>
 </body>
 </html>
-
