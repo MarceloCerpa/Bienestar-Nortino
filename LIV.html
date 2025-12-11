@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIV | Ligereza que Fluye - Fibra y Probióticos para tu Bienestar</title>
+    <meta name="description" content="Descubre LIV en Chile: La sinergia perfecta de fibras y probióticos. Desintoxica tu cuerpo, mejora tu digestión y controla tu peso de forma natural. ¡Envío a todo Chile!">
+    <meta name="keywords" content="LIV, fibra natural, probióticos, digestión, detox, bajar de peso chile, estreñimiento, salud intestinal, FWP">
+    <meta name="author" content="Future World Products">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tulandingpage.cl/">
+    <meta property="og:title" content="LIV - Siente la Ligereza que Fluye">
+    <meta property="og:description" content="Elimina la hinchazón y recupera tu ritmo digestivo con la nueva fórmula de fibras y probióticos.">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/5eead4/134e4a?text=LIV+Chile">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <!-- Animation Library (AOS) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom Config for Tailwind Colors based on LIV Packaging -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        liv: {
+                            teal: '#66B2B2',    /* Main Body Color */
+                            dark: '#2C5F5F',    /* Dark Text/Footer */
+                            light: '#E0F7FA',   /* Backgrounds */
+                            green: '#8DC63F',   /* Accent Green Apple */
+                            accent: '#FF6B6B',  /* CTA Red/Orange */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(141, 198, 63, 0.5)',
+                        'card': '0 10px 30px -5px rgba(0, 0, 0, 0.1)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles & Utilities */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .font-heading {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #2C5F5F, #66B2B2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-bg {
+            background: radial-gradient(circle at top right, #E0F7FA 0%, #ffffff 50%, #f0fdf4 100%);
+        }
+
+        .btn-pulse {
+            animation: pulse-green 2s infinite;
+        }
+
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(141, 198, 63, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(141, 198, 63, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(141, 198, 63, 0); }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Diagonal Section Separator */
+        .separator-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+
+        .separator-bottom svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 60px;
+        }
+
+        .shape-fill {
+            fill: #FFFFFF;
+        }
+    </style>
+</head>
+<body class="text-gray-800 antialiased overflow-x-hidden">
+
+    <!-- Top Bar -->
+    <div class="bg-liv-dark text-white text-center py-2 text-sm font-semibold tracking-wide">
+        🚀 ENVIOS RÁPIDOS A TODO CHILE 🇨🇱 | <span class="text-liv-green">OFERTA DE LANZAMIENTO</span>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <span class="font-heading text-3xl font-black text-liv-teal tracking-tighter">LIV<span class="text-liv-green">.</span></span>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#beneficios" class="text-gray-600 hover:text-liv-teal font-medium transition">Beneficios</a>
+                    <a href="#ingredientes" class="text-gray-600 hover:text-liv-teal font-medium transition">Ingredientes</a>
+                    <a href="#testimonios" class="text-gray-600 hover:text-liv-teal font-medium transition">Resultados</a>
+                    <a href="#oferta" class="bg-liv-green hover:bg-green-600 text-white px-6 py-2.5 rounded-full font-bold transition shadow-lg transform hover:scale-105">
+                        COMPRAR AHORA
+                    </a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <a href="#oferta" class="bg-liv-green text-white px-4 py-2 rounded-full font-bold text-sm shadow-md mr-3">
+                        OFERTA
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-bg relative pt-12 pb-24 lg:pt-20 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="text-center lg:text-left" data-aos="fade-right">
+                    <div class="inline-block bg-liv-light text-liv-dark px-4 py-1.5 rounded-full font-bold text-xs uppercase tracking-wider mb-6 border border-liv-teal/20">
+                        ✨ Nueva Fórmula Mejorada
+                    </div>
+                    <h1 class="font-heading text-5xl lg:text-7xl font-extrabold text-gray-900 leading-tight mb-6">
+                        LIGEREZA QUE <br>
+                        <span class="text-liv-teal">FLUYE</span> EN TI
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0">
+                        La sinergia perfecta de <strong>fibras solubles, insolubles y probióticos</strong>. Desinflama tu abdomen, regula tu tránsito y siéntete liviana todo el día con el poder de la Manzana Verde y el Bamboo.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#oferta" class="bg-liv-green text-white text-xl font-bold py-4 px-10 rounded-full shadow-glow hover:bg-green-600 transition transform hover:-translate-y-1 btn-pulse">
+                            QUIERO PROBARLO <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="mt-8 flex items-center justify-center lg:justify-start gap-6 text-sm font-medium text-gray-500">
+                        <div class="flex items-center"><i class="fas fa-check-circle text-liv-teal mr-2"></i> Sin Azúcar</div>
+                        <div class="flex items-center"><i class="fas fa-check-circle text-liv-teal mr-2"></i> 0% Grasa</div>
+                        <div class="flex items-center"><i class="fas fa-check-circle text-liv-teal mr-2"></i> 6g Fibra</div>
+                    </div>
+                </div>
+
+                <!-- Product Image -->
+                <div class="relative" data-aos="fade-left">
+                    <!-- Decorative blob background -->
+                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-liv-teal/10 rounded-full blur-3xl -z-10"></div>
+                    
+                    <!-- Main Image Placeholder (Replace with your uploaded image) -->
+                    <img src="https://via.placeholder.com/600x600/ffffff/66B2B2?text=LIV+Product+Image" alt="LIV Suplemento Fibra" class="relative z-10 w-full max-w-md mx-auto floating drop-shadow-2xl">
+                    
+                    <!-- Floating Badges -->
+                    <div class="absolute top-10 right-10 bg-white p-3 rounded-2xl shadow-xl z-20 animate-bounce" style="animation-duration: 3s;">
+                        <span class="block text-3xl font-bold text-liv-dark text-center">28</span>
+                        <span class="block text-xs text-gray-500 font-bold uppercase">Porciones</span>
+                    </div>
+                    
+                    <div class="absolute bottom-20 left-0 bg-white/90 backdrop-blur p-4 rounded-xl shadow-lg z-20 border-l-4 border-liv-green">
+                        <div class="flex items-center gap-3">
+                            <div class="bg-green-100 p-2 rounded-full text-liv-green">
+                                <i class="fas fa-leaf text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 font-bold uppercase">Sabor</p>
+                                <p class="text-lg font-bold text-liv-dark">Manzana Verde</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Wave Separator -->
+        <div class="separator-bottom">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </header>
+
+    <!-- Problem / Agitation Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+            <span class="text-liv-accent font-bold tracking-widest uppercase text-sm">¿Te suena familiar?</span>
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-gray-900 mt-3 mb-12">
+                Tu cuerpo te está pidiendo un <span class="text-liv-teal underline decoration-liv-green decoration-4 underline-offset-4">respiro</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 hover:shadow-card transition duration-300" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4 text-red-500 text-2xl">
+                        <i class="fas fa-drumstick-bite"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Hinchazón Constante</h3>
+                    <p class="text-gray-600">Sientes el abdomen inflamado después de comer, sin importar qué tan saludable sea tu comida.</p>
+                </div>
+                
+                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 hover:shadow-card transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 text-orange-500 text-2xl">
+                        <i class="fas fa-battery-quarter"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Pesadez y Fatiga</h3>
+                    <p class="text-gray-600">Esa sensación de pesadez que te quita energía y te hace sentir lenta durante el día.</p>
+                </div>
+                
+                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 hover:shadow-card transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4 text-yellow-600 text-2xl">
+                        <i class="fas fa-stopwatch"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Tránsito Lento</h3>
+                    <p class="text-gray-600">Ir al baño se convierte en un desafío irregular, afectando tu humor y bienestar general.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution / Benefits Section -->
+    <section id="beneficios" class="py-20 bg-liv-light/30 relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1" data-aos="fade-right">
+                    <img src="https://via.placeholder.com/600x700/66B2B2/ffffff?text=LIV+Lifestyle+Shot" alt="Mujer feliz con LIV" class="rounded-3xl shadow-2xl w-full object-cover h-[500px]">
+                </div>
+                
+                <div class="order-1 lg:order-2" data-aos="fade-left">
+                    <h2 class="font-heading text-3xl md:text-5xl font-bold text-liv-dark mb-6">
+                        Recupera tu Equilibrio con <span class="text-liv-green">LIV</span>
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-8">
+                        LIV no es solo fibra; es una fórmula avanzada diseñada por doctores que combina lo mejor de la naturaleza con la ciencia de los probióticos.
+                    </p>
+                    
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-liv-green text-white flex items-center justify-center mt-1">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-bold text-gray-900">Detox Natural y Limpieza</h4>
+                                <p class="text-gray-600">Elimina toxinas acumuladas y promueve una limpieza interna suave pero efectiva.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-liv-green text-white flex items-center justify-center mt-1">
+                                <i class="fas fa-hourglass-half"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-bold text-gray-900">Saciedad Prolongada</h4>
+                                <p class="text-gray-600">Gracias a la fibra de Bamboo y Linaza, te sentirás satisfecha por más tiempo, ayudando al control de peso.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-liv-green text-white flex items-center justify-center mt-1">
+                                <i class="fas fa-shield-virus"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-bold text-gray-900">Flora Intestinal Fortalecida</h4>
+                                <p class="text-gray-600">3 cepas de probióticos que restauran tu equilibrio bacteriano y mejoran la absorción de nutrientes.</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="mt-10">
+                        <a href="#oferta" class="inline-block bg-liv-dark text-white font-bold py-3 px-8 rounded-full hover:bg-gray-800 transition">
+                            VER OFERTAS DISPONIBLES
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ingredients Grid -->
+    <section id="ingredientes" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="font-heading text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+                El Poder de la <span class="text-liv-green">Naturaleza</span>
+            </h2>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-16">Una selección premium de ingredientes funcionales para maximizar tu bienestar.</p>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Ingrediente 1 -->
+                <div class="p-6 bg-gray-50 rounded-2xl hover:bg-liv-light transition duration-300 group">
+                    <div class="text-4xl mb-3 group-hover:scale-110 transition duration-300">🍏</div>
+                    <h3 class="font-bold text-lg text-gray-800">Manzana Verde</h3>
+                    <p class="text-sm text-gray-500 mt-2">Fuente de pectina y antioxidantes.</p>
+                </div>
+                <!-- Ingrediente 2 -->
+                <div class="p-6 bg-gray-50 rounded-2xl hover:bg-liv-light transition duration-300 group">
+                    <div class="text-4xl mb-3 group-hover:scale-110 transition duration-300">🎍</div>
+                    <h3 class="font-bold text-lg text-gray-800">Fibra de Bamboo</h3>
+                    <p class="text-sm text-gray-500 mt-2">Fibra insoluble para el tránsito.</p>
+                </div>
+                <!-- Ingrediente 3 -->
+                <div class="p-6 bg-gray-50 rounded-2xl hover:bg-liv-light transition duration-300 group">
+                    <div class="text-4xl mb-3 group-hover:scale-110 transition duration-300">🟠</div>
+                    <h3 class="font-bold text-lg text-gray-800">Papaya</h3>
+                    <p class="text-sm text-gray-500 mt-2">Enzimas digestivas naturales.</p>
+                </div>
+                <!-- Ingrediente 4 -->
+                <div class="p-6 bg-gray-50 rounded-2xl hover:bg-liv-light transition duration-300 group">
+                    <div class="text-4xl mb-3 group-hover:scale-110 transition duration-300">🦠</div>
+                    <h3 class="font-bold text-lg text-gray-800">Probióticos</h3>
+                    <p class="text-sm text-gray-500 mt-2">3 Cepas activas para tu flora.</p>
+                </div>
+                <!-- Ingrediente 5 -->
+                <div class="p-6 bg-gray-50 rounded-2xl hover:bg-liv-light transition duration-300 group">
+                    <div class="text-4xl mb-3 group-hover:scale-110 transition duration-300">🌸</div>
+                    <h3 class="font-bold text-lg text-gray-800">Pitahaya</h3>
+                    <p class="text-sm text-gray-500 mt-2">Prebiótico natural.</p>
+                </div>
+                <!-- Ingrediente 6 -->
+                <div class="p-6 bg-gray-50 rounded-2xl hover:bg-liv-light transition duration-300 group">
+                    <div class="text-4xl mb-3 group-hover:scale-110 transition duration-300">🌾</div>
+                    <h3 class="font-bold text-lg text-gray-800">Linaza</h3>
+                    <p class="text-sm text-gray-500 mt-2">Omega 3 y fibra dietética.</p>
+                </div>
+                <!-- Ingrediente 7 -->
+                <div class="p-6 bg-gray-50 rounded-2xl hover:bg-liv-light transition duration-300 group">
+                    <div class="text-4xl mb-3 group-hover:scale-110 transition duration-300">💜</div>
+                    <h3 class="font-bold text-lg text-gray-800">Ciruela</h3>
+                    <p class="text-sm text-gray-500 mt-2">El aliado clásico de la digestión.</p>
+                </div>
+                <!-- Ingrediente 8 -->
+                <div class="p-6 bg-gray-50 rounded-2xl hover:bg-liv-light transition duration-300 group">
+                    <div class="text-4xl mb-3 group-hover:scale-110 transition duration-300">🚫</div>
+                    <h3 class="font-bold text-lg text-gray-800">Cero Azúcar</h3>
+                    <p class="text-sm text-gray-500 mt-2">Endulzado con Estevia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section id="testimonios" class="py-20 bg-liv-teal/5">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-center font-heading text-3xl md:text-4xl font-bold text-gray-900 mb-12">
+                Ellas ya sienten la <span class="text-liv-teal">ligereza</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg relative">
+                    <div class="text-liv-green text-4xl absolute top-4 left-6">"</div>
+                    <p class="text-gray-600 italic mb-6 mt-4">
+                        "Llevo 2 semanas tomando LIV y la diferencia es increíble. Ya no me siento hinchada por las tardes y mi digestión se regularizó por completo. ¡El sabor a manzana es exquisito!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-500">CM</div>
+                        <div class="ml-3">
+                            <p class="text-sm font-bold text-gray-900">Carolina M.</p>
+                            <div class="text-yellow-400 text-xs">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg relative transform md:-translate-y-4 border-2 border-liv-green/20">
+                    <div class="absolute -top-3 right-4 bg-liv-green text-white text-xs px-2 py-1 rounded">Compra Verificada</div>
+                    <div class="text-liv-green text-4xl absolute top-4 left-6">"</div>
+                    <p class="text-gray-600 italic mb-6 mt-4">
+                        "Lo que más me gusta es que me quita la ansiedad de comer a deshoras. Me siento más liviana y con más energía. Es parte fija de mi desayuno ahora."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-500">AP</div>
+                        <div class="ml-3">
+                            <p class="text-sm font-bold text-gray-900">Andrea P.</p>
+                            <div class="text-yellow-400 text-xs">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg relative">
+                    <div class="text-liv-green text-4xl absolute top-4 left-6">"</div>
+                    <p class="text-gray-600 italic mb-6 mt-4">
+                        "He probado muchas fibras y todas tenían mal sabor o textura. LIV se disuelve súper bien y sabe a jugo de manzana. 100% recomendado."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-500">FV</div>
+                        <div class="ml-3">
+                            <p class="text-sm font-bold text-gray-900">Fernanda V.</p>
+                            <div class="text-yellow-400 text-xs">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GRAND SLAM OFFER SECTION -->
+    <section id="oferta" class="py-24 bg-gradient-to-br from-gray-900 to-liv-dark relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20">
+            <div class="absolute -top-20 -right-20 w-96 h-96 bg-liv-green rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-80 h-80 bg-liv-teal rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <span class="text-liv-green font-bold tracking-widest uppercase">Oferta Exclusiva Chile</span>
+                <h2 class="font-heading text-4xl md:text-6xl font-black text-white mt-2 mb-4">
+                    ELIGE TU PACK <span class="text-transparent bg-clip-text bg-gradient-to-r from-liv-green to-emerald-400">LIV</span>
+                </h2>
+                <p class="text-gray-300 text-lg">Envío rápido y seguro a todo el país</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8 items-center max-w-6xl mx-auto">
+                
+                <!-- Card 1: STARTER -->
+                <div class="bg-white rounded-3xl p-6 shadow-2xl transform hover:scale-105 transition duration-300">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-gray-800">Pack Inicial</h3>
+                        <p class="text-gray-500">Para probar y encantarte</p>
+                    </div>
+                    <div class="relative h-48 mb-6 flex justify-center items-center">
+                         <img src="https://via.placeholder.com/300x300/66B2B2/ffffff?text=1+x+LIV" alt="1 Frasco LIV" class="h-full object-contain">
+                    </div>
+                    <div class="text-center mb-8">
+                        <p class="text-gray-400 line-through text-lg">$59.990</p>
+                        <p class="text-4xl font-black text-liv-dark">$49.990</p>
+                        <p class="text-sm text-green-600 font-bold mt-2">Ahorras $10.000</p>
+                    </div>
+                    <ul class="space-y-3 mb-8 text-gray-600 text-sm">
+                        <li class="flex items-center"><i class="fas fa-check text-liv-green mr-2"></i> 1 Frasco de LIV (280g)</li>
+                        <li class="flex items-center"><i class="fas fa-check text-liv-green mr-2"></i> Acceso a Grupo de Apoyo</li>
+                        <li class="flex items-center text-gray-400"><i class="fas fa-times mr-2"></i> Sin envío gratis</li>
+                    </ul>
+                    <a href="https://wa.me/569XXXXXXXX?text=Hola,%20quiero%20comprar%20el%20Pack%20Inicial%20de%20LIV%20por%20$49.990" target="_blank" class="block w-full bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold py-4 rounded-xl text-center transition">
+                        COMPRAR 1 FRASCO
+                    </a>
+                </div>
+
+                <!-- Card 2: BEST SELLER (Highlighted) -->
+                <div class="bg-white rounded-3xl p-6 shadow-glow relative transform scale-105 z-20 border-4 border-liv-green">
+                    <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-liv-green to-green-600 text-white px-6 py-2 rounded-full font-bold text-sm shadow-lg tracking-wide uppercase">
+                        Más Vendido 🔥
+                    </div>
+                    <div class="text-center mb-6 mt-4">
+                        <h3 class="text-3xl font-bold text-gray-800">Pack Tratamiento</h3>
+                        <p class="text-gray-500">Resultados visibles en 8 semanas</p>
+                    </div>
+                    <div class="relative h-56 mb-6 flex justify-center items-center">
+                        <img src="https://via.placeholder.com/300x300/66B2B2/ffffff?text=2+x+LIV" alt="2 Frascos LIV" class="h-full object-contain">
+                        <!-- Sticker -->
+                        <div class="absolute -right-4 top-0 bg-red-500 text-white w-16 h-16 rounded-full flex items-center justify-center font-bold text-sm transform rotate-12 shadow-md">
+                            -15%
+                        </div>
+                    </div>
+                    <div class="text-center mb-8">
+                        <p class="text-gray-400 line-through text-lg">$99.980</p>
+                        <p class="text-5xl font-black text-liv-dark">$84.990</p>
+                        <p class="text-sm text-green-600 font-bold mt-2">Envío GRATIS incluido 🚚</p>
+                    </div>
+                    <ul class="space-y-3 mb-8 text-gray-600">
+                        <li class="flex items-center"><i class="fas fa-check text-liv-green mr-2"></i> 2 Frascos de LIV (560g total)</li>
+                        <li class="flex items-center"><i class="fas fa-check text-liv-green mr-2"></i> <strong>Envío GRATIS</strong> a todo Chile</li>
+                        <li class="flex items-center"><i class="fas fa-check text-liv-green mr-2"></i> Guía Digital de Detox</li>
+                    </ul>
+                    <a href="https://wa.me/569XXXXXXXX?text=Hola,%20quiero%20la%20OFERTA%20BEST%20SELLER%20de%202%20LIV%20por%20$84.990" target="_blank" class="block w-full bg-liv-green hover:bg-green-600 text-white font-bold py-5 rounded-xl text-center shadow-lg transition text-xl btn-pulse">
+                        COMPRAR PACK DOBLE
+                    </a>
+                </div>
+
+                <!-- Card 3: BULK -->
+                <div class="bg-white rounded-3xl p-6 shadow-2xl transform hover:scale-105 transition duration-300">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-gray-800">Pack Familiar</h3>
+                        <p class="text-gray-500">Comparte el bienestar</p>
+                    </div>
+                    <div class="relative h-48 mb-6 flex justify-center items-center">
+                        <img src="https://via.placeholder.com/300x300/66B2B2/ffffff?text=3+x+LIV" alt="3 Frascos LIV" class="h-full object-contain">
+                    </div>
+                    <div class="text-center mb-8">
+                        <p class="text-gray-400 line-through text-lg">$149.970</p>
+                        <p class="text-4xl font-black text-liv-dark">$119.990</p>
+                        <p class="text-sm text-green-600 font-bold mt-2">Mejor precio por unidad</p>
+                    </div>
+                    <ul class="space-y-3 mb-8 text-gray-600 text-sm">
+                        <li class="flex items-center"><i class="fas fa-check text-liv-green mr-2"></i> 3 Frascos de LIV</li>
+                        <li class="flex items-center"><i class="fas fa-check text-liv-green mr-2"></i> <strong>Envío GRATIS</strong> Prioritario</li>
+                        <li class="flex items-center"><i class="fas fa-check text-liv-green mr-2"></i> Asesoría Nutricional Express</li>
+                    </ul>
+                    <a href="https://wa.me/569XXXXXXXX?text=Hola,%20quiero%20el%20Pack%20Familiar%20de%203%20LIV%20por%20$119.990" target="_blank" class="block w-full bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold py-4 rounded-xl text-center transition">
+                        COMPRAR 3 FRASCOS
+                    </a>
+                </div>
+
+            </div>
+            
+            <p class="text-center text-gray-400 mt-12 text-sm">
+                *Precios en Pesos Chilenos (CLP). Métodos de pago aceptados: Transferencia y Webpay.
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-center font-heading text-3xl font-bold text-gray-900 mb-12">Preguntas Frecuentes</h2>
+            
+            <div class="space-y-4">
+                <details class="group bg-white rounded-xl shadow-sm">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-lg text-gray-800">
+                        <span>¿Cómo se prepara LIV?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="fas fa-chevron-down text-liv-teal"></i>
+                        </span>
+                    </summary>
+                    <div class="text-gray-600 p-6 pt-0 animate-fadeIn">
+                        Es muy simple. Disuelve 1 scoop (10g) de LIV en un vaso de 200ml de agua fría. Revuelve bien hasta que se disuelva y disfruta. Se recomienda tomarlo por las mañanas.
+                    </div>
+                </details>
+
+                <details class="group bg-white rounded-xl shadow-sm">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-lg text-gray-800">
+                        <span>¿Tiene contraindicaciones?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="fas fa-chevron-down text-liv-teal"></i>
+                        </span>
+                    </summary>
+                    <div class="text-gray-600 p-6 pt-0 animate-fadeIn">
+                        LIV es un producto natural. Sin embargo, mujeres embarazadas, en periodo de lactancia o personas con condiciones médicas específicas deben consultar a su médico antes de consumir cualquier suplemento.
+                    </div>
+                </details>
+
+                <details class="group bg-white rounded-xl shadow-sm">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-lg text-gray-800">
+                        <span>¿Cuánto demora el envío?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="fas fa-chevron-down text-liv-teal"></i>
+                        </span>
+                    </summary>
+                    <div class="text-gray-600 p-6 pt-0 animate-fadeIn">
+                        Realizamos envíos a todo Chile. En Región Metropolitana los pedidos suelen llegar en 24-48 horas hábiles. En regiones, el plazo es de 2 a 5 días hábiles dependiendo de la zona.
+                    </div>
+                </details>
+
+                 <details class="group bg-white rounded-xl shadow-sm">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-lg text-gray-800">
+                        <span>¿Es apto para diabéticos?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="fas fa-chevron-down text-liv-teal"></i>
+                        </span>
+                    </summary>
+                    <div class="text-gray-600 p-6 pt-0 animate-fadeIn">
+                        Sí, LIV contiene 0g de azúcar añadida y está endulzado con Estevia natural, por lo que es amigable para quienes buscan reducir su consumo de azúcar.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-20 bg-liv-green text-center text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/10"></div>
+        <div class="max-w-4xl mx-auto px-4 relative z-10">
+            <h2 class="font-heading text-4xl font-bold mb-6">¿Lista para sentirte liviana?</h2>
+            <p class="text-xl mb-10 opacity-90">No dejes pasar otro día sintiéndote hinchada. Tu cuerpo merece fluir.</p>
+            <a href="#oferta" class="inline-block bg-white text-liv-green text-xl font-bold py-4 px-12 rounded-full shadow-lg hover:bg-gray-100 transition transform hover:scale-105">
+                COMPRAR AHORA
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-liv-dark text-white py-12 border-t border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-8 mb-8">
+            <div class="col-span-1 md:col-span-2">
+                <span class="font-heading text-3xl font-black tracking-tighter mb-4 block">LIV<span class="text-liv-green">.</span></span>
+                <p class="text-gray-400 text-sm max-w-sm">
+                    Una marca de Future World Products (FWP). Comprometidos con tu bienestar a través de la nutrición inteligente y natural.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Enlaces Rápidos</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="#beneficios" class="hover:text-liv-green">Beneficios</a></li>
+                    <li><a href="#ingredientes" class="hover:text-liv-green">Ingredientes</a></li>
+                    <li><a href="#oferta" class="hover:text-liv-green">Comprar</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Contacto</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><i class="fab fa-whatsapp mr-2"></i> +56 9 XXXX XXXX</li>
+                    <li><i class="far fa-envelope mr-2"></i> contacto@tulanding.cl</li>
+                    <li><i class="fas fa-map-marker-alt mr-2"></i> Santiago, Chile</li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+            <p>&copy; 2025 FWP LIV. Todos los derechos reservados.</p>
+            <div class="flex space-x-4 mt-4 md:mt-0">
+                <a href="#" class="hover:text-white">Términos y Condiciones</a>
+                <a href="#" class="hover:text-white">Política de Privacidad</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html>
