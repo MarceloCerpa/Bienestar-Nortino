@@ -104,6 +104,16 @@
             </div>
         </section>
 
+        <!-- Banner de Envío Gratis (Actualizado a Español) -->
+        <section class="bg-white border-y border-gray-100 py-4 shadow-sm">
+            <div class="container mx-auto px-6 text-center">
+                <p class="text-fwp-dark font-bold text-lg mb-1 flex items-center justify-center gap-2">
+                    <span class="text-2xl">🚚</span> Primer envío GRATIS en cualquier pack
+                </p>
+                <p class="text-gray-500 text-sm">Aprovecha hoy y recibe tu producto sin costo de despacho en tu primera compra</p>
+            </div>
+        </section>
+
         <!-- Sección de Productos -->
         <section id="productos" class="py-20">
             <div class="container mx-auto px-6">
@@ -113,12 +123,16 @@
                 </div>
 
                 <!-- Grid de Productos -->
-                <!-- MODIFICADO: Cambiado a max-w-5xl, mx-auto y lg:grid-cols-2 para lograr diseño 2x2 centrado -->
+                <!-- Diseño mantenido: 2x2 centrado -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
 
                     <!-- Producto 1: RENÖVA+ -->
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col card-hover-effect">
-                        <div class="p-2 bg-pink-50">
+                        <div class="p-2 bg-pink-50 relative">
+                            <!-- Badge (Actualizado a Español) -->
+                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm border border-pink-100 z-10">
+                                <span class="text-xs font-bold text-fwp-renova uppercase tracking-wide">Perfecto para comenzar</span>
+                            </div>
                             <img src="Imagenes/RENÖVA+.png" alt="Producto RENÖVA+" class="w-full h-64 object-contain">
                         </div>
                         <div class="p-6 flex flex-col flex-grow">
@@ -152,10 +166,10 @@
                         </div>
                     </div>
 
-                    <!-- Producto 4: LIV (Nuevo) -->
+                    <!-- Producto 4: LIV -->
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col card-hover-effect">
                         <div class="p-2 bg-teal-50">
-                            <img src="Imagenes/LIV.png" alt="Producto LIV" class="w-full h-64 object-contain">
+                            <img src="Imagenes/LIV.pg" alt="Producto LIV" class="w-full h-64 object-contain">
                         </div>
                         <div class="p-6 flex flex-col flex-grow">
                             <h3 class="text-2xl font-bold mb-2 text-fwp-liv">LIV</h3>
