@@ -1,204 +1,224 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FWP Distribuidor Autorizado - Inicio</title>
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-    
-    <!-- Estilos personalizados y configuración de Tailwind -->
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-      .hero-gradient {
-    background:
-        linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-        url('Imagenes/fondo-navidad.webp') center center / cover no-repeat;
-        }
-        .hero-gradient h1,
-    .hero-gradient p {
-        color: #ffffff; /* texto blanco */
-        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); /* sombra para contraste */}
-        /* Transiciones suaves para elementos interactivos */
-        .card-hover-effect {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card-hover-effect:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-        }
-    </style>
-    <script>
-      // Configuración personalizada para los colores de la marca en Tailwind
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              'fwp-renova': '#e91e63', // Rosa para RENÖVA+
-              'fwp-24burn': '#84cc16', // Verde para 24BURN
-              'fwp-eboost': '#f97316', // Naranja para E-BOOST
-              'fwp-liv': '#26a69a',    // Teal para LIV (Nuevo)
-              'fwp-dark': '#1f2937',   // Gris oscuro para texto y header
-            }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FWP | Bienestar Nortino</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .hero-gradient {
+      background:
+        linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+        url('Imagenes/fondo-navidad.webp') center / cover no-repeat;
+    }
+    .card-hover-effect {
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .card-hover-effect:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.15);
+    }
+  </style>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'fwp-renova': '#e91e63',
+            'fwp-24burn': '#84cc16',
+            'fwp-eboost': '#f97316',
+            'fwp-liv': '#26a69a',
+            'fwp-dark': '#1f2937',
           }
         }
       }
-    </script>
+    }
+  </script>
 </head>
+
 <body class="bg-gray-50 text-fwp-dark">
 
-    <!-- =========== HEADER / MENÚ SUPERIOR =========== -->
-    <header class="bg-white/80 backdrop-blur-lg shadow-md sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Logo -->
-            <a href="#" class="flex items-center text-fwp-dark">
-                <img src="Imagenes/LOGO.png" alt="Logo Bienestar Nortino" class="h-16 w-auto">
-                <span class="ml-3 text-2xl font-bold">Bienestar Nortino</span>
-            </a>
+<!-- HEADER -->
+<header class="bg-white/80 backdrop-blur-lg shadow-md sticky top-0 z-50">
+  <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <a href="#" class="flex items-center">
+      <img src="Imagenes/LOGO.png" class="h-16" alt="Bienestar Nortino">
+      <span class="ml-3 text-2xl font-bold">Bienestar Nortino</span>
+    </a>
+    <ul class="hidden md:flex space-x-8 font-semibold text-gray-700">
+      <li><a href="#" class="hover:text-fwp-renova">Inicio</a></li>
+      <li><a href="#productos" class="hover:text-fwp-renova">Productos</a></li>
+      <li><a href="#negocio" class="hover:text-fwp-renova">Oportunidad</a></li>
+      <li><a href="CONTACTO.html" class="hover:text-fwp-renova">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
 
-            <!-- Menú para Escritorio -->
-            <ul class="hidden md:flex items-center space-x-8">
-                <li><a href="#" class="font-semibold text-gray-700 hover:text-fwp-renova transition-colors">Inicio</a></li>
-                <li><a href="#productos" class="font-semibold text-gray-700 hover:text-fwp-renova transition-colors">Productos</a></li>
-                <li><a href="#nosotros" class="font-semibold text-gray-700 hover:text-fwp-renova transition-colors">Sobre Nosotros</a></li>
-                <li><a href="CONTACTO.html" class="font-semibold text-gray-700 hover:text-fwp-renova transition-colors">Contacto</a></li>
-            </ul>
+<main>
 
-            <!-- Botón del Menú Móvil (Hamburguesa) -->
-            <div class="md:hidden">
-                <button id="menu-btn" class="text-fwp-dark focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
-        </nav>
+<!-- HERO -->
+<section class="hero-gradient pt-20 pb-28 text-white text-center">
+  <div class="container mx-auto px-6 max-w-4xl">
+    <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
+      Bienestar real, resultados visibles<br>
+      y una oportunidad para crecer
+    </h1>
+    <p class="text-lg md:text-xl mb-10">
+      Productos diseñados para mejorar tu energía, tu cuerpo y tu bienestar diario.
+      Tú eliges el objetivo. Nosotros te damos el sistema.
+    </p>
+    <div class="flex flex-col md:flex-row gap-4 justify-center">
+      <a href="#productos" class="bg-fwp-dark px-8 py-3 rounded-full font-bold hover:bg-fwp-renova transition">
+        Ver productos
+      </a>
+      <a href="#negocio" class="bg-white text-fwp-dark px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition">
+        Generar ingresos
+      </a>
+    </div>
+  </div>
+</section>
 
-        <!-- Menú Móvil -->
-        <div id="mobile-menu" class="hidden md:hidden">
-            <ul class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <li><a href="#inicio" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Inicio</a></li>
-                <li><a href="#productos" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Productos</a></li>
-                <li><a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Sobre Nosotros</a></li>
-                <li><a href="CONTACTO.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">CONTACTO</a></li>
-            </ul>
+<!-- PROBLEMA -->
+<section class="py-16 bg-gray-100">
+  <div class="container mx-auto px-6 max-w-4xl text-center">
+    <h2 class="text-3xl font-bold mb-4">
+      El problema no es tu falta de ganas
+    </h2>
+    <p class="text-gray-600 text-lg">
+      Muchas personas se sienten cansadas, sin energía o estancadas en su bienestar,
+      no porque no lo intenten, sino porque no cuentan con un sistema simple y constante.
+    </p>
+  </div>
+</section>
+
+<!-- SISTEMA -->
+<section class="py-20 bg-white">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-12">
+      ¿Por qué FWP es diferente?
+    </h2>
+    <div class="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+      <div>
+        <h3 class="font-bold text-lg mb-2">Productos efectivos</h3>
+        <p class="text-gray-600">Fórmulas pensadas para resultados reales y sostenibles.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-lg mb-2">Hábito diario</h3>
+        <p class="text-gray-600">No soluciones mágicas. Constancia que sí funciona.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-lg mb-2">Acompañamiento</h3>
+        <p class="text-gray-600">Educación, comunidad y apoyo continuo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTOS -->
+<section id="productos" class="py-20 bg-gray-50">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold">Elige tu objetivo de bienestar</h2>
+      <p class="text-gray-500 mt-2">Cada producto responde a una necesidad específica.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+
+      <!-- RENÖVA+ -->
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover-effect flex flex-col">
+        <img src="Imagenes/RENÖVA+.png" class="h-64 object-contain bg-pink-50 p-4">
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-2xl font-bold text-fwp-renova mb-2">RENÖVA+</h3>
+          <p class="text-gray-600 mb-4 flex-grow">
+            Apoyo diario para piel, cabello y bienestar desde el interior.
+          </p>
+          <a href="/RENÖVA+" class="bg-fwp-renova text-white text-center py-3 rounded-lg font-semibold">
+            Ver producto
+          </a>
         </div>
-    </header>
+      </div>
 
-    <!-- =========== SECCIÓN PRINCIPAL (MAIN) =========== -->
-    <main>
-        <!-- Hero Section -->
-        <section class="hero-gradient pt-16 pb-24">
-            <div class="container mx-auto px-6 text-center">
-                <h1 class="text-4xl md:text-6xl font-black leading-tight mb-4">Transforma tu Bienestar, <br>Día a Día</h1>
-                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">Descubre nuestra selección de productos premium diseñados para potenciar tu energía, belleza y salud desde el interior.</p>
-                <a href="#productos" class="bg-fwp-dark text-white font-bold py-3 px-8 rounded-full hover:bg-fwp-renova transition-all duration-300">Explorar Productos</a>
-            </div>
-        </section>
-
-        <!-- Banner de Envío Gratis (Actualizado a Español) -->
-        <section class="bg-white border-y border-gray-100 py-4 shadow-sm">
-            <div class="container mx-auto px-6 text-center">
-                <p class="text-fwp-dark font-bold text-lg mb-1 flex items-center justify-center gap-2">
-                    <span class="text-2xl">🚚</span> Primer envío GRATIS en cualquier pack
-                </p>
-                <p class="text-gray-500 text-sm">Aprovecha hoy y recibe tu producto sin costo de despacho en tu primera compra</p>
-            </div>
-        </section>
-
-        <!-- Sección de Productos -->
-        <section id="productos" class="py-20">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold">Nuestros Productos Estrella</h2>
-                    <p class="text-gray-500 mt-2">Fórmulas únicas para alcanzar tus objetivos.</p>
-                </div>
-
-                <!-- Grid de Productos -->
-                <!-- Diseño mantenido: 2x2 centrado -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
-
-                    <!-- Producto 1: RENÖVA+ -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col card-hover-effect">
-                        <div class="p-2 bg-pink-50 relative">
-                            <!-- Badge (Actualizado a Español) -->
-                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm border border-pink-100 z-10">
-                                <span class="text-xs font-bold text-fwp-renova uppercase tracking-wide">Perfecto para comenzar</span>
-                            </div>
-                            <img src="Imagenes/RENÖVA+.png" alt="Producto RENÖVA+" class="w-full h-64 object-contain">
-                        </div>
-                        <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-2xl font-bold mb-2 text-fwp-renova">RENÖVA+</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">Tu dosis diaria de juventud. Colágeno hidrolizado con Resveratrol y Q10 para una piel, cabello y uñas radiantes.</p>
-                            <a href="http://www.bienestarnortino.com/RENÖVA+" target="_blank" class="mt-auto w-full text-center bg-fwp-renova text-white font-semibold py-3 px-6 rounded-lg hover:bg-opacity-90 transition-colors">Ver más</a>
-                        </div>
-                    </div>
-
-                    <!-- Producto 2: 24BURN -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col card-hover-effect">
-                        <div class="p-2 bg-lime-50">
-                            <img src="Imagenes/24BURN.png" alt="Producto 24BURN" class="w-full h-64 object-contain">
-                        </div>
-                        <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-2xl font-bold mb-2 text-fwp-24burn">24BURN</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">El acelerador que tu metabolismo necesita. Activa tu cuerpo, reduce medidas y controla la ansiedad de forma natural.</p>
-                            <a href="http://www.bienestarnortino.com/24burn" target="_blank" class="mt-auto w-full text-center bg-fwp-24burn text-white font-semibold py-3 px-6 rounded-lg hover:bg-opacity-90 transition-colors">Ver más</a>
-                        </div>
-                    </div>
-
-                    <!-- Producto 3: E-BOOST -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col card-hover-effect">
-                        <div class="p-2 bg-orange-50">
-                            <img src="Imagenes/E-BOOST.png" alt="Producto E-BOOST" class="w-full h-64 object-contain">
-                        </div>
-                        <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-2xl font-bold mb-2 text-fwp-eboost">E-BOOST</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">Despierta la energía que llevas dentro. Un impulso de vitalidad y concentración para superar tu rutina diaria.</p>
-                            <a href="http://www.bienestarnortino.com/e-boost" target="_blank" class="mt-auto w-full text-center bg-fwp-eboost text-white font-semibold py-3 px-6 rounded-lg hover:bg-opacity-90 transition-colors">Ver más</a>
-                        </div>
-                    </div>
-
-                    <!-- Producto 4: LIV -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col card-hover-effect">
-                        <div class="p-2 bg-teal-50">
-                            <img src="Imagenes/LIV.png" alt="Producto LIV" class="w-full h-64 object-contain">
-                        </div>
-                        <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-2xl font-bold mb-2 text-fwp-liv">LIV</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">Ligereza que fluye. Sinergia de fibras y probióticos que prolonga la saciedad, mejora la digestión y equilibra tu flora intestinal.</p>
-                            <a href="http://www.bienestarnortino.com/liv" target="_blank" class="mt-auto w-full text-center bg-fwp-liv text-white font-semibold py-3 px-6 rounded-lg hover:bg-opacity-90 transition-colors">Ver más</a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- =========== FOOTER =========== -->
-    <footer class="bg-fwp-dark text-white">
-        <div class="container mx-auto px-6 py-8 text-center">
-            <p>&copy; 2024 FWP Distribuidor Autorizado. Todos los derechos reservados.</p>
-            <p class="text-sm text-gray-400 mt-2">Los suplementos alimenticios no son medicamentos y no están destinados a tratar, curar o prevenir ninguna enfermedad.</p>
+      <!-- 24BURN -->
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover-effect flex flex-col">
+        <img src="Imagenes/24BURN.png" class="h-64 object-contain bg-lime-50 p-4">
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-2xl font-bold text-fwp-24burn mb-2">24BURN</h3>
+          <p class="text-gray-600 mb-4 flex-grow">
+            Apoyo metabólico para control de peso y energía diaria.
+          </p>
+          <a href="/24burn" class="bg-fwp-24burn text-white text-center py-3 rounded-lg font-semibold">
+            Ver producto
+          </a>
         </div>
-    </footer>
+      </div>
 
-    <!-- Script para el menú móvil -->
-    <script>
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
+      <!-- E-BOOST -->
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover-effect flex flex-col">
+        <img src="Imagenes/E-BOOST.png" class="h-64 object-contain bg-orange-50 p-4">
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-2xl font-bold text-fwp-eboost mb-2">E-BOOST</h3>
+          <p class="text-gray-600 mb-4 flex-grow">
+            Energía, enfoque y rendimiento para tu día a día.
+          </p>
+          <a href="/e-boost" class="bg-fwp-eboost text-white text-center py-3 rounded-lg font-semibold">
+            Ver producto
+          </a>
+        </div>
+      </div>
 
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    </script>
+      <!-- LIV -->
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover-effect flex flex-col">
+        <img src="Imagenes/LIV.png" class="h-64 object-contain bg-teal-50 p-4">
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-2xl font-bold text-fwp-liv mb-2">LIV</h3>
+          <p class="text-gray-600 mb-4 flex-grow">
+            Digestión, saciedad y equilibrio intestinal.
+          </p>
+          <a href="/liv" class="bg-fwp-liv text-white text-center py-3 rounded-lg font-semibold">
+            Ver producto
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- NEGOCIO -->
+<section id="negocio" class="py-20 bg-gray-100">
+  <div class="container mx-auto px-6 text-center max-w-4xl">
+    <h2 class="text-3xl md:text-4xl font-bold mb-6">
+      ¿Quieres más que solo consumir?
+    </h2>
+    <p class="text-gray-600 text-lg mb-8">
+      Ahorra en tus productos y genera ingresos extra compartiendo bienestar con FWP.
+    </p>
+    <a href="https://wa.me/56933394706"
+       class="bg-fwp-dark text-white font-bold py-3 px-8 rounded-full hover:bg-fwp-renova transition">
+      Conocer la oportunidad
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-fwp-dark text-white text-center py-8">
+  <p>&copy; 2024 Bienestar Nortino.</p>
+  <p class="text-sm text-gray-400 mt-2">
+    Los suplementos no reemplazan tratamientos médicos.
+  </p>
+</footer>
+
 </body>
 </html>
