@@ -1,682 +1,235 @@
 <!DOCTYPE html>
-<html lang="es-CL">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RENÖVA+ | Dosis Diaria de Juventud - Colágeno y Resveratrol para Chile</title>
-    <meta name="description" content="Descubre RENÖVA+ en Chile: Colágeno Hidrolizado con Biopéptidos, Resveratrol (300mg) y Coenzima Q10. Rejuvenece piel, uñas, cabello y protege articulaciones. ¡Envío a todo Chile!">
-    <meta name="keywords" content="RENÖVA+, colágeno hidrolizado, resveratrol, coenzima Q10, anti-edad, piel, articulaciones, pelo, uñas, suplemento, longevidad celular">
-    <meta name="author" content="Future World Products">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://tulandingpage.cl/renova">
-    <meta property="og:title" content="RENÖVA+ - Dosis Diaria de Juventud">
-    <meta property="og:description" content="La fórmula avanzada con Colágeno, Resveratrol y Q10 para combatir el envejecimiento desde el interior.">
-    <meta property="og:image" content="https://via.placeholder.com/1200x630/8A2BE2/FFFFFF?text=RENÖVA+%20Chile">
-
-    <!-- Tailwind CSS -->
+    <title>RENÖVA+ | Dosis Diaria de Juventud</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-    
-    <!-- Animation Library (AOS) -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <!-- Custom Config for Tailwind Colors based on RENÖVA+ Palette -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        renova: {
-                            purple: '#8A2BE2',    /* Main Body Color (Blue Violet) */
-                            dark: '#4B0082',      /* Dark Text/Footer (Indigo) */
-                            light: '#F5F0FF',     /* Backgrounds (Lavender light) */
-                            pink: '#FF69B4',      /* Accent Pink/Berries */
-                            accent: '#FFD700',    /* CTA Gold */
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        heading: ['Poppins', 'sans-serif'],
-                    },
-                    boxShadow: {
-                        'glow': '0 0 20px rgba(255, 105, 180, 0.7)', // Pink glow
-                        'card': '0 10px 30px -5px rgba(0, 0, 0, 0.1)',
-                    }
-                }
-            }
-        }
-    </script>
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Custom Styles & Utilities */
-        body {
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-        }
-        
-        .font-heading {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .gradient-text {
-            background: linear-gradient(to right, #4B0082, #8A2BE2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-bg {
-            background: radial-gradient(circle at top right, #F5F0FF 0%, #ffffff 50%, #FAF0FF 100%);
-        }
-
-        .btn-pulse {
-            animation: pulse-pink 2s infinite;
-        }
-
-        @keyframes pulse-pink {
-            0% { box-shadow: 0 0 0 0 rgba(255, 105, 180, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(255, 105, 180, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 105, 180, 0); }
-        }
-
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
-        }
-
-        /* Diagonal Section Separator */
-        .separator-bottom {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            overflow: hidden;
-            line-height: 0;
-            transform: rotate(180deg);
-        }
-
-        .separator-bottom svg {
-            position: relative;
-            display: block;
-            width: calc(100% + 1.3px);
-            height: 60px;
-        }
-
-        .shape-fill {
-            fill: #FFFFFF;
-        }
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .product-gradient { background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(248,250,252,1) 100%); }
     </style>
 </head>
-<body class="text-gray-800 antialiased overflow-x-hidden">
-
-    <!-- Top Bar -->
-    <div class="bg-renova-dark text-white text-center py-2 text-sm font-semibold tracking-wide">
-        ✨ DOSIS DIARIA DE JUVENTUD | <span class="text-renova-pink">ENVÍO GRATIS en Pack Programa</span>
-    </div>
-
-    <!-- Navbar -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center gap-2">
-                    <span class="font-heading text-3xl font-black text-renova-purple tracking-tighter">RENÖVA<span class="text-renova-pink">+</span></span>
-                </div>
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#beneficios" class="text-gray-600 hover:text-renova-purple font-medium transition">Beneficios</a>
-                    <a href="#ingredientes" class="text-gray-600 hover:text-renova-purple font-medium transition">Fórmula</a>
-                    <a href="#testimonios" class="text-gray-600 hover:text-renova-purple font-medium transition">Resultados</a>
-                    <a href="#oferta" class="bg-renova-pink hover:bg-pink-600 text-white px-6 py-2.5 rounded-full font-bold transition shadow-lg transform hover:scale-105">
-                        COMPRAR AHORA
-                    </a>
-                </div>
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
-                    <a href="#oferta" class="bg-renova-pink text-white px-4 py-2 rounded-full font-bold text-sm shadow-md mr-3">
-                        OFERTA
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
+<body class="bg-white text-slate-900">
 
     <!-- Hero Section -->
-    <header class="hero-bg relative pt-12 pb-24 lg:pt-20 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Text Content -->
-                <div class="text-center lg:text-left" data-aos="fade-right">
-                    <div class="inline-block bg-renova-light text-renova-dark px-4 py-1.5 rounded-full font-bold text-xs uppercase tracking-wider mb-6 border border-renova-purple/20">
-                        ⚡️ Colágeno + Resveratrol + CoQ10
-                    </div>
-                    <h1 class="font-heading text-5xl lg:text-7xl font-extrabold text-gray-900 leading-tight mb-6">
-                        DOSIS DIARIA DE <br>
-                        <span class="text-renova-purple">JUVENTUD</span>
-                    </h1>
-                    <p class="text-lg text-gray-600 mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0">
-                        El colágeno hidrolizado con **biopéptidos activos**, fortalecido con **300mg de Resveratrol** y **Coenzima Q10**, para rejuvenecer tu piel, cabello, uñas y articulaciones desde el interior.
-                    </p>
-                    
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a href="#oferta" class="bg-renova-pink text-white text-xl font-bold py-4 px-10 rounded-full shadow-glow hover:bg-pink-600 transition transform hover:-translate-y-1 btn-pulse">
-                            REJUVENECE HOY <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                    
-                    <div class="mt-8 flex items-center justify-center lg:justify-start gap-6 text-sm font-medium text-gray-500">
-                        <div class="flex items-center"><i class="fas fa-check-circle text-renova-purple mr-2"></i> 10g Colágeno</div>
-                        <div class="flex items-center"><i class="fas fa-check-circle text-renova-purple mr-2"></i> Resveratrol 300mg</div>
-                        <div class="flex items-center"><i class="fas fa-check-circle text-renova-purple mr-2"></i> Cero Azúcar</div>
-                    </div>
-                </div>
+    <header class="relative pt-16 pb-24 overflow-hidden product-gradient">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <span class="text-blue-600 font-semibold tracking-widest uppercase text-sm">FWP Quality Certification</span>
+            <h1 class="text-4xl md:text-6xl font-bold mt-4 mb-6 leading-tight">
+                RENÖVA+<br><span class="text-slate-500">Dosis Diaria de Juventud</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto">
+                Suplemento de colágeno hidrolizado con biopéptidos activos, resveratrol y coenzima Q10.
+            </p>
+            
+            <div class="mb-12">
+                <img src="https://Imagenes/Renöva+.png" alt="Renova Product" class="mx-auto w-64 md:w-80 drop-shadow-2xl rounded-2xl">
+            </div>
 
-                <!-- Product Image -->
-                <div class="relative" data-aos="fade-left">
-                    <!-- Decorative blob background -->
-                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-renova-purple/10 rounded-full blur-3xl -z-10"></div>
-                    
-                    <!-- Main Image Placeholder (Replace with your uploaded image) -->
-                    <img src="Imagenes/RENÖVA+.png" alt="RENÖVA+ Colágeno" class="relative z-10 w-full max-w-md mx-auto floating drop-shadow-2xl">
-                    
-                    <!-- Floating Badges -->
-                    <div class="absolute top-10 right-10 bg-white p-3 rounded-2xl shadow-xl z-20 animate-bounce" style="animation-duration: 3s;">
-                        <span class="block text-3xl font-bold text-renova-dark text-center">30</span>
-                        <span class="block text-xs text-gray-500 font-bold uppercase">Días</span>
-                    </div>
-                    
-                    <div class="absolute bottom-20 left-0 bg-white/90 backdrop-blur p-4 rounded-xl shadow-lg z-20 border-l-4 border-renova-pink">
-                        <div class="flex items-center gap-3">
-                            <div class="bg-pink-100 p-2 rounded-full text-renova-pink">
-                                <i class="fas fa-berry text-xl"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-gray-500 font-bold uppercase">Sabor</p>
-                                <p class="text-lg font-bold text-renova-dark">Berries</p>
-                            </div>
-                        </div>
-                    </div>
+            <div class="flex flex-wrap justify-center gap-8 mb-12 text-left max-w-3xl mx-auto">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold">✓</div>
+                    <span class="font-medium">Salud de piel, uñas y cabello</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold">✓</div>
+                    <span class="font-medium">Soporte articular y muscular</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold">✓</div>
+                    <span class="font-medium">Potente acción antioxidante</span>
                 </div>
             </div>
-        </div>
-        
-        <!-- Wave Separator -->
-        <div class="separator-bottom">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-            </svg>
+
+            <a href="#offers" class="inline-block bg-slate-900 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-slate-800 transition-transform hover:scale-105">
+                Comprar Ahora
+            </a>
         </div>
     </header>
 
-    <!-- Problem / Agitation Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-            <span class="text-renova-purple font-bold tracking-widest uppercase text-sm">¿Te sientes en la cuenta regresiva?</span>
-            <h2 class="font-heading text-3xl md:text-4xl font-bold text-gray-900 mt-3 mb-12">
-                Tu cuerpo está pidiendo <span class="text-renova-pink underline decoration-renova-purple decoration-4 underline-offset-4">soporte</span> antiedad
-            </h2>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 hover:shadow-card transition duration-300" data-aos="fade-up" data-aos-delay="0">
-                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4 text-renova-purple text-2xl">
-                        <i class="fas fa-face-sad"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Piel Opaca y Seca</h3>
-                    <p class="text-gray-600">Disminución de elasticidad, líneas de expresión más visibles y falta de brillo natural.</p>
+    <!-- Problem Section -->
+    <section class="py-20 bg-slate-50">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16">Lo que suele ocurrir con el paso del tiempo</h2>
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                    <p class="text-blue-600 font-bold mb-2">01. Desgaste Natural</p>
+                    <p class="text-slate-600">La producción de colágeno disminuye, afectando la elasticidad de la piel y la firmeza de las articulaciones.</p>
                 </div>
-                
-                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 hover:shadow-card transition duration-300" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4 text-renova-pink text-2xl">
-                        <i class="fas fa-person-walking-luggage"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Dolor Articular</h3>
-                    <p class="text-gray-600">Rigidez o molestias al moverte, señal de que tus articulaciones necesitan una ayudita extra de colágeno.</p>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                    <p class="text-blue-600 font-bold mb-2">02. Estrés Oxidativo</p>
+                    <p class="text-slate-600">Los factores ambientales aceleran el envejecimiento celular, restando vitalidad a nivel sistémico.</p>
                 </div>
-                
-                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 hover:shadow-card transition duration-300" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4 text-renova-accent text-2xl">
-                        <i class="fas fa-hair-long"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Cabello y Uñas Débiles</h3>
-                    <p class="text-gray-600">Uñas que se quiebran con facilidad y cabello sin volumen ni resistencia.</p>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                    <p class="text-blue-600 font-bold mb-2">03. Debilidad en Faneras</p>
+                    <p class="text-slate-600">Las uñas se vuelven quebradizas y el cabello pierde el brillo y la fuerza característica de la juventud.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Solution / Benefits Section -->
-    <section id="beneficios" class="py-20 bg-renova-light/50 relative">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <!-- MODIFICACIÓN 1.B: Reemplazo de placeholder por ruta local de imagen -->
-                <div class="order-2 lg:order-1" data-aos="fade-right">
-                    <img src="Imagenes/MujerRENÖVA+.png" alt="MujerRENÖVA+" class="rounded-3xl shadow-2xl w-full object-cover h-[500px]">
-                </div>
-                
-                <div class="order-1 lg:order-2" data-aos="fade-left">
-                    <h2 class="font-heading text-3xl md:text-5xl font-bold text-renova-dark mb-6">
-                        El secreto de la <span class="text-renova-pink">Juventud</span> Celular
-                    </h2>
-                    <p class="text-lg text-gray-600 mb-8">
-                        RENÖVA+ no es solo colágeno; es una matriz de activos funcionales diseñada para la longevidad, con una absorción ultra-rápida.
-                    </p>
-                    
-                    <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-renova-pink text-white flex items-center justify-center mt-1">
-                                <i class="fas fa-spa"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-xl font-bold text-gray-900">Belleza Potenciada (Piel, Uñas, Cabello)</h4>
-                                <p class="text-gray-600">Estimula la producción natural de colágeno, mejorando la firmeza y el brillo de tu piel, y fortaleciendo anexos.</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-renova-pink text-white flex items-center justify-center mt-1">
-                                <i class="fas fa-clock-rotate-left"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-xl font-bold text-gray-900">Longevidad y Anti-Estrés Oxidativo</h4>
-                                <p class="text-gray-600">Con Resveratrol (300mg) y Coenzima Q10, combate los radicales libres, protegiendo tus células del daño diario.</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-renova-pink text-white flex items-center justify-center mt-1">
-                                <i class="fas fa-bone"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-xl font-bold text-gray-900">Soporte Articular y Óseo</h4>
-                                <p class="text-gray-600">Magnesio y Colágeno que ayudan a regenerar tejidos conectivos, aportando flexibilidad y fortaleza a huesos y articulaciones.</p>
-                            </div>
-                        </li>
-                    </ul>
-
-                    <div class="mt-10">
-                        <a href="#oferta" class="inline-block bg-renova-dark text-white font-bold py-3 px-8 rounded-full hover:bg-gray-800 transition">
-                            VER OFERTAS DISPONIBLES
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Ingredients Grid -->
-    <section id="ingredientes" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="font-heading text-3xl md:text-5xl font-bold text-gray-900 mb-4">
-                La <span class="text-renova-pink">Fórmula</span> de RENÖVA+
-            </h2>
-            <p class="text-gray-600 max-w-2xl mx-auto mb-16">Una selección premium de activos con acción comprobada para el rejuvenecimiento.</p>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <!-- Ingrediente 1 -->
-                <div class="p-6 bg-gray-50 rounded-2xl hover:bg-renova-light transition duration-300 group">
-                    <div class="text-4xl mb-3 group-hover:scale-110 transition duration-300">🧬</div>
-                    <h3 class="font-bold text-lg text-gray-800">Colágeno Biopéptidos</h3>
-                    <p class="text-sm text-gray-500 mt-2">10g de colágeno por porción de máxima absorción.</p>
-                </div>
-                <!-- Ingrediente 2 -->
-                <div class="p-6 bg-gray-50 rounded-2xl hover:bg-renova-light transition duration-300 group">
-                    <div class="text-4xl mb-3 group-hover:scale-110 transition duration-300">🍇</div>
-                    <h3 class="font-bold text-lg text-gray-800">Resveratrol (300mg)</h3>
-                    <p class="text-sm text-gray-500 mt-2">El potente antioxidante de la longevidad celular.</p>
-                </div>
-                <!-- Ingrediente 3 -->
-                <div class="p-6 bg-gray-50 rounded-2xl hover:bg-renova-light transition duration-300 group">
-                    <div class="text-4xl mb-3 group-hover:scale-110 transition duration-300">⚡️</div>
-                    <h3 class="font-bold text-lg text-gray-800">Coenzima Q10 (15mg)</h3>
-                    <p class="text-sm text-gray-500 mt-2">Acelerador de la regeneración celular y energía.</p>
-                </div>
-                <!-- Ingrediente 4 -->
-                <div class="p-6 bg-gray-50 rounded-2xl hover:bg-renova-light transition duration-300 group">
-                    <div class="text-4xl mb-3 group-hover:scale-110 transition duration-300">🛡️</div>
-                    <h3 class="font-bold text-lg text-gray-800">Zinc y Magnesio</h3>
-                    <p class="text-sm text-gray-500 mt-2">Fortalece el sistema inmune y la salud ósea.</p>
-                </div>
-                <!-- Ingrediente 5 -->
-                <div class="p-6 bg-gray-50 rounded-2xl hover:bg-renova-light transition duration-300 group">
-                    <div class="text-4xl mb-3 group-hover:scale-110 transition duration-300">🍊</div>
-                    <h3 class="font-bold text-lg text-gray-800">Vitamina C</h3>
-                    <p class="text-sm text-gray-500 mt-2">Esencial para la síntesis de colágeno.</p>
-                </div>
-                <!-- Ingrediente 6 -->
-                <div class="p-6 bg-gray-50 rounded-2xl hover:bg-renova-light transition duration-300 group">
-                    <div class="text-4xl mb-3 group-hover:scale-110 transition duration-300">💪</div>
-                    <h3 class="font-bold text-lg text-gray-800">Complejo B</h3>
-                    <p class="text-sm text-gray-500 mt-2">Vitaminas B3, B6, B12 para la vitalidad.</p>
-                </div>
-                <!-- Ingrediente 7 -->
-                <div class="p-6 bg-gray-50 rounded-2xl hover:bg-renova-light transition duration-300 group">
-                    <div class="text-4xl mb-3 group-hover:scale-110 transition duration-300">🍒</div>
-                    <h3 class="font-bold text-lg text-gray-800">Sabor Berries</h3>
-                    <p class="text-sm text-gray-500 mt-2">Delicioso sabor natural a frutos rojos.</p>
-                </div>
-                <!-- Ingrediente 8 -->
-                <div class="p-6 bg-gray-50 rounded-2xl hover:bg-renova-light transition duration-300 group">
-                    <div class="text-4xl mb-3 group-hover:scale-110 transition duration-300">🚫</div>
-                    <h3 class="font-bold text-lg text-gray-800">Cero Azúcar</h3>
-                    <p class="text-sm text-gray-500 mt-2">Endulzado con Estevia, apto para tu dieta.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Social Proof -->
-    <section id="testimonios" class="py-20 bg-renova-purple/5">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-center font-heading text-3xl md:text-4xl font-bold text-gray-900 mb-12">
-                Nuestras clientas ya están <span class="text-renova-purple">radiantes</span>
-            </h2>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Testimonial 1 (Mercedes Ledezma - Imagen con ruta corregida) -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg relative">
-                    <div class="text-renova-pink text-4xl absolute top-4 left-6">"</div>
-                    <p class="text-gray-600 italic mb-6 mt-4">
-                        "La verdad es que me mejoró el sistema digestivo, las uñas están más fuertes, la piel de mis piernas ya no está reseca y hasta en la peluquería notaron mi pelo mucho mejor."
-                    </p>
-                    <div class="flex items-center">
-                        <div class="w-10 h-10 rounded-full overflow-hidden">
-                            <img 
-                                src="Imagenes/MercedesLedezmaT.png"
-                                alt="Mercedes Ledezma"
-                                class="w-full h-full object-cover"
-                            >
-                        </div>
-                        <div class="ml-3">
-                            <p class="text-sm font-bold text-gray-900">Mercedes Ledezma 66 Años</p>
-                            <div class="text-yellow-400 text-xs">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial 2 (Alberto Cerpa - Reemplazo de iniciales por imagen) -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg relative transform md:-translate-y-4 border-2 border-renova-pink/20">
-                    <div class="absolute -top-3 right-4 bg-renova-pink text-white text-xs px-2 py-1 rounded">Compra Verificada</div>
-                    <div class="text-renova-pink text-4xl absolute top-4 left-6">"</div>
-                    <p class="text-gray-600 italic mb-6 mt-4">
-                        "Lo compré por el dolor de rodillas y estoy impresionada. La rigidez ha disminuido y me siento con más energía. El Resveratrol y Q10 se notan."
-                    </p>
-                    <div class="flex items-center">
-                        <div class="w-10 h-10 rounded-full overflow-hidden">
-                            <img 
-                                src="Imagenes/testimonios/alberto-cerpa.jpg"
-                                alt="Alberto Cerpa"
-                                class="w-full h-full object-cover"
-                            >
-                        </div>
-                        <div class="ml-3">
-                            <p class="text-sm font-bold text-gray-900">Alberto Cerpa</p>
-                            <div class="text-yellow-400 text-xs">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial 3 (Angélica Mora - Reemplazo de iniciales por imagen) -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg relative">
-                    <div class="text-renova-pink text-4xl absolute top-4 left-6">"</div>
-                    <p class="text-gray-600 italic mb-6 mt-4">
-                        "La combinación de colágeno y el complejo de vitaminas es excelente. Noto mi cabello con más fuerza y mucho menos caída. ¡Es mi ritual de belleza diario!"
-                    </p>
-                    <div class="flex items-center">
-                        <div class="w-10 h-10 rounded-full overflow-hidden">
-                            <img 
-                                src="Imagenes/testimonios/angelica-mora.jpg"
-                                alt="Angélica Mora"
-                                class="w-full h-full object-cover"
-                            >
-                        </div>
-                        <div class="ml-3">
-                            <p class="text-sm font-bold text-gray-900">Angélica Mora</p>
-                            <div class="text-yellow-400 text-xs">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- GRAND SLAM OFFER SECTION -->
-    <section id="oferta" class="py-24 bg-gradient-to-br from-gray-900 to-renova-dark relative overflow-hidden">
-        <!-- Background Elements -->
-        <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20">
-            <div class="absolute -top-20 -right-20 w-96 h-96 bg-renova-pink rounded-full blur-3xl"></div>
-            <div class="absolute bottom-0 left-0 w-80 h-80 bg-renova-purple rounded-full blur-3xl"></div>
-        </div>
-
-        <div class="max-w-7xl mx-auto px-4 relative z-10">
-            <div class="text-center mb-16">
-                <span class="text-renova-pink font-bold tracking-widest uppercase">Oferta Exclusiva Chile</span>
-                <h2 class="font-heading text-4xl md:text-6xl font-black text-white mt-2 mb-4">
-                    COMIENZA TU <span class="text-transparent bg-clip-text bg-gradient-to-r from-renova-pink to-yellow-300">TRANSFORMACIÓN</span>
-                </h2>
-                <p class="text-gray-300 text-lg">Envío seguro a todo el país</p>
-            </div>
-
-            <div class="grid lg:grid-cols-3 gap-8 items-center max-w-6xl mx-auto">
-                
-                <!-- Card 1: STARTER -->
-                <div class="bg-white rounded-3xl p-6 shadow-2xl transform hover:scale-105 transition duration-300">
-                    <div class="text-center mb-6">
-                        <h3 class="text-2xl font-bold text-gray-800">Pack Inicio</h3>
-                        <p class="text-gray-500">Para probar 1 mes de juventud</p>
-                    </div>
-                    <div class="relative h-48 mb-6 flex justify-center items-center">
-                         <img src="https://via.placeholder.com/300x300/8A2BE2/FFFFFF?text=1+x+RENÖVA+" alt="1 Frasco RENÖVA+" class="h-full object-contain">
-                    </div>
-                    <div class="text-center mb-8">
-                        <p class="text-gray-400 line-through text-lg">$61.990</p>
-                        <p class="text-4xl font-black text-renova-dark">$51.990</p>
-                        <p class="text-sm text-pink-600 font-bold mt-2">Ahorras $10.000</p>
-                    </div>
-                    <ul class="space-y-3 mb-8 text-gray-600 text-sm">
-                        <li class="flex items-center"><i class="fas fa-check text-renova-pink mr-2"></i> 1 Pote de RENÖVA+ (21 porciones)</li>
-                        <li class="flex items-center"><i class="fas fa-check text-renova-pink mr-2"></i> 11g Colágeno + Biopéptidos Activos</li>
-                        <li class="flex items-center text-gray-400"><i class="fas fa-times mr-2"></i> Sin envío gratis</li>
-                    </ul>
-                    <!-- MODIFICACIÓN 2: Enlace a Mercado Pago Pack Inicio -->
-                    <a href="https://link.mercadopago.cl/renova-pack-inicio" target="_blank" class="block w-full bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold py-4 rounded-xl text-center transition">
-                        COMPRAR 1 POTE
-                    </a>
-                </div>
-
-                <!-- Card 2: BEST SELLER (Highlighted) -->
-                <div class="bg-white rounded-3xl p-6 shadow-glow relative transform scale-105 z-20 border-4 border-renova-pink">
-                    <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-renova-pink to-pink-600 text-white px-6 py-2 rounded-full font-bold text-sm shadow-lg tracking-wide uppercase">
-                        Paquete Recomendado 👑
-                    </div>
-                    <div class="text-center mb-6 mt-4">
-                        <h3 class="text-3xl font-bold text-gray-800">Pack Radiante</h3>
-                        <p class="text-gray-500">Resultados visibles en las primeras 3 semanas</p>
-                    </div>
-                    <div class="relative h-56 mb-6 flex justify-center items-center">
-                        <img src="https://via.placeholder.com/300x300/8A2BE2/FFFFFF?text=2+x+RENÖVA+" alt="2 Frascos RENÖVA+" class="h-full object-contain">
-                        <!-- Sticker -->
-                        <div class="absolute -right-4 top-0 bg-renova-accent text-gray-900 w-16 h-16 rounded-full flex items-center justify-center font-bold text-sm transform rotate-12 shadow-md">
-                            -15%
-                        </div>
-                    </div>
-                    <div class="text-center mb-8">
-                        <p class="text-gray-400 line-through text-lg">$123.980</p>
-                        <p class="text-5xl font-black text-renova-dark">$101.990</p>
-                        <p class="text-sm text-pink-600 font-bold mt-2">Envío GRATIS incluido 🚚</p>
-                    </div>
-                    <ul class="space-y-3 mb-8 text-gray-600">
-                        <li class="flex items-center"><i class="fas fa-check text-renova-pink mr-2"></i> 2 Potes de RENÖVA+ (42 porciones total)</li>
-                        <li class="flex items-center"><i class="fas fa-check text-renova-pink mr-2"></i> **Envío GRATIS** a todo Chile</li>
-                        <li class="flex items-center"><i class="fas fa-check text-renova-pink mr-2"></i> Guía Digital de Rutina Antiedad</li>
-                    </ul>
-                    <!-- MODIFICACIÓN 2: Enlace a Mercado Pago Pack Radiante -->
-                    <a href="https://link.mercadopago.cl/renova-pack-radiante" target="_blank" class="block w-full bg-renova-pink hover:bg-pink-600 text-white font-bold py-5 rounded-xl text-center shadow-lg transition text-xl btn-pulse">
-                        COMPRAR PACK DOBLE
-                    </a>
-                </div>
-
-                <!-- Card 3: BULK -->
-                <div class="bg-white rounded-3xl p-6 shadow-2xl transform hover:scale-105 transition duration-300">
-                    <div class="text-center mb-6">
-                        <h3 class="text-2xl font-bold text-gray-800">Pack Premium</h3>
-                        <p class="text-gray-500">El máximo ahorro y longevidad</p>
-                    </div>
-                    <div class="relative h-48 mb-6 flex justify-center items-center">
-                        <img src="https://via.placeholder.com/300x300/8A2BE2/FFFFFF?text=3+x+RENÖVA+" alt="3 Frascos RENÖVA+" class="h-full object-contain">
-                    </div>
-                    <div class="text-center mb-8">
-                        <p class="text-gray-400 line-through text-lg">$185.970</p>
-                        <p class="text-4xl font-black text-renova-dark">$151.990</p>
-                        <p class="text-sm text-pink-600 font-bold mt-2">Mejor precio por porción</p>
-                    </div>
-                    <ul class="space-y-3 mb-8 text-gray-600 text-sm">
-                        <li class="flex items-center"><i class="fas fa-check text-renova-pink mr-2"></i> 3 Potes de RENÖVA+</li>
-                        <li class="flex items-center"><i class="fas fa-check text-renova-pink mr-2"></i> **Envío GRATIS** Prioritario</li>
-                        <li class="flex items-center"><i class="fas fa-check text-renova-pink mr-2"></i> Asesoría Nutricional Express</li>
-                    </ul>
-                    <!-- MODIFICACIÓN 2: Enlace a Mercado Pago Pack Premium -->
-                    <a href="https://link.mercadopago.cl/renova-pack-premium" target="_blank" class="block w-full bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold py-4 rounded-xl text-center transition">
-                        COMPRAR 3 POTES
-                    </a>
-                </div>
-
-            </div>
-            
-            <p class="text-center text-gray-400 mt-12 text-sm">
-                *Precios en Pesos Chilenos (CLP). Métodos de pago aceptados: Transferencia y Webpay.
+    <!-- Solution Section -->
+    <section class="py-20">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-8">La ciencia detrás de RENÖVA+</h2>
+            <p class="text-lg text-slate-600 leading-relaxed mb-6">
+                RENÖVA+ es una fórmula avanzada diseñada para aportar los nutrientes esenciales que el cuerpo deja de producir en niveles óptimos. Al combinar colágeno hidrolizado de alta absorción con polifenoles de cáscara de uva (Resveratrol), creamos un entorno favorable para la longevidad celular.
+            </p>
+            <p class="text-lg text-slate-600 leading-relaxed">
+                No es magia, es nutrición funcional. Con 300mg de Resveratrol y 15mg de Coenzima Q10 por toma, proporcionas a tus células las herramientas necesarias para su regeneración y protección frente al daño externo.
             </p>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="py-20 bg-gray-50">
-        <div class="max-w-4xl mx-auto px-4">
-            <h2 class="text-center font-heading text-3xl font-bold text-gray-900 mb-12">Preguntas Frecuentes</h2>
-            
-            <div class="space-y-4">
-                <details class="group bg-white rounded-xl shadow-sm">
-                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-lg text-gray-800">
-                        <span>¿Cómo se toma RENÖVA+?</span>
-                        <span class="transition group-open:rotate-180">
-                            <i class="fas fa-chevron-down text-renova-purple"></i>
-                        </span>
-                    </summary>
-                    <div class="text-gray-600 p-6 pt-0 animate-fadeIn">
-                        Disuelve 1 scoop (10g) de RENÖVA+ en 200ml de agua o tu bebida favorita (jugo, batido). Se recomienda tomarlo una vez al día, preferiblemente por la mañana o antes de dormir.
-                    </div>
-                </details>
-
-                <details class="group bg-white rounded-xl shadow-sm">
-                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-lg text-gray-800">
-                        <span>¿Es apto para hombres?</span>
-                        <span class="transition group-open:rotate-180">
-                            <i class="fas fa-chevron-down text-renova-purple"></i>
-                        </span>
-                    </summary>
-                    <div class="text-gray-600 p-6 pt-0 animate-fadeIn">
-                        Absolutamente. El Colágeno, Resveratrol y Coenzima Q10 son beneficiosos para la salud articular, muscular y cardiovascular en ambos sexos, además de los beneficios estéticos.
-                    </div>
-                </details>
-
-                <details class="group bg-white rounded-xl shadow-sm">
-                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-lg text-gray-800">
-                        <span>¿Cuánto tiempo necesito tomarlo para ver resultados?</span>
-                        <span class="transition group-open:rotate-180">
-                            <i class="fas fa-chevron-down text-renova-purple"></i>
-                        </span>
-                    </summary>
-                    <div class="text-gray-600 p-6 pt-0 animate-fadeIn">
-                        Aunque muchas personas notan mejoría en energía y digestión en las primeras semanas, para los beneficios en piel, cabello y articulaciones, se recomienda un uso constante de al menos 8 semanas (Pack Radiante).
-                    </div>
-                </details>
-
-                 <details class="group bg-white rounded-xl shadow-sm">
-                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-lg text-gray-800">
-                        <span>¿Contiene azúcar o gluten?</span>
-                        <span class="transition group-open:rotate-180">
-                            <i class="fas fa-chevron-down text-renova-purple"></i>
-                        </span>
-                    </summary>
-                    <div class="text-gray-600 p-6 pt-0 animate-fadeIn">
-                        RENÖVA+ contiene **0g de azúcar añadida** y está endulzado con Estevia. Es libre de gluten.
-                    </div>
-                </details>
+    <!-- Ingredients Grid -->
+    <section class="py-20 bg-slate-900 text-white">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16">Componentes Clave</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="border border-slate-700 p-6 rounded-xl">
+                    <h3 class="font-bold text-blue-400 mb-2">Colágeno Peptan®</h3>
+                    <p class="text-sm text-slate-300 italic mb-1">Proteína Estructural</p>
+                    <p class="text-slate-400">Beneficia la estructura de piel, uñas, cabello y articulaciones.</p>
+                </div>
+                <div class="border border-slate-700 p-6 rounded-xl">
+                    <h3 class="font-bold text-blue-400 mb-2">Resveratrol (300mg)</h3>
+                    <p class="text-sm text-slate-300 italic mb-1">Polifenoles de Uva</p>
+                    <p class="text-slate-400">Potente antioxidante que contribuye a la longevidad celular.</p>
+                </div>
+                <div class="border border-slate-700 p-6 rounded-xl">
+                    <h3 class="font-bold text-blue-400 mb-2">Coenzima Q10 (15mg)</h3>
+                    <p class="text-sm text-slate-300 italic mb-1">Ubiquinona</p>
+                    <p class="text-slate-400">Antioxidante clave que contribuye a la regeneración celular.</p>
+                </div>
+                <div class="border border-slate-700 p-6 rounded-xl">
+                    <h3 class="font-bold text-blue-400 mb-2">Magnesio y Zinc</h3>
+                    <p class="text-sm text-slate-300 italic mb-1">Minerales Esenciales</p>
+                    <p class="text-slate-400">Fortalecen el sistema inmunológico y la salud ósea.</p>
+                </div>
+                <div class="border border-slate-700 p-6 rounded-xl">
+                    <h3 class="font-bold text-blue-400 mb-2">Complejo Vitamínico B</h3>
+                    <p class="text-sm text-slate-300 italic mb-1">B1, B2, B3, B5, B6, B12</p>
+                    <p class="text-slate-400">Apoya el metabolismo energético y la vitalidad general.</p>
+                </div>
+                <div class="border border-slate-700 p-6 rounded-xl">
+                    <h3 class="font-bold text-blue-400 mb-2">Vitamina C</h3>
+                    <p class="text-sm text-slate-300 italic mb-1">Ácido Ascórbico</p>
+                    <p class="text-slate-400">Fundamental para la síntesis natural de colágeno en el cuerpo.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Final CTA -->
-    <section class="py-20 bg-renova-pink text-center text-white relative overflow-hidden">
-        <div class="absolute inset-0 bg-black/10"></div>
-        <div class="max-w-4xl mx-auto px-4 relative z-10">
-            <h2 class="font-heading text-4xl font-bold mb-6">Tu dosis de juventud te espera</h2>
-            <p class="text-xl mb-10 opacity-90">No esperes más para darle a tu cuerpo los nutrientes que necesita para brillar.</p>
-            <a href="#oferta" class="inline-block bg-white text-renova-pink text-xl font-bold py-4 px-12 rounded-full shadow-lg hover:bg-gray-100 transition transform hover:scale-105">
-                COMPRAR AHORA
-            </a>
+    <!-- Testimonials -->
+    <section class="py-20">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16">Lo que dicen quienes lo usan</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-slate-50 p-8 rounded-2xl italic text-slate-600">
+                    "Llevo tres semanas tomándolo y noto mis uñas mucho más fuertes. El sabor a berries es muy agradable."
+                    <p class="not-italic font-bold mt-4 text-slate-900">— María J., Santiago</p>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-2xl italic text-slate-600">
+                    "Me lo recomendaron por el colágeno y me gusta que incluya Resveratrol. Se disuelve bien y me siento con más energía."
+                    <p class="not-italic font-bold mt-4 text-slate-900">— Roberto P., Concepción</p>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-2xl italic text-slate-600">
+                    "Buscaba algo completo para la piel y articulaciones. RENÖVA+ tiene una tabla nutricional muy sólida."
+                    <p class="not-italic font-bold mt-4 text-slate-900">— Claudia V., Viña del Mar</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offers / Packs -->
+    <section id="offers" class="py-20 bg-blue-50">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4">Elige tu plan de renovación</h2>
+            <p class="text-slate-600 mb-12">Envío disponible a todo Chile</p>
+            
+            <div class="max-w-md mx-auto bg-white rounded-3xl shadow-xl overflow-hidden border-2 border-slate-900">
+                <div class="bg-slate-900 text-white py-4 font-bold uppercase tracking-widest">
+                    Pack Recomendado
+                </div>
+                <div class="p-10">
+                    <h3 class="text-2xl font-bold mb-2">RENÖVA+ X1</h3>
+                    <p class="text-slate-500 mb-6">Contenido Neto: 315g (21 porciones)</p>
+                    <div class="flex items-center justify-center gap-4 mb-8">
+                        <span class="text-4xl font-bold text-slate-900">CLP 49,990</span>
+                        <span class="text-xl text-slate-400">|</span>
+                        <span class="text-2xl text-slate-500">$49.99 USD</span>
+                    </div>
+                    <ul class="text-left space-y-4 mb-10 text-slate-600">
+                        <li class="flex items-center gap-2">✓ Incluye scoop dosificador (15g)</li>
+                        <li class="flex items-center gap-2">✓ Sabor Berries Natural</li>
+                        <li class="flex items-center gap-2">✓ Sin azúcar añadida (Endulzado con Estevia)</li>
+                    </ul>
+                    <button class="w-full bg-slate-900 text-white py-4 rounded-xl font-bold text-lg hover:bg-slate-800 transition-colors">
+                        Comprar Ahora
+                    </button>
+                </div>
+            </div>
+            <p class="mt-8 text-sm text-slate-500">
+                *Para mayor información sobre precios de distribuidor, contacta a un Embajador FWP.
+            </p>
+        </div>
+    </section>
+
+    <!-- Preparation -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12 border-t pt-12">
+                <div class="md:w-1/2">
+                    <h2 class="text-2xl font-bold mb-4">Cómo prepararlo</h2>
+                    <p class="text-slate-600 mb-4">
+                        Disolver una cuchara de RENÖVA+ (aproximadamente 15g) en un vaso de 250ml con agua. Agitar hasta disolver completamente.
+                    </p>
+                </div>
+                <div class="md:w-1/2 grid grid-cols-2 gap-4">
+                    <div class="bg-slate-50 p-4 rounded-xl text-center">
+                        <span class="block text-2xl font-bold text-blue-600">15g</span>
+                        <span class="text-xs uppercase text-slate-400">Porción</span>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl text-center">
+                        <span class="block text-2xl font-bold text-blue-600">250ml</span>
+                        <span class="text-xs uppercase text-slate-400">Agua</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-renova-dark text-white py-12 border-t border-gray-700">
-        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-8 mb-8">
-            <div class="col-span-1 md:col-span-2">
-                <span class="font-heading text-3xl font-black tracking-tighter mb-4 block">RENÖVA<span class="text-renova-pink">+</span></span>
-                <p class="text-gray-400 text-sm max-w-sm">
-                    Una marca de Future World Products (FWP). Comprometidos con tu bienestar y longevidad a través de la nutrición inteligente.
-                </p>
+    <footer class="bg-slate-900 text-white py-16">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 mb-12">
+                <div>
+                    <h3 class="font-bold text-xl mb-6">RENÖVA+</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Suplemento alimenticio. Las mujeres embarazadas o lactantes y las personas con afecciones médicas conocidas deben consultar a su médico antes de agregar cualquier suplemento nutricional a su dieta. Recomendado para mayores de 18 años.
+                    </p>
+                </div>
+                <div class="flex flex-col md:items-end">
+                    <h4 class="font-bold mb-4">Certificaciones</h4>
+                    <div class="flex gap-4">
+                        <span class="border border-slate-700 px-3 py-1 rounded text-xs">HACCP</span>
+                        <span class="border border-slate-700 px-3 py-1 rounded text-xs">ISO Quality</span>
+                        <span class="border border-slate-700 px-3 py-1 rounded text-xs">Peptan®</span>
+                    </div>
+                </div>
             </div>
-            <div>
-                <h4 class="font-bold mb-4">Enlaces Rápidos</h4>
-                <ul class="space-y-2 text-sm text-gray-400">
-                    <li><a href="#beneficios" class="hover:text-renova-pink">Beneficios</a></li>
-                    <li><a href="#ingredientes" class="hover:text-renova-pink">Fórmula</a></li>
-                    <li><a href="#oferta" class="hover:text-renova-pink">Comprar</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-bold mb-4">Contacto</h4>
-                <ul class="space-y-2 text-sm text-gray-400">
-                    <li><i class="fab fa-whatsapp mr-2"></i> +56 9 3339 4706</li>
-                    <li><i class="far fa-envelope mr-2"></i> contacto@tulanding.cl</li>
-                    <li><i class="fas fa-map-marker-alt mr-2"></i> Santiago, Chile</li>
-                </ul>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto px-4 pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
-            <p>&copy; 2025 FWP RENÖVA+. Todos los derechos reservados.</p>
-            <div class="flex space-x-4 mt-4 md:mt-0">
-                <a href="#" class="hover:text-white">Términos y Condiciones</a>
-                <a href="#" class="hover:text-white">Política de Privacidad</a>
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between text-slate-500 text-xs gap-4">
+                <p>© 2024 FWP SCENTIA. Todos los derechos reservados.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white transition-colors">Términos Legales</a>
+                    <a href="#" class="hover:text-white transition-colors">Políticas de Privacidad</a>
+                    <a href="#" class="hover:text-white transition-colors">Contacto</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- AOS Animation Script -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 800,
-            once: true,
-            offset: 100
-        });
-    </script>
 </body>
 </html>
