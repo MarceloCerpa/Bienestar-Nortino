@@ -9,6 +9,16 @@
     <style>
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         .product-gradient { background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(248,250,252,1) 100%); }
+        .image-placeholder {
+            border: 2px dashed #cbd5e1;
+            background: #f8fafc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #64748b;
+            font-weight: 500;
+        }
     </style>
 </head>
 <body class="bg-white text-slate-900">
@@ -25,13 +35,11 @@
             </p>
             
             <div class="mb-12">
-    <img 
-        src="Imagenes/RENÖVA+.png" 
-        alt="RENÖVA+" 
-        class="mx-auto w-64 md:w-80 drop-shadow-2xl rounded-2xl"
-    >
-</div>
-
+                <!-- INSERTAR IMAGEN PRINCIPAL DEL PRODUCTO AQUÍ -->
+                <div class="Imagenes/RENÖVA+.png">
+                    <span>[IMAGEN PRINCIPAL DEL PRODUCTO]</span>
+                </div>
+            </div>
 
             <div class="flex flex-wrap justify-center gap-8 mb-12 text-left max-w-3xl mx-auto">
                 <div class="flex items-center gap-3">
@@ -48,7 +56,7 @@
                 </div>
             </div>
 
-            <a href="#offers" class="inline-block bg-slate-900 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-slate-800 transition-transform hover:scale-105">
+            <a href="#packs" class="inline-block bg-slate-900 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-slate-800 transition-transform hover:scale-105">
                 Comprar Ahora
             </a>
         </div>
@@ -149,38 +157,86 @@
     </section>
 
     <!-- Offers / Packs -->
-    <section id="offers" class="py-20 bg-blue-50">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-4">Elige tu plan de renovación</h2>
-            <p class="text-slate-600 mb-12">Envío disponible a todo Chile</p>
-            
-            <div class="max-w-md mx-auto bg-white rounded-3xl shadow-xl overflow-hidden border-2 border-slate-900">
-                <div class="bg-slate-900 text-white py-4 font-bold uppercase tracking-widest">
-                    Pack Recomendado
-                </div>
-                <div class="p-10">
-                    <h3 class="text-2xl font-bold mb-2">RENÖVA+ X1</h3>
-                    <p class="text-slate-500 mb-6">Contenido Neto: 315g (21 porciones)</p>
-                    <div class="flex items-center justify-center gap-4 mb-8">
-                        <span class="text-4xl font-bold text-slate-900">CLP 49,990</span>
-                        <span class="text-xl text-slate-400">|</span>
-                        <span class="text-2xl text-slate-500">$49.99 USD</span>
+   <section id="packs" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center text-slate-900 mb-16">
+            Elige tu Pack RENÖVA+
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+
+            <!-- Pack Inicio -->
+            <div class="p-10 bg-white rounded-3xl shadow-xl border border-slate-100 hover:shadow-2xl transition">
+                <div class="mb-8">
+                    <!-- INSERTAR IMAGEN PACK 1 UNIDAD AQUÍ -->
+                    <div class="image-placeholder mx-auto w-48 md:w-56 h-56 rounded-2xl">
+                        <span>[IMAGEN 1 UNIDAD]</span>
                     </div>
-                    <ul class="text-left space-y-4 mb-10 text-slate-600">
-                        <li class="flex items-center gap-2">✓ Incluye scoop dosificador (15g)</li>
-                        <li class="flex items-center gap-2">✓ Sabor Berries Natural</li>
-                        <li class="flex items-center gap-2">✓ Sin azúcar añadida (Endulzado con Estevia)</li>
-                    </ul>
-                    <button class="w-full bg-slate-900 text-white py-4 rounded-xl font-bold text-lg hover:bg-slate-800 transition-colors">
+                </div>
+                <h3 class="text-2xl font-bold mb-2 text-center">Pack Inicio</h3>
+                <p class="text-slate-500 text-center mb-6">1 Unidad • Contenido Neto: 315g</p>
+                <div class="flex items-center justify-center mb-8">
+                    <span class="text-4xl font-bold text-slate-900">CLP 49,990</span>
+                </div>
+
+                <a href="https://mpago.la/1mH2yFq" target="_blank" rel="noopener noreferrer">
+                    <button class="w-full py-3 rounded-xl bg-slate-900 text-white font-semibold hover:bg-slate-700 transition">
                         Comprar Ahora
                     </button>
-                </div>
+                </a>
             </div>
-            <p class="mt-8 text-sm text-slate-500">
-                *Para mayor información sobre precios de distribuidor, contacta a un Embajador FWP.
-            </p>
+
+            <!-- Pack Recomendado -->
+            <div class="p-10 bg-white rounded-3xl shadow-xl border border-slate-100 hover:shadow-2xl transition relative">
+
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-amber-500 text-white text-sm font-bold px-4 py-1 rounded-full shadow-md">
+                    MÁS VENDIDO
+                </div>
+
+                <div class="mb-8">
+                    <!-- INSERTAR IMAGEN PACK 2 UNIDADES AQUÍ -->
+                    <div class="image-placeholder mx-auto w-48 md:w-56 h-56 rounded-2xl">
+                        <span>[IMAGEN 2 UNIDADES]</span>
+                    </div>
+                </div>
+                <h3 class="text-2xl font-bold mb-2 text-center">Pack Recomendado</h3>
+                <p class="text-slate-500 text-center mb-6">2 Unidades • Contenido Neto: 630g</p>
+                <div class="flex items-center justify-center mb-8">
+                    <span class="text-4xl font-bold text-slate-900">CLP 102,980</span>
+                </div>
+
+                <a href="https://mpago.la/1QtJCTP" target="_blank" rel="noopener noreferrer">
+                    <button class="w-full py-3 rounded-xl bg-amber-500 text-white font-semibold hover:bg-amber-600 transition">
+                        Comprar Ahora
+                    </button>
+                </a>
+            </div>
+
+            <!-- Pack Máximo Ahorro -->
+            <div class="p-10 bg-white rounded-3xl shadow-xl border border-slate-100 hover:shadow-2xl transition">
+                <div class="mb-8">
+                    <!-- INSERTAR IMAGEN PACK 3 UNIDADES AQUÍ -->
+                    <div class="image-placeholder mx-auto w-48 md:w-56 h-56 rounded-2xl">
+                        <span>[IMAGEN 3 UNIDADES]</span>
+                    </div>
+                </div>
+                <h3 class="text-2xl font-bold mb-2 text-center">Pack Máximo Ahorro</h3>
+                <p class="text-slate-500 text-center mb-6">3 Unidades • Contenido Neto: 945g</p>
+                <div class="flex items-center justify-center mb-8">
+                    <span class="text-4xl font-bold text-slate-900">CLP 152,970</span>
+                </div>
+
+                <a href="https://mpago.la/2WvyvES" target="_blank" rel="noopener noreferrer">
+                    <button class="w-full py-3 rounded-xl bg-slate-900 text-white font-semibold hover:bg-slate-700 transition">
+                        Comprar Ahora
+                    </button>
+                </a>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Preparation -->
     <section class="py-20 bg-white">
