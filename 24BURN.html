@@ -1,404 +1,589 @@
-import React, { useState } from 'react';
-import { 
-  Flame, 
-  Activity, 
-  Target, 
-  Zap, 
-  CheckCircle2, 
-  ShoppingCart,
-  Menu,
-  X,
-  Wind,
-  ShieldCheck,
-  TrendingDown,
-  Star
-} from 'lucide-react';
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RENÖVA+ | Dosis Diaria de Juventud</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #d44d8c;
+            --primary-dark: #b03a71;
+            --text-dark: #2d2d2d;
+            --text-light: #666666;
+            --bg-light: #f9f9fb;
+            --white: #ffffff;
+            --shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
 
-const App = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const whatsappNumber = "+56942781056";
-  const whatsappLink = `https://wa.me/56942781056`;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
-  // Placeholders para rutas de imágenes (User can replace these strings with actual paths)
-  const images = {
-    productHero: "Imagenes/24BURN.png",
-    productPack1: "Imagenes/24BURN.png",
-    productPack2: "path/to/double-pack.png",
-    productPack3: "path/to/triple-pack.png",
-    backgroundHero: "path/to/background-pattern.svg"
-  };
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
 
-  const productInfo = {
-    name: "24BURN",
-    tagline: "Reduce y activa todos los días",
-    description: "Gracias a la combinación de Té verde (95% polifenoles), Panax Ginseng y L-Carnitina, le da a tu cuerpo un boost acelerador de metabolismo que te permitirá procesar las calorías de una manera más eficiente e inteligente.",
-    servings: 33,
-    netWeight: "500g",
-    flavor: "Té Limón",
-    purchaseOptions: [
-      {
-        id: 'starter',
-        name: "STARTER PACK",
-        units: "1 Producto",
-        price: "35,990",
-        originalPrice: null,
-        badge: "Básico",
-        popular: false
-      },
-      {
-        id: 'recommended',
-        name: "RECOMMENDED PACK",
-        units: "2 Productos",
-        price: "74,980",
-        originalPrice: "71,980",
-        badge: "Más Vendido",
-        popular: true
-      },
-      {
-        id: 'savings',
-        name: "MAXIMUM SAVINGS PACK",
-        units: "3 Productos",
-        price: "110,970",
-        originalPrice: "107,970",
-        badge: "Mejor Valor",
-        popular: false
-      }
-    ],
-    benefits: [
-      { icon: <Zap className="w-6 h-6" />, title: "Acelera el metabolismo", text: "Optimiza la quema calórica diaria de forma inteligente." },
-      { icon: <Activity className="w-6 h-6" />, title: "Rendimiento Deportivo", text: "Incrementa notablemente la energía durante el ejercicio físico." },
-      { icon: <Target className="w-6 h-6" />, title: "Activación Efectiva", text: "Potencia la claridad mental y la energía física constante." },
-      { icon: <ShieldCheck className="w-6 h-6" />, title: "Salud Digestiva", text: "Su contenido de fibra contribuye a regular la digestión y el colesterol." }
-    ],
-    ingredients: [
-      { name: "Té Verde (95% Polifenoles)", detail: "Potente antioxidante y acelerador metabólico." },
-      { name: "Panax Ginseng", detail: "Activación física y mental; reduce estrés y fatiga." },
-      { name: "L-Carnitina", detail: "Favorece la oxidación de grasas para convertirlas en energía." },
-      { name: "Vitaminas A, B2 y B3", detail: "Enriquecido para un soporte nutricional completo." }
-    ]
-  };
+        /* --- HEADER --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-  const handleContact = (packName) => {
-    const message = packName ? `Hola, me interesa el ${packName} de 24BURN.` : "Hola, me gustaría obtener más información sobre 24BURN.";
-    window.open(`${whatsappLink}?text=${encodeURIComponent(message)}`, '_blank');
-  };
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-  return (
-    <div className="min-h-screen bg-neutral-50 font-sans text-neutral-900">
-      {/* Navigation - Clean version */}
-      <nav className="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-neutral-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16 items-center">
-            <div className="flex items-center gap-2">
-              <div className="bg-lime-500 p-1.5 rounded-lg">
-                <Flame className="w-6 h-6 text-white" />
-              </div>
-              <span className="text-2xl font-black tracking-tighter text-neutral-900 uppercase">24BURN</span>
-            </div>
-            
-            <div className="hidden md:flex items-center gap-10 font-bold text-xs uppercase tracking-widest">
-              <a href="#benefits" className="hover:text-lime-600 transition-colors">Beneficios</a>
-              <a href="#formula" className="hover:text-lime-600 transition-colors">Ingredientes</a>
-              <a href="#nutrition" className="hover:text-lime-600 transition-colors">Información Nutricional</a>
-            </div>
+        .logo-img {
+            height: 40px;
+            width: auto;
+        }
 
-            <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-              {isMenuOpen ? <X /> : <Menu />}
-            </button>
-          </div>
-        </div>
+        .brand-name {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        /* --- HERO --- */
+        .hero {
+            padding: 140px 5% 80px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            background: linear-gradient(135deg, #fff 0%, #fff0f6 100%);
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(0 10px 30px rgba(0,0,0,0.1));
+        }
+
+        .tagline {
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        h1 {
+            font-size: 3rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .hero-bullets {
+            list-style: none;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-bullets li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+        }
+
+        .hero-bullets li::before {
+            content: '✓';
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, background 0.3s;
+            box-shadow: 0 4px 15px rgba(212, 77, 140, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* --- SECTIONS --- */
+        section {
+            padding: 80px 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .section-title .underline {
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            margin: 0 auto;
+        }
+
+        /* --- BENEFITS --- */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-card {
+            padding: 30px;
+            background: var(--bg-light);
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        /* --- INGREDIENTS --- */
+        .ingredients-list {
+            background: var(--bg-light);
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
         
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden bg-white border-b border-neutral-200 p-6 space-y-4 flex flex-col items-center uppercase font-bold text-sm tracking-widest">
-            <a href="#benefits" onClick={() => setIsMenuOpen(false)}>Beneficios</a>
-            <a href="#formula" onClick={() => setIsMenuOpen(false)}>Ingredientes</a>
-            <a href="#nutrition" onClick={() => setIsMenuOpen(false)}>Información Nutricional</a>
-          </div>
-        )}
-      </nav>
+        .ingredients-text {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            text-align: center;
+        }
 
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 bg-lime-100 text-lime-700 px-4 py-2 rounded-full font-bold text-xs uppercase tracking-widest">
-              <Wind className="w-4 h-4" /> El acelerador que tu metabolismo necesita
-            </div>
-            <h1 className="text-6xl lg:text-8xl font-black leading-tight text-neutral-900">
-              REDUCE Y <br />
-              <span className="text-lime-500 uppercase">ACTIVA</span>
-            </h1>
-            <p className="text-xl text-neutral-600 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-              {productInfo.description}
+        /* --- NUTRITION --- */
+        .nutrition-table-container {
+            max-width: 600px;
+            margin: 0 auto;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            border: 1px solid #eee;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background: var(--bg-light);
+            font-weight: 700;
+        }
+
+        /* --- PREPARATION --- */
+        .prep-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .prep-step img {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 20px;
+            object-fit: contain;
+        }
+
+        .prep-step h4 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* --- PACKS --- */
+        .packs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .pack-card {
+            border: 1px solid #eee;
+            border-radius: 24px;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .pack-card.recommended {
+            border: 2px solid var(--primary);
+            transform: scale(1.05);
+            background: var(--white);
+            z-index: 10;
+        }
+
+        .badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 20px 0;
+            display: block;
+        }
+
+        /* --- BUSINESS OPPORTUNITY --- */
+        .biz-opp {
+            background: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 60px 5%;
+        }
+
+        .biz-opp h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            nav { display: none; }
+            .hero { padding-top: 100px; text-align: center; }
+            .hero-content { order: 2; }
+            .hero-image { order: 1; margin-bottom: 40px; }
+            .hero-description { margin: 0 auto 2rem; }
+            .hero-bullets { display: inline-block; text-align: left; }
+            .pack-card.recommended { transform: scale(1); margin: 20px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="Imagenes/Logo.png" alt="FWP Logo" class="logo-img" />
+            <span class="brand-name">RENÖVA+</span>
+        </div>
+        <nav>
+            <a href="#benefits">Beneficios</a>
+            <a href="#ingredients">Ingredientes</a>
+            <a href="#nutrition">Nutrición</a>
+            <a href="#preparation">Preparación</a>
+            <a href="#packs">Comprar</a>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="tagline">Dosis Diaria de Juventud</span>
+            <h1>Vive tus días más joven con RENÖVA+</h1>
+            <p class="hero-description">
+                Gracias a su fuente de Colágeno Hidrolizado con Biopéptidos Activos, beneficia tu piel, uñas y cabello. Fortalecido con Resveratrol y Coenzima Q10 para combatir el estrés oxidativo.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <button 
-                onClick={() => handleContact()}
-                className="bg-lime-500 text-neutral-900 font-black text-xl px-10 py-5 rounded-2xl hover:bg-lime-400 transform hover:-translate-y-1 transition-all shadow-xl shadow-lime-500/30"
-              >
-                OBTENER ASESORÍA
-              </button>
-              <div className="flex flex-col justify-center items-center lg:items-start text-neutral-500 text-sm">
-                <span className="font-bold text-neutral-900 text-lg">{productInfo.servings} Tomas por envase</span>
-                <span>Contenido Neto {productInfo.netWeight}</span>
-              </div>
-            </div>
-          </div>
-          
-          <div className="relative">
-            <div className="absolute inset-0 bg-lime-400/15 blur-[120px] rounded-full"></div>
-            <div className="relative bg-white p-10 rounded-[3rem] shadow-2xl border border-neutral-100 overflow-hidden">
-              <div className="aspect-square flex items-center justify-center bg-neutral-50 rounded-3xl mb-8 overflow-hidden">
-                <img 
-                  src={images.productHero} 
-                  alt="24BURN Product" 
-                  className="w-full h-full object-contain"
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                    const placeholder = e.currentTarget.parentElement.querySelector('.img-placeholder');
-                    if (placeholder) placeholder.style.display = 'flex';
-                  }}
-                />
-                <div className="img-placeholder hidden w-full h-full items-center justify-center text-neutral-300 font-bold italic text-center p-4">
-                  Insertar Imagen: {images.productHero}
-                </div>
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="p-4 bg-neutral-50 rounded-2xl border border-neutral-100">
-                  <p className="text-xs text-neutral-400 uppercase font-bold tracking-widest">Sabor</p>
-                  <p className="font-black text-lg">Té Limón</p>
-                </div>
-                <div className="p-4 bg-neutral-50 rounded-2xl border border-neutral-100">
-                  <p className="text-xs text-neutral-400 uppercase font-bold tracking-widest">Azúcar</p>
-                  <p className="font-black text-lg">0%</p>
-                </div>
-              </div>
-            </div>
-          </div>
+            <ul class="hero-bullets">
+                <li>Mejora piel, uñas y cabello</li>
+                <li>Fortalece el sistema inmunológico</li>
+                <li>Potente acción antioxidante (Q10 + Resveratrol)</li>
+                <li>Reforzado con Zinc y Magnesio</li>
+            </ul>
+            <a href="#packs" class="btn-primary">Comprar Ahora</a>
         </div>
-      </section>
-
-      {/* Benefits Grid */}
-      <section id="benefits" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="max-w-3xl mb-16">
-            <h2 className="text-4xl lg:text-5xl font-black mb-6">Potenciando tu metabolismo de forma eficiente.</h2>
-            <p className="text-neutral-500 text-lg leading-relaxed">
-              Con cada toma de 24BURN tendrás una sensación de saciedad que te ayudará a mejorar la pérdida de peso y favorecerá la oxidación de grasas.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {productInfo.benefits.map((benefit, idx) => (
-              <div key={idx} className="p-10 rounded-[2.5rem] bg-neutral-50 border border-neutral-100 hover:shadow-xl hover:-translate-y-2 transition-all group">
-                <div className="bg-lime-500 w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg shadow-lime-500/20 mb-8 text-white group-hover:scale-110 transition-transform">
-                  {benefit.icon}
-                </div>
-                <h3 className="text-xl font-black mb-4 leading-tight">{benefit.title}</h3>
-                <p className="text-neutral-600 leading-relaxed text-sm">{benefit.text}</p>
-              </div>
-            ))}
-          </div>
+        <div class="hero-image">
+            <img src="Imagenes/RENÖVA+.png" alt="Renova+ Product Image" />
         </div>
-      </section>
+    </section>
 
-      {/* Purchase Options Section */}
-      <section id="pricing" className="py-24 bg-neutral-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-6xl font-black mb-4 uppercase italic">Escoge tu plan</h2>
-            <p className="text-neutral-500 text-lg">Selecciona la opción que mejor se adapte a tus objetivos.</p>
-          </div>
-          
-          <div className="grid lg:grid-cols-3 gap-8">
-            {productInfo.purchaseOptions.map((opt) => (
-              <div key={opt.id} className={`relative flex flex-col bg-white rounded-[3rem] p-10 border ${opt.popular ? 'border-lime-500 shadow-2xl scale-105 z-10' : 'border-neutral-200'}`}>
-                {opt.badge && (
-                  <div className={`absolute -top-4 left-1/2 -translate-x-1/2 px-6 py-2 rounded-full text-xs font-black uppercase tracking-widest shadow-lg ${opt.popular ? 'bg-lime-500 text-neutral-900' : 'bg-neutral-900 text-white'}`}>
-                    {opt.badge}
-                  </div>
-                )}
-                
-                <div className="mb-8 text-center">
-                  <h3 className="text-xl font-black mb-2">{opt.name}</h3>
-                  <p className="text-neutral-500 text-sm font-bold tracking-widest uppercase">{opt.units}</p>
-                </div>
-
-                <div className="aspect-video mb-8 bg-neutral-50 rounded-3xl flex items-center justify-center overflow-hidden border border-neutral-100 italic text-[10px] text-neutral-400 p-4 relative">
-                  <img 
-                    src={opt.id === 'starter' ? images.productPack1 : opt.id === 'recommended' ? images.productPack2 : images.productPack3} 
-                    alt={opt.name}
-                    className="w-full h-full object-contain"
-                    onError={(e) => {
-                      e.currentTarget.style.display = 'none';
-                      const placeholder = e.currentTarget.parentElement.querySelector('.pack-placeholder');
-                      if (placeholder) placeholder.style.display = 'block';
-                    }}
-                  />
-                  <span className="pack-placeholder hidden">Imagen Pack: {opt.id}</span>
-                </div>
-
-                <div className="mt-auto text-center space-y-6">
-                  <div>
-                    <span className="text-4xl font-black tracking-tighter italic text-neutral-900">CLP ${opt.price}</span>
-                  </div>
-                  
-                  <button 
-                    onClick={() => handleContact(opt.name)}
-                    className={`w-full py-5 rounded-2xl font-black text-lg uppercase transition-all flex items-center justify-center gap-3 ${opt.popular ? 'bg-lime-500 text-neutral-900 hover:bg-lime-400' : 'bg-neutral-900 text-white hover:bg-neutral-800'}`}
-                  >
-                    <ShoppingCart className="w-5 h-5" /> Ordenar Ahora
-                  </button>
-                  
-                  <div className="flex items-center justify-center gap-2 text-xs font-bold text-neutral-400 uppercase tracking-widest">
-                    <TrendingDown className="w-4 h-4" /> Despacho a todo Chile
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+    <!-- BENEFITS SECTION -->
+    <section id="benefits">
+        <div class="section-title">
+            <h2>Beneficios Principales</h2>
+            <div class="underline"></div>
         </div>
-      </section>
-
-      {/* Ingredients Section */}
-      <section id="formula" className="py-24 bg-neutral-900 text-white overflow-hidden relative">
-        <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-20 items-center">
-          <div className="space-y-10">
-            <div>
-              <h2 className="text-4xl lg:text-6xl font-black leading-tight mb-6">
-                Fórmula <span className="text-lime-400">Premium</span>
-              </h2>
-              <p className="text-neutral-400 text-lg max-w-md leading-relaxed">
-                Nuestra mezcla energética de extractos naturales es un potente antioxidante que reduce la inflamación y retención de líquidos.
-              </p>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <h3>Salud Estética</h3>
+                <p>Mejora visiblemente la salud de tu piel, uñas y cabello gracias a los biopéptidos de colágeno.</p>
             </div>
-            <div className="grid gap-6">
-              {productInfo.ingredients.map((ing, idx) => (
-                <div key={idx} className="flex items-start gap-5 p-6 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
-                  <div className="mt-1 p-2 bg-lime-500 rounded-lg text-neutral-900">
-                    <CheckCircle2 className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="font-black text-xl text-lime-400 mb-1">{ing.name}</h4>
-                    <p className="text-neutral-400 text-sm leading-relaxed">{ing.detail}</p>
-                  </div>
-                </div>
-              ))}
+            <div class="benefit-card">
+                <h3>Longevidad Celular</h3>
+                <p>El Resveratrol actúa como un potente antioxidante que contribuye a la longevidad de tus células.</p>
             </div>
-          </div>
-          <div className="relative flex justify-center lg:justify-end">
-             <div className="w-full max-lg max-w-lg aspect-square bg-gradient-to-br from-lime-500/30 to-transparent rounded-full flex items-center justify-center border border-white/10 p-12">
-                <div className="grid grid-cols-2 gap-6 w-full">
-                    <div className="bg-neutral-800/80 backdrop-blur-xl p-8 rounded-[2rem] border border-white/10 text-center">
-                        <p className="text-4xl font-black text-lime-400 mb-1">95%</p>
-                        <p className="text-[10px] uppercase font-bold tracking-widest text-neutral-400">Polifenoles</p>
-                    </div>
-                    <div className="bg-neutral-800/80 backdrop-blur-xl p-8 rounded-[2rem] border border-white/10 text-center">
-                        <p className="text-4xl font-black text-lime-400 mb-1">Kelp</p>
-                        <p className="text-[10px] uppercase font-bold tracking-widest text-neutral-400">Concentrado</p>
-                    </div>
-                    <div className="bg-neutral-800/80 backdrop-blur-xl p-8 rounded-[2rem] border border-white/10 text-center">
-                        <p className="text-4xl font-black text-lime-400 mb-1">B2-B3</p>
-                        <p className="text-[10px] uppercase font-bold tracking-widest text-neutral-400">Vitaminas</p>
-                    </div>
-                    <div className="bg-neutral-800/80 backdrop-blur-xl p-8 rounded-[2rem] border border-white/10 text-center text-lime-400 font-black text-xl flex items-center justify-center">
-                        GUARA-NÁ
-                    </div>
-                </div>
-             </div>
-          </div>
+            <div class="benefit-card">
+                <h3>Regeneración</h3>
+                <p>La Coenzima Q10 potencia la regeneración celular y vitalidad general de tu cuerpo.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Defensas y Huesos</h3>
+                <p>El Zinc y Magnesio ayudan a mejorar tu sistema inmunológico y fortalecer la estructura ósea.</p>
+            </div>
         </div>
-      </section>
+    </section>
 
-      {/* Instructions */}
-      <section className="py-24 bg-lime-50">
-        <div className="max-w-5xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-black mb-4 uppercase italic">Preparación sugerida</h2>
-          <p className="text-neutral-500 mb-16 text-lg">Tu cambio inicia hoy con una toma simple cada mañana.</p>
-          <div className="grid md:grid-cols-3 gap-12 relative">
-            <div className="hidden md:block absolute top-12 left-1/4 right-1/4 h-0.5 border-t-2 border-dashed border-lime-300"></div>
-            <div className="relative space-y-6">
-              <div className="w-20 h-20 bg-white shadow-xl rounded-[2rem] flex items-center justify-center mx-auto text-3xl font-black text-lime-500 border border-lime-100">1</div>
-              <h4 className="text-xl font-black">Agregar</h4>
-              <p className="text-neutral-600 text-sm">1 scoop de 24BURN (15g).</p>
-            </div>
-            <div className="relative space-y-6">
-              <div className="w-20 h-20 bg-white shadow-xl rounded-[2rem] flex items-center justify-center mx-auto text-3xl font-black text-lime-500 border border-lime-100">2</div>
-              <h4 className="text-xl font-black">Servir</h4>
-              <p className="text-neutral-600 text-sm">En un vaso con 200ml de agua.</p>
-            </div>
-            <div className="relative space-y-6">
-              <div className="w-20 h-20 bg-white shadow-xl rounded-[2rem] flex items-center justify-center mx-auto text-3xl font-black text-lime-500 border border-lime-100">3</div>
-              <h4 className="text-xl font-black">Remover</h4>
-              <p className="text-neutral-600 text-sm">Remover por unos segundos y disfrutar.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Nutritional Table */}
-      <section id="nutrition" className="py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="bg-white border-2 border-neutral-900 overflow-hidden rounded-xl shadow-2xl">
-            <div className="bg-neutral-900 text-white p-6">
-              <h2 className="text-2xl font-black uppercase tracking-tighter italic">Información Nutricional</h2>
-              <p className="text-xs text-neutral-400 mt-1">Bebida suplemento en polvo / Sabor Té Limón</p>
-            </div>
-            <div className="p-8">
-              <div className="flex justify-between font-black text-lg border-b-4 border-neutral-900 pb-2 mb-4">
-                <span>Porción: 15 g</span>
-                <span>Porciones por envase: 33</span>
-              </div>
-              <table className="w-full text-left">
-                <thead>
-                  <tr className="border-b-2 border-neutral-900 uppercase text-[10px] font-black tracking-widest">
-                    <th className="py-2">Componente</th>
-                    <th className="py-2 text-right">Por 100g</th>
-                    <th className="py-2 text-right">Por Porción (15g)</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-neutral-100 text-sm">
-                  <tr><td className="py-2 font-bold uppercase">Energía (kcal)</td><td className="text-right">46.2</td><td className="text-right font-black">6.9</td></tr>
-                  <tr><td className="py-2 font-bold uppercase">Proteínas (g)</td><td className="text-right">0.3</td><td className="text-right font-black">0</td></tr>
-                  <tr><td className="py-2 font-bold uppercase">H. de Carbono Disp (g)</td><td className="text-right">23.3</td><td className="text-right font-black">3.5</td></tr>
-                  <tr><td className="py-2 font-bold uppercase">Azúcares (g)</td><td className="text-right">1.6</td><td className="text-right font-black">0.2</td></tr>
-                  <tr><td className="py-2 font-bold uppercase">Grasa Total (g)</td><td className="text-right">0.1</td><td className="text-right font-black">0</td></tr>
-                  <tr><td className="py-2 font-bold uppercase">Fibra Dietaria (g)</td><td className="text-right">21.8</td><td className="text-right font-black">3.3</td></tr>
-                  <tr><td className="py-2 font-bold uppercase">Sodio (mg)</td><td className="text-right">4.3</td><td className="text-right font-black">0.6</td></tr>
-                  <tr className="bg-lime-50/50"><td className="py-2 font-black uppercase text-lime-700">L-Carnitina / Té (mg)</td><td className="text-right font-bold text-lime-700">1000</td><td className="text-right font-black text-lime-700">150</td></tr>
-                  <tr className="bg-lime-50/50"><td className="py-2 font-black uppercase text-lime-700">Extr. Té Verde 95% (mg)</td><td className="text-right font-bold text-lime-700">400</td><td className="text-right font-black text-lime-700">60</td></tr>
-                </tbody>
-              </table>
-              <div className="mt-8 p-4 bg-neutral-50 rounded-lg text-[10px] text-neutral-500 leading-relaxed italic border border-neutral-200">
-                <span className="font-bold text-neutral-800 not-italic block mb-1 uppercase">Ingredientes:</span>
-                Maltodextrina, polidextrosa, ácido cítrico, L-carnitina, ácido málico, extracto de guaraná, concentrado de kelp, extracto de té verde, color caramelo en polvo, cafeína, sabor idéntico al natural té limón, sucralosa, extracto de panax ginseng, vitamina B3, dióxido de silicio, vitamina A, vitamina B2.
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-neutral-900 text-white pt-24 pb-12">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center space-y-8">
-             <div className="flex items-center justify-center gap-2">
-                <div className="bg-lime-500 p-1.5 rounded-lg text-white">
-                  <Flame className="w-5 h-5" />
-                </div>
-                <span className="text-2xl font-black uppercase tracking-tighter">24BURN</span>
-             </div>
-             <p className="text-[10px] text-neutral-500 max-w-2xl mx-auto leading-relaxed uppercase tracking-widest">
-                Recomendado para adultos mayores de 18 años. Mujeres embarazadas o en lactancia deben consultar a su médico antes de consumir. Producto diseñado para potenciar el metabolismo por las mañanas.
-             </p>
-             <div className="pt-8 text-neutral-600 text-[10px] font-bold tracking-widest">
-                © 2024 FWP CHILE. TODOS LOS DERECHOS RESERVADOS.
-             </div>
-          </div>
-        </div>
-      </footer>
+   <!-- INGREDIENTS SECTION -->
+<section id="ingredients" style="background-color: var(--white); padding: 60px 20px;">
+    <div class="section-title">
+        <h2>Ingredientes Premium</h2>
+        <div class="underline"></div>
     </div>
-  );
-};
 
-export default App;
+    <div class="ingredients-container">
+        
+        <!-- IMAGE PLACEHOLDER (puedes agregar la imagen aquí cuando quieras) -->
+        <div class="Imagenes/INGREDIENTE R.png">
+            <!-- EJEMPLO (dejar comentado hasta insertar imagen):
+            <img src="ruta-de-la-imagen.png" alt="Ingredientes Premium">
+            -->
+        </div>
+
+        <!-- TEXT BLOCK -->
+        <div class="ingredients-list">
+            <p class="ingredients-text">
+                Colágeno hidrolizado de bovino, inulina, citrato de magnesio, ácido cítrico, polifenoles de cáscara de uva, sabor idéntico al natural frutos rojos, concentrado de arándanos, glucosidos de esteviol, ácido ascórbico, sulfato de zinc, ubiquinona (Q10), niacina, pantotenato de calcio, piridoxina, tiamina, riboflavina, cianocobalamina.
+            </p>
+
+            <p class="ingredients-text" style="margin-top:20px; font-weight: 600;">
+                Sabor: Berries | Endulzado con Estevia
+            </p>
+        </div>
+    </div>
+</section>
+
+
+    <!-- NUTRITION SECTION -->
+    <section id="nutrition" style="background-color: var(--bg-light);">
+        <div class="section-title">
+            <h2>Información Nutricional</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="nutrition-table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Análisis Medio</th>
+                        <th>Por 100g</th>
+                        <th>Por Porción (15g)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Energía (kcal)</td>
+                        <td>318</td>
+                        <td>48</td>
+                    </tr>
+                    <tr>
+                        <td>Proteínas (g)</td>
+                        <td>72</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td>H. de Carbono (g)</td>
+                        <td>5</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Grasa Total (g)</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Sodio (mg)</td>
+                        <td>320</td>
+                        <td>48</td>
+                    </tr>
+                    <tr>
+                        <td>Vitamina C (mg)</td>
+                        <td>200</td>
+                        <td>30 (50% DDR)</td>
+                    </tr>
+                    <tr>
+                        <td>Magnesio (mg)</td>
+                        <td>800</td>
+                        <td>120 (37% DDR)</td>
+                    </tr>
+                    <tr>
+                        <td>Zinc (mg)</td>
+                        <td>37</td>
+                        <td>5.5 (55% DDR)</td>
+                    </tr>
+                    <tr>
+                        <td>Coenzima Q10 (mg)</td>
+                        <td>-</td>
+                        <td>10 (Placeholder)</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="font-size: 0.8rem; color: var(--text-light); margin-top: 15px;">*Porciones por envase: 21 aprox.</p>
+        </div>
+    </section>
+
+    <!-- PREPARATION SECTION -->
+    <section id="preparation">
+        <div class="section-title">
+            <h2>¿Cómo prepararlo?</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="prep-grid">
+            <div class="prep-step">
+                <img src="https://via.placeholder.com/150?text=STEP+1" alt="Add Scoop" />
+                <h4>1. Agrega</h4>
+                <p>Agrega 1 scoop de RENÖVA+ (15g) en un recipiente.</p>
+            </div>
+            <div class="prep-step">
+                <img src="https://via.placeholder.com/150?text=STEP+2" alt="Add Water" />
+                <h4>2. Mezcla</h4>
+                <p>Vierte en un vaso de 200 ml con agua fría o natural.</p>
+            </div>
+            <div class="prep-step">
+                <img src="https://via.placeholder.com/150?text=STEP+3" alt="Enjoy" />
+                <h4>3. Disfruta</h4>
+                <p>Remueve por unos segundos hasta disolver y disfruta tu dosis de juventud.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PACKS SECTION -->
+    <section id="packs" style="background-color: var(--bg-light);">
+        <div class="section-title">
+            <h2>Elige tu Pack</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="packs-grid">
+            <!-- Pack 1 -->
+            <div class="pack-card">
+                <h3>Starter Pack</h3>
+                <p>1 Unidad (21 porciones)</p>
+                <span class="price">$49.990</span>
+                <a href="MP_LINK_PACK_INICIO_PLACEHOLDER" class="btn-primary">Buy Now</a>
+            </div>
+            <!-- Pack 2 -->
+            <div class="pack-card recommended">
+                <div class="badge">RECOMENDADO</div>
+                <h3>Recommended Pack</h3>
+                <p>2 Unidades</p>
+                <span class="price">$89.990</span>
+                <a href="MP_LINK_PACK_RECOMENDADO_PLACEHOLDER" class="btn-primary">Buy Now</a>
+            </div>
+            <!-- Pack 3 -->
+            <div class="pack-card">
+                <h3>Maximum Savings</h3>
+                <p>3 Unidades</p>
+                <span class="price">$124.990</span>
+                <a href="MP_LINK_PACK_MAXIMO_AHORRO_PLACEHOLDER" class="btn-primary">Buy Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BUSINESS OPPORTUNITY -->
+    <section class="biz-opp">
+        <h3>¿Quieres generar ingresos recomendando este producto?</h3>
+        <p>Únete a nuestra red de embajadores FWP y transforma tu estilo de vida.</p>
+        <a href="https://wa.me/56942781056?text=Hola%20%F0%9F%91%8B%2C%20llegu%C3%A9%20desde%20la%20p%C3%A1gina%20del%20producto.%20Me%20interesa%20saber%20m%C3%A1s%20sobre%20c%C3%B3mo%20generar%20ingresos%20recomend%C3%A1ndolo.%20%C2%BFPodr%C3%ADas%20orientarme%3F" class="btn-whatsapp">
+            Contactar por WhatsApp
+        </a>
+    </section>
+
+    <footer style="padding: 40px 5%; text-align: center; color: var(--text-light); font-size: 0.9rem; border-top: 1px solid #eee;">
+        <p>&copy; 2024 FWP Chile. RENÖVA+ es un suplemento alimenticio. Su consumo es responsabilidad de quien lo recomienda y quien lo usa.</p>
+    </footer>
+
+</body>
+</html>
