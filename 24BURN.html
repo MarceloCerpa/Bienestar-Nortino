@@ -3,30 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RENÖVA+ | Dosis Diaria de Juventud</title>
+    <title>24BURN - Reduce y Activa Todos los Días</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #d44d8c;
-            --primary-dark: #b03a71;
-            --text-dark: #2d2d2d;
-            --text-light: #666666;
-            --bg-light: #f9f9fb;
+            --primary-color: #76bc21; /* Green from the brand style */
+            --dark-color: #1a1a1a;
+            --light-bg: #f9f9f9;
             --white: #ffffff;
-            --shadow: 0 4px 20px rgba(0,0,0,0.08);
+            --text-main: #333333;
+            --text-muted: #666666;
+            --transition: all 0.3s ease;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
             scroll-behavior: smooth;
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            color: var(--text-dark);
             line-height: 1.6;
+            color: var(--text-main);
             background-color: var(--white);
         }
 
@@ -37,242 +42,234 @@
             width: 100%;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            padding: 1rem 5%;
+            z-index: 1000;
+            height: 70px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 20px;
         }
 
-        .logo-container {
+        .logo-area {
             display: flex;
             align-items: center;
             gap: 10px;
-        }
-
-        .logo-img {
-            height: 40px;
-            width: auto;
-        }
-
-        .brand-name {
             font-weight: 700;
             font-size: 1.2rem;
-            color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        nav {
-            display: flex;
-            gap: 20px;
-        }
-
-        nav a {
+            color: var(--dark-color);
             text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: color 0.3s;
         }
 
-        nav a:hover {
-            color: var(--primary);
+        .logo-area img {
+            height: 40px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
         }
 
         /* --- HERO --- */
         .hero {
-            padding: 140px 5% 80px;
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            background: linear-gradient(135deg, #fff 0%, #fff0f6 100%);
-        }
-
-        .hero-content {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .hero-image {
-            flex: 1;
-            min-width: 300px;
+            padding: 140px 20px 80px;
+            background: linear-gradient(135deg, #ffffff 0%, #f1f8e9 100%);
             text-align: center;
         }
 
-        .hero-image img {
+        .hero-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero img {
             max-width: 100%;
             height: auto;
-            filter: drop-shadow(0 10px 30px rgba(0,0,0,0.1));
+            max-height: 450px;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
         }
 
-        .tagline {
-            color: var(--primary);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        h1 {
-            font-size: 3rem;
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: var(--dark-color);
+            margin-bottom: 10px;
             line-height: 1.1;
-            margin-bottom: 1.5rem;
         }
 
-        .hero-description {
+        .hero .tagline {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto 30px;
             font-size: 1.1rem;
-            color: var(--text-light);
-            margin-bottom: 2rem;
-            max-width: 500px;
+            color: var(--text-muted);
         }
 
         .hero-bullets {
-            list-style: none;
-            margin-bottom: 2.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
         }
 
-        .hero-bullets li {
-            margin-bottom: 10px;
+        .bullet {
+            background: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            font-weight: 600;
+            font-size: 0.9rem;
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-weight: 600;
+            gap: 8px;
         }
 
-        .hero-bullets li::before {
+        .bullet::before {
             content: '✓';
-            color: var(--primary);
-            font-weight: 800;
+            color: var(--primary-color);
         }
 
-        .btn-primary {
-            display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.3s, background 0.3s;
-            box-shadow: 0 4px 15px rgba(212, 77, 140, 0.3);
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-
-        /* --- SECTIONS --- */
+        /* --- SECTION COMMONS --- */
         section {
-            padding: 80px 5%;
+            padding: 80px 20px;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
             font-size: 2.2rem;
-            margin-bottom: 10px;
+            margin-bottom: 50px;
+            position: relative;
         }
 
-        .section-title .underline {
+        .section-title::after {
+            content: '';
+            display: block;
             width: 60px;
             height: 4px;
-            background: var(--primary);
-            margin: 0 auto;
+            background: var(--primary-color);
+            margin: 15px auto 0;
+            border-radius: 2px;
         }
 
         /* --- BENEFITS --- */
         .benefits-grid {
+            max-width: 1100px;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
         }
 
         .benefit-card {
-            padding: 30px;
-            background: var(--bg-light);
+            background: var(--light-bg);
+            padding: 40px 30px;
             border-radius: 20px;
             text-align: center;
-            transition: transform 0.3s;
+            transition: var(--transition);
         }
 
         .benefit-card:hover {
             transform: translateY(-5px);
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
 
         .benefit-card h3 {
             margin-bottom: 15px;
-            color: var(--primary);
+            color: var(--dark-color);
         }
 
         /* --- INGREDIENTS --- */
-        .ingredients-list {
-            background: var(--bg-light);
-            padding: 40px;
-            border-radius: 20px;
-            max-width: 900px;
-            margin: 0 auto;
+        #ingredients {
+            background: #fafafa;
         }
-        
-        .ingredients-text {
-            color: var(--text-light);
-            font-size: 0.95rem;
+
+        .ingredients-container {
+            max-width: 1000px;
+            margin: 0 auto;
             text-align: center;
         }
 
+        .ingredient-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .ingredient-tag {
+            background: white;
+            border: 1px solid #eee;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-weight: 500;
+        }
+
+        .ingredient-highlight-img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 40px;
+            border-radius: 20px;
+        }
+
         /* --- NUTRITION --- */
-        .nutrition-table-container {
+        .nutrition-table {
             max-width: 600px;
             margin: 0 auto;
-            overflow-x: auto;
-        }
-
-        table {
             width: 100%;
             border-collapse: collapse;
-            background: var(--white);
-            border: 1px solid #eee;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            border-radius: 15px;
+            overflow: hidden;
         }
 
-        th, td {
-            padding: 12px 15px;
+        .nutrition-table th, .nutrition-table td {
+            padding: 15px 20px;
             text-align: left;
             border-bottom: 1px solid #eee;
         }
 
-        th {
-            background: var(--bg-light);
-            font-weight: 700;
+        .nutrition-table th {
+            background: var(--dark-color);
+            color: white;
+        }
+
+        .nutrition-table tr:last-child td {
+            border-bottom: none;
         }
 
         /* --- PREPARATION --- */
-        .prep-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            text-align: center;
-        }
-
-        .prep-step img {
-            width: 120px;
-            height: 120px;
-            margin-bottom: 20px;
-            object-fit: contain;
-        }
-
-        .prep-step h4 {
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
-
-        /* --- PACKS --- */
-        .packs-grid {
+        .prep-steps {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
@@ -280,20 +277,59 @@
             margin: 0 auto;
         }
 
-        .pack-card {
-            border: 1px solid #eee;
-            border-radius: 24px;
-            padding: 40px 30px;
+        .step {
             text-align: center;
-            position: relative;
-            transition: all 0.3s;
+        }
+
+        .step img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            background-color: #eee;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            color: white;
+            line-height: 40px;
+            border-radius: 50%;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        /* --- PACKS --- */
+        #packs {
+            background: var(--light-bg);
+        }
+
+        .packs-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .pack-card {
+            background: white;
+            padding: 40px;
+            border-radius: 25px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
         }
 
         .pack-card.recommended {
-            border: 2px solid var(--primary);
+            border-color: var(--primary-color);
             transform: scale(1.05);
-            background: var(--white);
-            z-index: 10;
+            position: relative;
         }
 
         .badge {
@@ -301,288 +337,300 @@
             top: -15px;
             left: 50%;
             transform: translateX(-50%);
-            background: var(--primary);
+            background: var(--primary-color);
             color: white;
             padding: 5px 20px;
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 700;
+            text-transform: uppercase;
         }
 
-        .price {
+        .pack-name {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .pack-price {
             font-size: 2.5rem;
             font-weight: 700;
-            margin: 20px 0;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+
+        .pack-price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-muted);
+        }
+
+        .buy-now-btn {
             display: block;
+            background: var(--dark-color);
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 12px;
+            font-weight: 600;
+            margin-top: auto;
+            transition: var(--transition);
+        }
+
+        .pack-card.recommended .buy-now-btn {
+            background: var(--primary-color);
+        }
+
+        .buy-now-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
         }
 
         /* --- BUSINESS OPPORTUNITY --- */
-        .biz-opp {
-            background: var(--text-dark);
-            color: var(--white);
+        .biz-op {
             text-align: center;
-            padding: 60px 5%;
-        }
-
-        .biz-opp h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-
-        .btn-whatsapp {
-            background: #25D366;
+            padding: 100px 20px;
+            background: var(--dark-color);
             color: white;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
+        }
+
+        .biz-op h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .biz-op p {
+            margin-bottom: 40px;
+            opacity: 0.8;
+            font-size: 1.1rem;
+        }
+
+        .whatsapp-btn {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            margin-top: 20px;
+            gap: 12px;
+            background: #25d366;
+            color: white;
+            text-decoration: none;
+            padding: 18px 35px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border-top: 1px solid #eee;
         }
 
         /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; }
-            nav { display: none; }
-            .hero { padding-top: 100px; text-align: center; }
-            .hero-content { order: 2; }
-            .hero-image { order: 1; margin-bottom: 40px; }
-            .hero-description { margin: 0 auto 2rem; }
-            .hero-bullets { display: inline-block; text-align: left; }
-            .pack-card.recommended { transform: scale(1); margin: 20px 0; }
+            nav ul {
+                display: none; /* Simple mobile approach: hide nav menu */
+            }
+            .pack-card.recommended {
+                transform: scale(1);
+                margin: 20px 0;
+            }
+            .hero {
+                padding-top: 100px;
+            }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-container">
-            <img src="Imagenes/Logo.png" alt="FWP Logo" class="logo-img" />
-            <span class="brand-name">RENÖVA+</span>
+        <div class="nav-container">
+            <a href="#" class="logo-area">
+                <img src="https://placehold.co/100x40/76bc21/ffffff?text=24BURN" alt="24BURN Logo">
+                <span>24BURN</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#benefits">Beneficios</a></li>
+                    <li><a href="#ingredients">Ingredientes</a></li>
+                    <li><a href="#nutrition">Nutrición</a></li>
+                    <li><a href="#preparation">Preparación</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <a href="#benefits">Beneficios</a>
-            <a href="#ingredients">Ingredientes</a>
-            <a href="#nutrition">Nutrición</a>
-            <a href="#preparation">Preparación</a>
-            <a href="#packs">Comprar</a>
-        </nav>
     </header>
 
-    <!-- HERO SECTION -->
     <section class="hero">
-        <div class="hero-content">
-            <span class="tagline">Dosis Diaria de Juventud</span>
-            <h1>Vive tus días más joven con RENÖVA+</h1>
-            <p class="hero-description">
-                Gracias a su fuente de Colágeno Hidrolizado con Biopéptidos Activos, beneficia tu piel, uñas y cabello. Fortalecido con Resveratrol y Coenzima Q10 para combatir el estrés oxidativo.
-            </p>
-            <ul class="hero-bullets">
-                <li>Mejora piel, uñas y cabello</li>
-                <li>Fortalece el sistema inmunológico</li>
-                <li>Potente acción antioxidante (Q10 + Resveratrol)</li>
-                <li>Reforzado con Zinc y Magnesio</li>
-            </ul>
-            <a href="#packs" class="btn-primary">Comprar Ahora</a>
-        </div>
-        <div class="hero-image">
-            <img src="Imagenes/RENÖVA+.png" alt="Renova+ Product Image" />
+        <div class="hero-container">
+            <img src="https://placehold.co/600x600/ffffff/76bc21?text=24BURN+PRODUCT" alt="24BURN Product">
+            <h1>24BURN</h1>
+            <p class="tagline">REDUCE Y ACTIVA TODOS LOS DÍAS</p>
+            <p>Gracias a la combinación de Té verde (95% polifenoles), Panax Ginseng y L-Carnitina, le da a tu cuerpo un boost acelerador de metabolismo que te permitirá procesar las calorías de una manera más eficiente e inteligente.</p>
+            
+            <div class="hero-bullets">
+                <div class="bullet">Acelera el metabolismo</div>
+                <div class="bullet">Rendimiento deportivo</div>
+                <div class="bullet">Activación física y mental</div>
+                <div class="bullet">Regula digestión</div>
+            </div>
+
+            <a href="#packs" class="whatsapp-btn" style="background-color: var(--primary-color);">Quiero reducir medidas hoy</a>
         </div>
     </section>
 
-    <!-- BENEFITS SECTION -->
     <section id="benefits">
-        <div class="section-title">
-            <h2>Beneficios Principales</h2>
-            <div class="underline"></div>
-        </div>
+        <h2 class="section-title">Beneficios Principales</h2>
         <div class="benefits-grid">
             <div class="benefit-card">
-                <h3>Salud Estética</h3>
-                <p>Mejora visiblemente la salud de tu piel, uñas y cabello gracias a los biopéptidos de colágeno.</p>
+                <h3>Metabolismo</h3>
+                <p>Acelera tu metabolismo para procesar calorías de forma eficiente.</p>
             </div>
             <div class="benefit-card">
-                <h3>Longevidad Celular</h3>
-                <p>El Resveratrol actúa como un potente antioxidante que contribuye a la longevidad de tus células.</p>
+                <h3>Energía</h3>
+                <p>Activación efectiva física y mental para tu día a día.</p>
             </div>
             <div class="benefit-card">
-                <h3>Regeneración</h3>
-                <p>La Coenzima Q10 potencia la regeneración celular y vitalidad general de tu cuerpo.</p>
+                <h3>Saciedad</h3>
+                <p>Genera una sensación de saciedad que ayuda a mejorar la pérdida de peso.</p>
             </div>
             <div class="benefit-card">
-                <h3>Defensas y Huesos</h3>
-                <p>El Zinc y Magnesio ayudan a mejorar tu sistema inmunológico y fortalecer la estructura ósea.</p>
+                <h3>Salud</h3>
+                <p>Disminuye el nivel de colesterol sanguíneo y favorece la oxidación de grasa.</p>
             </div>
         </div>
     </section>
 
-   <!-- INGREDIENTS SECTION -->
-<section id="ingredients" style="background-color: var(--white); padding: 60px 20px;">
-    <div class="section-title">
-        <h2>Ingredientes Premium</h2>
-        <div class="underline"></div>
-    </div>
-
-    <div class="ingredients-container">
-        
-        <!-- IMAGE PLACEHOLDER (puedes agregar la imagen aquí cuando quieras) -->
-        <div class="Imagenes/INGREDIENTE R.png">
-            <!-- EJEMPLO (dejar comentado hasta insertar imagen):
-            <img src="ruta-de-la-imagen.png" alt="Ingredientes Premium">
-            -->
-        </div>
-
-        <!-- TEXT BLOCK -->
-        <div class="ingredients-list">
-            <p class="ingredients-text">
-                Colágeno hidrolizado de bovino, inulina, citrato de magnesio, ácido cítrico, polifenoles de cáscara de uva, sabor idéntico al natural frutos rojos, concentrado de arándanos, glucosidos de esteviol, ácido ascórbico, sulfato de zinc, ubiquinona (Q10), niacina, pantotenato de calcio, piridoxina, tiamina, riboflavina, cianocobalamina.
-            </p>
-
-            <p class="ingredients-text" style="margin-top:20px; font-weight: 600;">
-                Sabor: Berries | Endulzado con Estevia
-            </p>
-        </div>
-    </div>
-</section>
-
-
-    <!-- NUTRITION SECTION -->
-    <section id="nutrition" style="background-color: var(--bg-light);">
-        <div class="section-title">
-            <h2>Información Nutricional</h2>
-            <div class="underline"></div>
-        </div>
-        <div class="nutrition-table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Análisis Medio</th>
-                        <th>Por 100g</th>
-                        <th>Por Porción (15g)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Energía (kcal)</td>
-                        <td>318</td>
-                        <td>48</td>
-                    </tr>
-                    <tr>
-                        <td>Proteínas (g)</td>
-                        <td>72</td>
-                        <td>11</td>
-                    </tr>
-                    <tr>
-                        <td>H. de Carbono (g)</td>
-                        <td>5</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>Grasa Total (g)</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>Sodio (mg)</td>
-                        <td>320</td>
-                        <td>48</td>
-                    </tr>
-                    <tr>
-                        <td>Vitamina C (mg)</td>
-                        <td>200</td>
-                        <td>30 (50% DDR)</td>
-                    </tr>
-                    <tr>
-                        <td>Magnesio (mg)</td>
-                        <td>800</td>
-                        <td>120 (37% DDR)</td>
-                    </tr>
-                    <tr>
-                        <td>Zinc (mg)</td>
-                        <td>37</td>
-                        <td>5.5 (55% DDR)</td>
-                    </tr>
-                    <tr>
-                        <td>Coenzima Q10 (mg)</td>
-                        <td>-</td>
-                        <td>10 (Placeholder)</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p style="font-size: 0.8rem; color: var(--text-light); margin-top: 15px;">*Porciones por envase: 21 aprox.</p>
+    <section id="ingredients">
+        <div class="ingredients-container">
+            <h2 class="section-title">Ingredientes Naturales</h2>
+            <img src="https://placehold.co/800x400/f1f8e9/76bc21?text=INGREDIENTS+WHEEL+PLACEHOLDER" alt="Ingredients Chart" class="ingredient-highlight-img">
+            <p>Nuestra fórmula premium contiene:</p>
+            <div class="ingredient-list">
+                <span class="ingredient-tag">Té Verde (95% Polifenoles)</span>
+                <span class="ingredient-tag">Panax Ginseng</span>
+                <span class="ingredient-tag">L-Carnitina</span>
+                <span class="ingredient-tag">Guaraná</span>
+                <span class="ingredient-tag">Kelp</span>
+                <span class="ingredient-tag">Vitamina B3</span>
+                <span class="ingredient-tag">Vitamina B2</span>
+                <span class="ingredient-tag">Vitamina A</span>
+            </div>
         </div>
     </section>
 
-    <!-- PREPARATION SECTION -->
+    <section id="nutrition">
+        <h2 class="section-title">Información Nutricional</h2>
+        <table class="nutrition-table">
+            <thead>
+                <tr>
+                    <th>Componente</th>
+                    <th>Por 15g (Porción)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Energía</td>
+                    <td>6.9 kcal</td>
+                </tr>
+                <tr>
+                    <td>H. de carbono disp.</td>
+                    <td>3.5 g</td>
+                </tr>
+                <tr>
+                    <td>Fibra dietaria</td>
+                    <td>3.3 g</td>
+                </tr>
+                <tr>
+                    <td>L-Carnitina</td>
+                    <td>150 mg</td>
+                </tr>
+                <tr>
+                    <td>Extracto Té Verde</td>
+                    <td>60 mg</td>
+                </tr>
+                <tr>
+                    <td>Vitamina B3</td>
+                    <td>188% DDR</td>
+                </tr>
+                <tr>
+                    <td>Vitamina B2</td>
+                    <td>188% DDR</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
     <section id="preparation">
-        <div class="section-title">
-            <h2>¿Cómo prepararlo?</h2>
-            <div class="underline"></div>
-        </div>
-        <div class="prep-grid">
-            <div class="prep-step">
-                <img src="https://via.placeholder.com/150?text=STEP+1" alt="Add Scoop" />
-                <h4>1. Agrega</h4>
-                <p>Agrega 1 scoop de RENÖVA+ (15g) en un recipiente.</p>
+        <h2 class="section-title">Cómo Prepararlo</h2>
+        <div class="prep-steps">
+            <div class="step">
+                <img src="https://placehold.co/400x300/eeeeee/999999?text=STEP+1" alt="Add 24BURN">
+                <div class="step-number">1</div>
+                <h3>Agrega</h3>
+                <p>Añade 1 scoop de 24BURN (15g) en un recipiente.</p>
             </div>
-            <div class="prep-step">
-                <img src="https://via.placeholder.com/150?text=STEP+2" alt="Add Water" />
-                <h4>2. Mezcla</h4>
-                <p>Vierte en un vaso de 200 ml con agua fría o natural.</p>
+            <div class="step">
+                <img src="https://placehold.co/400x300/eeeeee/999999?text=STEP+2" alt="Add Water">
+                <div class="step-number">2</div>
+                <h3>Mezcla</h3>
+                <p>Vierte en un vaso de 200 ml con agua fría o tibia.</p>
             </div>
-            <div class="prep-step">
-                <img src="https://via.placeholder.com/150?text=STEP+3" alt="Enjoy" />
-                <h4>3. Disfruta</h4>
-                <p>Remueve por unos segundos hasta disolver y disfruta tu dosis de juventud.</p>
+            <div class="step">
+                <img src="https://placehold.co/400x300/eeeeee/999999?text=STEP+3" alt="Enjoy">
+                <div class="step-number">3</div>
+                <h3>Disfruta</h3>
+                <p>Remueve por unos segundos y disfruta de su sabor Té Limón.</p>
             </div>
         </div>
     </section>
 
-    <!-- PACKS SECTION -->
-    <section id="packs" style="background-color: var(--bg-light);">
-        <div class="section-title">
-            <h2>Elige tu Pack</h2>
-            <div class="underline"></div>
-        </div>
-        <div class="packs-grid">
+    <section id="packs">
+        <h2 class="section-title">Elige tu Plan</h2>
+        <div class="packs-container">
             <!-- Pack 1 -->
             <div class="pack-card">
-                <h3>Starter Pack</h3>
-                <p>1 Unidad (21 porciones)</p>
-                <span class="price">$49.990</span>
-                <a href="MP_LINK_PACK_INICIO_PLACEHOLDER" class="btn-primary">Buy Now</a>
+                <h3 class="pack-name">Pack Inicio</h3>
+                <p>1 Unidad (33 porciones)</p>
+                <div class="pack-price">$35.990 <span>CLP</span></div>
+                <a href="MP_LINK_PACK_INICIO_PLACEHOLDER" class="buy-now-btn">Comprar Ahora</a>
             </div>
             <!-- Pack 2 -->
             <div class="pack-card recommended">
-                <div class="badge">RECOMENDADO</div>
-                <h3>Recommended Pack</h3>
+                <div class="badge">Más Popular</div>
+                <h3 class="pack-name">Pack Recomendado</h3>
                 <p>2 Unidades</p>
-                <span class="price">$89.990</span>
-                <a href="MP_LINK_PACK_RECOMENDADO_PLACEHOLDER" class="btn-primary">Buy Now</a>
+                <div class="pack-price">$64.990 <span>CLP</span></div>
+                <a href="MP_LINK_PACK_RECOMENDADO_PLACEHOLDER" class="buy-now-btn">Comprar Ahora</a>
             </div>
             <!-- Pack 3 -->
             <div class="pack-card">
-                <h3>Maximum Savings</h3>
+                <h3 class="pack-name">Máximo Ahorro</h3>
                 <p>3 Unidades</p>
-                <span class="price">$124.990</span>
-                <a href="MP_LINK_PACK_MAXIMO_AHORRO_PLACEHOLDER" class="btn-primary">Buy Now</a>
+                <div class="pack-price">$89.990 <span>CLP</span></div>
+                <a href="MP_LINK_PACK_MAXIMO_AHORRO_PLACEHOLDER" class="buy-now-btn">Comprar Ahora</a>
             </div>
         </div>
     </section>
 
-    <!-- BUSINESS OPPORTUNITY -->
-    <section class="biz-opp">
-        <h3>¿Quieres generar ingresos recomendando este producto?</h3>
-        <p>Únete a nuestra red de embajadores FWP y transforma tu estilo de vida.</p>
-        <a href="https://wa.me/56942781056?text=Hola%20%F0%9F%91%8B%2C%20llegu%C3%A9%20desde%20la%20p%C3%A1gina%20del%20producto.%20Me%20interesa%20saber%20m%C3%A1s%20sobre%20c%C3%B3mo%20generar%20ingresos%20recomend%C3%A1ndolo.%20%C2%BFPodr%C3%ADas%20orientarme%3F" class="btn-whatsapp">
+    <section class="biz-op">
+        <h2>¿Quieres generar ingresos recomendando este producto?</h2>
+        <p>Únete a nuestra red de embajadores y transforma tu estilo de vida mientras ayudas a otros.</p>
+        <a href="https://wa.me/56942781056?text=Hola%20%F0%9F%91%8B%2C%20llegu%C3%A9%20desde%20la%20p%C3%A1gina%20del%20producto.%20Me%20interesa%20saber%20m%C3%A1s%20sobre%20c%C3%B3mo%20generar%20ingresos%20recomend%C3%A1ndolo.%20%C2%BFPodr%C3%ADas%20orientarme%3F" class="whatsapp-btn">
             Contactar por WhatsApp
         </a>
     </section>
 
-    <footer style="padding: 40px 5%; text-align: center; color: var(--text-light); font-size: 0.9rem; border-top: 1px solid #eee;">
-        <p>&copy; 2024 FWP Chile. RENÖVA+ es un suplemento alimenticio. Su consumo es responsabilidad de quien lo recomienda y quien lo usa.</p>
+    <footer>
+        <p>&copy; 2024 24BURN - FWP. Todos los derechos reservados.</p>
+        <p style="margin-top: 10px; font-size: 0.7rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+            Las mujeres embarazadas o lactantes y las personas con afecciones médicas deben consultar a su médico antes de agregar cualquier suplemento nutricional. Recomendado para mayores de 18 años.
+        </p>
     </footer>
 
 </body>
