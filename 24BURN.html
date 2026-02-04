@@ -9,13 +9,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #76bc21; /* Green from the brand style */
+            --primary-color: #76bc21;
             --dark-color: #1a1a1a;
             --light-bg: #f9f9f9;
             --white: #ffffff;
             --text-main: #333333;
             --text-muted: #666666;
-            --transition: all 0.3s ease;
+            --accent-color: #ff6b00;
         }
 
         * {
@@ -42,407 +42,301 @@
             width: 100%;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             z-index: 1000;
-            height: 70px;
-            display: flex;
-            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
-        .nav-container {
+        .header-container {
             max-width: 1200px;
             margin: 0 auto;
-            width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 20px;
+            padding: 1rem 2rem;
         }
 
         .logo-area {
             display: flex;
             align-items: center;
             gap: 10px;
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: var(--dark-color);
             text-decoration: none;
         }
 
-        .logo-area img {
+        .logo-img {
             height: 40px;
+            width: auto;
+        }
+
+        .brand-name {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--dark-color);
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 25px;
+            gap: 1.5rem;
         }
 
-        nav ul li a {
+        nav a {
             text-decoration: none;
             color: var(--text-main);
-            font-size: 0.9rem;
             font-weight: 500;
-            transition: var(--transition);
+            font-size: 0.9rem;
+            transition: color 0.3s;
         }
 
-        nav ul li a:hover {
+        nav a:hover {
             color: var(--primary-color);
+        }
+
+        /* --- SECTIONS --- */
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         /* --- HERO --- */
         .hero {
-            padding: 140px 20px 80px;
-            background: linear-gradient(135deg, #ffffff 0%, #f1f8e9 100%);
-            text-align: center;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            padding-top: 140px;
+            gap: 40px;
         }
 
-        .hero-container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .hero img {
-            max-width: 100%;
-            height: auto;
-            max-height: 450px;
-            margin-bottom: 30px;
-            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            color: var(--dark-color);
-            margin-bottom: 10px;
+        .hero-content h1 {
+            font-size: 3.5rem;
             line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--dark-color);
         }
 
-        .hero .tagline {
-            font-size: 1.5rem;
+        .hero-content .tagline {
+            font-size: 1.2rem;
             color: var(--primary-color);
             font-weight: 600;
-            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            display: block;
         }
 
-        .hero p {
-            max-width: 700px;
-            margin: 0 auto 30px;
+        .hero-description {
             font-size: 1.1rem;
             color: var(--text-muted);
+            margin-bottom: 2rem;
         }
 
         .hero-bullets {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-bottom: 40px;
+            list-style: none;
+            margin-bottom: 2.5rem;
         }
 
-        .bullet {
-            background: white;
-            padding: 10px 20px;
-            border-radius: 50px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            font-weight: 600;
-            font-size: 0.9rem;
+        .hero-bullets li {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
         }
 
-        .bullet::before {
+        .hero-bullets li::before {
             content: '✓';
             color: var(--primary-color);
+            font-weight: bold;
         }
 
-        /* --- SECTION COMMONS --- */
-        section {
-            padding: 80px 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 50px;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
+        .hero-image img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
             display: block;
-            width: 60px;
-            height: 4px;
-            background: var(--primary-color);
-            margin: 15px auto 0;
-            border-radius: 2px;
+            margin: 0 auto;
+            border-radius: 20px;
         }
 
         /* --- BENEFITS --- */
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
         .benefits-grid {
-            max-width: 1100px;
-            margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            gap: 2rem;
         }
 
         .benefit-card {
             background: var(--light-bg);
-            padding: 40px 30px;
-            border-radius: 20px;
+            padding: 2rem;
+            border-radius: 15px;
             text-align: center;
-            transition: var(--transition);
+            transition: transform 0.3s;
         }
 
         .benefit-card:hover {
             transform: translateY(-5px);
-            background: white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
 
         .benefit-card h3 {
-            margin-bottom: 15px;
-            color: var(--dark-color);
+            color: var(--primary-color);
+            margin-bottom: 1rem;
         }
 
         /* --- INGREDIENTS --- */
-        #ingredients {
-            background: #fafafa;
-        }
-
-        .ingredients-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .ingredient-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .ingredient-tag {
-            background: white;
-            border: 1px solid #eee;
-            padding: 10px 20px;
-            border-radius: 10px;
-            font-weight: 500;
-        }
-
-        .ingredient-highlight-img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 40px;
+        .ingredients-list {
+            background: var(--dark-color);
+            color: var(--white);
+            padding: 3rem;
             border-radius: 20px;
+            margin-top: 2rem;
+        }
+
+        .ingredients-list h2 {
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
         }
 
         /* --- NUTRITION --- */
-        .nutrition-table {
-            max-width: 600px;
-            margin: 0 auto;
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            border-radius: 15px;
-            overflow: hidden;
+        .nutrition-table-container {
+            overflow-x: auto;
+            margin-top: 2rem;
         }
 
-        .nutrition-table th, .nutrition-table td {
-            padding: 15px 20px;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+        }
+
+        th, td {
             text-align: left;
+            padding: 12px 15px;
             border-bottom: 1px solid #eee;
         }
 
-        .nutrition-table th {
-            background: var(--dark-color);
-            color: white;
-        }
-
-        .nutrition-table tr:last-child td {
-            border-bottom: none;
+        th {
+            background-color: var(--light-bg);
+            color: var(--dark-color);
         }
 
         /* --- PREPARATION --- */
         .prep-steps {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .step {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
             text-align: center;
         }
 
         .step img {
             width: 100%;
-            height: 250px;
+            height: 200px;
             object-fit: cover;
-            border-radius: 20px;
-            margin-bottom: 20px;
-            background-color: #eee;
-        }
-
-        .step-number {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background: var(--primary-color);
-            color: white;
-            line-height: 40px;
-            border-radius: 50%;
-            font-weight: 700;
-            margin-bottom: 15px;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            background: #eee;
         }
 
         /* --- PACKS --- */
-        #packs {
-            background: var(--light-bg);
-        }
-
         .packs-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1100px;
-            margin: 0 auto;
+            gap: 2rem;
         }
 
         .pack-card {
-            background: white;
-            padding: 40px;
-            border-radius: 25px;
+            border: 2px solid #eee;
+            border-radius: 20px;
+            padding: 2.5rem;
             text-align: center;
-            border: 2px solid transparent;
-            transition: var(--transition);
             display: flex;
             flex-direction: column;
+            transition: all 0.3s;
         }
 
         .pack-card.recommended {
             border-color: var(--primary-color);
             transform: scale(1.05);
-            position: relative;
+            box-shadow: 0 10px 30px rgba(118, 188, 33, 0.1);
         }
 
-        .badge {
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
+        .pack-tag {
             background: var(--primary-color);
             color: white;
-            padding: 5px 20px;
+            padding: 5px 15px;
             border-radius: 20px;
             font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 1rem;
+            align-self: center;
         }
 
-        .pack-name {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-        }
-
-        .pack-price {
+        .price {
             font-size: 2.5rem;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin: 1.5rem 0;
             color: var(--dark-color);
         }
 
-        .pack-price span {
-            font-size: 1rem;
-            font-weight: 400;
-            color: var(--text-muted);
-        }
-
-        .buy-now-btn {
-            display: block;
-            background: var(--dark-color);
+        .buy-btn {
+            background: var(--primary-color);
             color: white;
             text-decoration: none;
-            padding: 15px;
-            border-radius: 12px;
+            padding: 1rem 2rem;
+            border-radius: 50px;
             font-weight: 600;
             margin-top: auto;
-            transition: var(--transition);
+            transition: opacity 0.3s;
         }
 
-        .pack-card.recommended .buy-now-btn {
-            background: var(--primary-color);
-        }
-
-        .buy-now-btn:hover {
+        .buy-btn:hover {
             opacity: 0.9;
-            transform: translateY(-2px);
         }
 
-        /* --- BUSINESS OPPORTUNITY --- */
-        .biz-op {
+        /* --- BIZ OPP --- */
+        .biz-opp {
+            background: #f0f7e6;
             text-align: center;
-            padding: 100px 20px;
-            background: var(--dark-color);
-            color: white;
-        }
-
-        .biz-op h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .biz-op p {
-            margin-bottom: 40px;
-            opacity: 0.8;
-            font-size: 1.1rem;
+            border-radius: 20px;
+            padding: 4rem 2rem;
         }
 
         .whatsapp-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
             background: #25d366;
             color: white;
             text-decoration: none;
-            padding: 18px 35px;
+            padding: 1rem 2.5rem;
             border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            transition: var(--transition);
-        }
-
-        .whatsapp-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            padding: 40px 20px;
-            text-align: center;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            border-top: 1px solid #eee;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 1.5rem;
         }
 
         /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
-            nav ul {
-                display: none; /* Simple mobile approach: hide nav menu */
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding-top: 100px;
+            }
+            .hero-bullets li {
+                justify-content: center;
+            }
+            nav {
+                display: none; /* Simplification for mobile */
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
             }
             .pack-card.recommended {
                 transform: scale(1);
-                margin: 20px 0;
-            }
-            .hero {
-                padding-top: 100px;
             }
         }
     </style>
@@ -450,10 +344,10 @@
 <body>
 
     <header>
-        <div class="nav-container">
+        <div class="header-container">
             <a href="#" class="logo-area">
-                <img src="Imagenes/LOGO.png" alt="24BURN Logo">
-                <span>24BURN</span>
+                <img src="Imagenes/LOGO.png" alt="24BURN Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/150x50?text=24BURN'">
+                <span class="brand-name">24BURN</span>
             </a>
             <nav>
                 <ul>
@@ -461,175 +355,165 @@
                     <li><a href="#ingredients">Ingredientes</a></li>
                     <li><a href="#nutrition">Nutrición</a></li>
                     <li><a href="#preparation">Preparación</a></li>
+                    <li><a href="#packs">Comprar</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-container">
-            <img src="Imagenes/24BURN.png" alt="24BURN Product">
-            <h1>24BURN</h1>
-            <p class="tagline">REDUCE Y ACTIVA TODOS LOS DÍAS</p>
-            <p>Gracias a la combinación de Té verde (95% polifenoles), Panax Ginseng y L-Carnitina, le da a tu cuerpo un boost acelerador de metabolismo que te permitirá procesar las calorías de una manera más eficiente e inteligente.</p>
-            
-            <div class="hero-bullets">
-                <div class="bullet">Acelera el metabolismo</div>
-                <div class="bullet">Rendimiento deportivo</div>
-                <div class="bullet">Activación física y mental</div>
-                <div class="bullet">Regula digestión</div>
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="hero-content">
+                <span class="tagline">Reduce y Activa Todos los Días</span>
+                <h1>Transforma tu Energía con 24BURN</h1>
+                <p class="hero-description">
+                    Gracias a la combinación de Té verde, Panax Ginseng y L-Carnitina, dale a tu cuerpo un boost acelerador de metabolismo que te permitirá procesar calorías de manera eficiente e inteligente.
+                </p>
+                <ul class="hero-bullets">
+                    <li>Acelera tu metabolismo de forma natural.</li>
+                    <li>Incrementa tu rendimiento deportivo.</li>
+                    <li>Activación efectiva física y mental.</li>
+                    <li>Mejora la sensación de saciedad.</li>
+                </ul>
+                <a href="#packs" class="buy-btn" style="padding: 1.2rem 3rem;">Empezar Ahora</a>
             </div>
+            <div class="hero-image">
+                <img src="PRODUCT_MAIN_IMAGE_URL" alt="24BURN Product" onerror="this.src='https://via.placeholder.com/500x600?text=24BURN+Product'">
+            </div>
+        </section>
 
-            <a href="#packs" class="whatsapp-btn" style="background-color: var(--primary-color);">Quiero reducir medidas hoy</a>
-        </div>
-    </section>
+        <!-- BENEFITS SECTION -->
+        <section id="benefits">
+            <h2 class="section-title">Beneficios Clave</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>Metabolismo</h3>
+                    <p>Acelera el proceso metabólico para una quema de grasas más eficiente.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Energía</h3>
+                    <p>Potente activación física y mental para tus desafíos diarios.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Rendimiento</h3>
+                    <p>Mejora significativamente tu desempeño en actividades deportivas.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Digestión</h3>
+                    <p>Contribuye a regular la digestión y el colesterol gracias a su contenido de fibra.</p>
+                </div>
+            </div>
+        </section>
 
-    <section id="benefits">
-        <h2 class="section-title">Beneficios Principales</h2>
-        <div class="benefits-grid">
-            <div class="benefit-card">
-                <h3>Metabolismo</h3>
-                <p>Acelera tu metabolismo para procesar calorías de forma eficiente.</p>
+        <!-- INGREDIENTS SECTION -->
+        <section id="ingredients">
+            <div class="ingredients-list">
+                <h2>Ingredientes de Alta Calidad</h2>
+                <p>Maltodextrina, polidextrosa, ácido cítrico, L-carnitina, ácido málico, extracto de guaraná, concentrado de kelp, extracto de té verde, cafeína, sabor té limón, sucralosa, extracto de panax ginseng, vitamina B3, vitamina A, vitamina B2.</p>
+                <div style="margin-top: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px;">
+                    <span style="background: #333; padding: 10px; border-radius: 5px;">Té Verde (95% Polifenoles)</span>
+                    <span style="background: #333; padding: 10px; border-radius: 5px;">Panax Ginseng</span>
+                    <span style="background: #333; padding: 10px; border-radius: 5px;">L-Carnitina</span>
+                    <span style="background: #333; padding: 10px; border-radius: 5px;">Guaraná y Kelp</span>
+                </div>
             </div>
-            <div class="benefit-card">
-                <h3>Energía</h3>
-                <p>Activación efectiva física y mental para tu día a día.</p>
-            </div>
-            <div class="benefit-card">
-                <h3>Saciedad</h3>
-                <p>Genera una sensación de saciedad que ayuda a mejorar la pérdida de peso.</p>
-            </div>
-            <div class="benefit-card">
-                <h3>Salud</h3>
-                <p>Disminuye el nivel de colesterol sanguíneo y favorece la oxidación de grasa.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="ingredients">
-        <div class="ingredients-container">
-            <h2 class="section-title">Ingredientes Naturales</h2>
-            <img src="https://placehold.co/800x400/f1f8e9/76bc21?text=INGREDIENTS+WHEEL+PLACEHOLDER" alt="Ingredients Chart" class="ingredient-highlight-img">
-            <p>Nuestra fórmula premium contiene:</p>
-            <div class="ingredient-list">
-                <span class="ingredient-tag">Té Verde (95% Polifenoles)</span>
-                <span class="ingredient-tag">Panax Ginseng</span>
-                <span class="ingredient-tag">L-Carnitina</span>
-                <span class="ingredient-tag">Guaraná</span>
-                <span class="ingredient-tag">Kelp</span>
-                <span class="ingredient-tag">Vitamina B3</span>
-                <span class="ingredient-tag">Vitamina B2</span>
-                <span class="ingredient-tag">Vitamina A</span>
+        <!-- NUTRITION SECTION -->
+        <section id="nutrition">
+            <h2 class="section-title">Información Nutricional</h2>
+            <div class="nutrition-table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Componente</th>
+                            <th>Por 100g</th>
+                            <th>Por Porción (15g)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Energía</td><td>46.2 kcal</td><td>6.9 kcal</td></tr>
+                        <tr><td>H. de Carbono Disp.</td><td>23.3 g</td><td>3.5 g</td></tr>
+                        <tr><td>Fibra Dietaria</td><td>21.8 g</td><td>3.3 g</td></tr>
+                        <tr><td>Vitamina B2</td><td>20 mg</td><td>188% DDR*</td></tr>
+                        <tr><td>Vitamina B3</td><td>25 mg</td><td>188% DDR*</td></tr>
+                        <tr><td>Vitamina A</td><td>4500 mg</td><td>84% DDR*</td></tr>
+                        <tr><td>L-Carnitina</td><td>1000 mg</td><td>150 mg</td></tr>
+                        <tr><td>Extracto Té Verde</td><td>400 mg</td><td>60 mg</td></tr>
+                    </tbody>
+                </table>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem;">* % en relación a la Dosis Diaria Recomendada (DDR).</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="nutrition">
-        <h2 class="section-title">Información Nutricional</h2>
-        <table class="nutrition-table">
-            <thead>
-                <tr>
-                    <th>Componente</th>
-                    <th>Por 15g (Porción)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Energía</td>
-                    <td>6.9 kcal</td>
-                </tr>
-                <tr>
-                    <td>H. de carbono disp.</td>
-                    <td>3.5 g</td>
-                </tr>
-                <tr>
-                    <td>Fibra dietaria</td>
-                    <td>3.3 g</td>
-                </tr>
-                <tr>
-                    <td>L-Carnitina</td>
-                    <td>150 mg</td>
-                </tr>
-                <tr>
-                    <td>Extracto Té Verde</td>
-                    <td>60 mg</td>
-                </tr>
-                <tr>
-                    <td>Vitamina B3</td>
-                    <td>188% DDR</td>
-                </tr>
-                <tr>
-                    <td>Vitamina B2</td>
-                    <td>188% DDR</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+        <!-- PREPARATION SECTION -->
+        <section id="preparation">
+            <h2 class="section-title">Cómo Prepararlo</h2>
+            <div class="prep-steps">
+                <div class="step">
+                    <img src="PREPARATION_STEP_1_IMAGE_URL" alt="Paso 1" onerror="this.src='https://via.placeholder.com/300x200?text=Paso+1'">
+                    <h3>1. Servir</h3>
+                    <p>Agrega 1 scoop de 24BURN (15g) en un vaso.</p>
+                </div>
+                <div class="step">
+                    <img src="PREPARATION_STEP_2_IMAGE_URL" alt="Paso 2" onerror="this.src='https://via.placeholder.com/300x200?text=Paso+2'">
+                    <h3>2. Mezclar</h3>
+                    <p>Añade 200 ml de agua fresca.</p>
+                </div>
+                <div class="step">
+                    <img src="PREPARATION_STEP_3_IMAGE_URL" alt="Paso 3" onerror="this.src='https://via.placeholder.com/300x200?text=Paso+3'">
+                    <h3>3. Disfrutar</h3>
+                    <p>Remueve por unos segundos y disfruta tu bebida.</p>
+                </div>
+            </div>
+        </section>
 
-    <section id="preparation">
-        <h2 class="section-title">Cómo Prepararlo</h2>
-        <div class="prep-steps">
-            <div class="step">
-                <img src="https://placehold.co/400x300/eeeeee/999999?text=STEP+1" alt="Add 24BURN">
-                <div class="step-number">1</div>
-                <h3>Agrega</h3>
-                <p>Añade 1 scoop de 24BURN (15g) en un recipiente.</p>
+        <!-- PACKS SECTION -->
+        <section id="packs">
+            <h2 class="section-title">Elige tu Pack</h2>
+            <div class="packs-container">
+                <!-- Pack 1 -->
+                <div class="pack-card">
+                    <span class="pack-tag" style="background: #999;">Básico</span>
+                    <h3>Starter Pack</h3>
+                    <p>1 Unidad (33 Porciones)</p>
+                    <div class="price">$35.990</div>
+                    <a href="MP_LINK_PACK_INICIO_PLACEHOLDER" class="buy-btn">Comprar Ahora</a>
+                </div>
+                <!-- Pack 2 -->
+                <div class="pack-card recommended">
+                    <span class="pack-tag">Más Popular</span>
+                    <h3>Recommended Pack</h3>
+                    <p>2 Unidades</p>
+                    <div class="price">$64.990</div>
+                    <a href="MP_LINK_PACK_RECOMENDADO_PLACEHOLDER" class="buy-btn">Comprar Ahora</a>
+                </div>
+                <!-- Pack 3 -->
+                <div class="pack-card">
+                    <span class="pack-tag" style="background: var(--accent-color);">Mejor Ahorro</span>
+                    <h3>Maximum Savings</h3>
+                    <p>3 Unidades</p>
+                    <div class="price">$89.990</div>
+                    <a href="MP_LINK_PACK_MAXIMO_AHORRO_PLACEHOLDER" class="buy-btn">Comprar Ahora</a>
+                </div>
             </div>
-            <div class="step">
-                <img src="https://placehold.co/400x300/eeeeee/999999?text=STEP+2" alt="Add Water">
-                <div class="step-number">2</div>
-                <h3>Mezcla</h3>
-                <p>Vierte en un vaso de 200 ml con agua fría o tibia.</p>
-            </div>
-            <div class="step">
-                <img src="https://placehold.co/400x300/eeeeee/999999?text=STEP+3" alt="Enjoy">
-                <div class="step-number">3</div>
-                <h3>Disfruta</h3>
-                <p>Remueve por unos segundos y disfruta de su sabor Té Limón.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="packs">
-        <h2 class="section-title">Elige tu Plan</h2>
-        <div class="packs-container">
-            <!-- Pack 1 -->
-            <div class="pack-card">
-                <h3 class="pack-name">Pack Inicio</h3>
-                <p>1 Unidad (33 porciones)</p>
-                <div class="pack-price">$35.990 <span>CLP</span></div>
-                <a href="MP_LINK_PACK_INICIO_PLACEHOLDER" class="buy-now-btn">Comprar Ahora</a>
-            </div>
-            <!-- Pack 2 -->
-            <div class="pack-card recommended">
-                <div class="badge">Más Popular</div>
-                <h3 class="pack-name">Pack Recomendado</h3>
-                <p>2 Unidades</p>
-                <div class="pack-price">$64.990 <span>CLP</span></div>
-                <a href="MP_LINK_PACK_RECOMENDADO_PLACEHOLDER" class="buy-now-btn">Comprar Ahora</a>
-            </div>
-            <!-- Pack 3 -->
-            <div class="pack-card">
-                <h3 class="pack-name">Máximo Ahorro</h3>
-                <p>3 Unidades</p>
-                <div class="pack-price">$89.990 <span>CLP</span></div>
-                <a href="MP_LINK_PACK_MAXIMO_AHORRO_PLACEHOLDER" class="buy-now-btn">Comprar Ahora</a>
-            </div>
-        </div>
-    </section>
+        <!-- BUSINESS OPPORTUNITY SECTION -->
+        <section class="biz-opp">
+            <h2>¿Te gustaría generar ingresos recomendando este producto?</h2>
+            <p>Únete a nuestra red de embajadores y comienza a emprender hoy mismo.</p>
+            <a href="https://wa.me/56942781056?text=Hola%20%F0%9F%91%8B%2C%20llegu%C3%A9%20desde%20la%20p%C3%A1gina%20del%20producto.%20Me%20interesa%20saber%20m%C3%A1s%20sobre%20c%C3%B3mo%20generar%20ingresos%20recomend%C3%A1ndolo.%20%C2%BFPodr%C3%ADas%20orientarme%3F" class="whatsapp-btn">
+                Contactar por WhatsApp
+            </a>
+        </section>
+    </main>
 
-    <section class="biz-op">
-        <h2>¿Quieres generar ingresos recomendando este producto?</h2>
-        <p>Únete a nuestra red de embajadores y transforma tu estilo de vida mientras ayudas a otros.</p>
-        <a href="https://wa.me/56942781056?text=Hola%20%F0%9F%91%8B%2C%20llegu%C3%A9%20desde%20la%20p%C3%A1gina%20del%20producto.%20Me%20interesa%20saber%20m%C3%A1s%20sobre%20c%C3%B3mo%20generar%20ingresos%20recomend%C3%A1ndolo.%20%C2%BFPodr%C3%ADas%20orientarme%3F" class="whatsapp-btn">
-            Contactar por WhatsApp
-        </a>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 24BURN - FWP. Todos los derechos reservados.</p>
-        <p style="margin-top: 10px; font-size: 0.7rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-            Las mujeres embarazadas o lactantes y las personas con afecciones médicas deben consultar a su médico antes de agregar cualquier suplemento nutricional. Recomendado para mayores de 18 años.
+    <footer style="text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.9rem;">
+        <p>&copy; 2024 FWP - 24BURN. Todos los derechos reservados.</p>
+        <p style="max-width: 600px; margin: 1rem auto; font-size: 0.75rem;">
+            *Las mujeres embarazadas o lactantes y personas con afecciones médicas conocidas deben consultar a su médico antes de consumir. Recomendado para mayores de 18 años.
         </p>
     </footer>
 
