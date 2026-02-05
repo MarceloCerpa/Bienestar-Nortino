@@ -1,237 +1,636 @@
-
 <!DOCTYPE html>
-<html lang="es-CL">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Metatags para SEO en Chile -->
-    <title>E-Boost | Energía Inteligente para Dominar tu Día</title>
-    <meta name="description" content="Descubre E-Boost, la fórmula con Guaraná, Té Negro y Yerba Mate para combatir la fatiga y mejorar tu concentración. ¡Pide el tuyo en Chile!">
-    <meta name="keywords" content="energizante, e-boost, guaraná, té negro, yerba mate, energía, concentración, fatiga, suplemento, Chile">
-    <meta name="author" content="FWP E-Boost Chile">
-    <meta property="og:title" content="E-Boost | Energía Inteligente para Dominar tu Día" />
-    <meta property="og:description" content="¿Cansado de la fatiga y el exceso de café? E-Boost es tu solución natural para una energía sostenida y una mente enfocada. ¡Oferta de lanzamiento!" />
-    <meta property="og:image" content="https://raw.githubusercontent.com/marcelocerpa/bienestar-nortino/main/Imagenes/E-BOOST.png" />
-    <meta property="og:url" content="https://www.bienestarnortino.com/e-boost" />
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="es_CL" />
-
-    <!-- Favicon -->
-    <link rel="icon" href="https://placehold.co/32x32/F58220/ffffff?text=E%2B" type="image/png">
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Google Fonts: Inter -->
+    <title>E-BOOST | Potencia, Enfoque y Energía</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-
-    <!-- Estilos personalizados -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #FF4500; /* Orange from packaging */
+            --dark: #1a1a1a;
+            --light: #f9f9f9;
+            --text: #333;
+            --border: #e1e1e1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #FDFDFD;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: #fff;
         }
-        .hormozi-headline {
-            font-weight: 900;
-            line-height: 1.2;
-        }
-        .main-cta-btn {
-            background-color: #F58220;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px 0 rgba(245, 130, 32, 0.4);
-        }
-        .main-cta-btn:hover {
-            transform: translateY(-3px);
-            background-color: #dd751d;
-            box-shadow: 0 6px 20px 0 rgba(245, 130, 32, 0.5);
-        }
-        .gradient-text {
-            background: linear-gradient(90deg, #dd751d, #F58220);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .value-stack-item {
-            border-left: 3px solid #F58220;
-        }
-        .checkmark {
-            color: #F58220;
-        }
-        .whatsapp-float {
+
+        /* --- Header --- */
+        header {
             position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            height: 70px;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-img {
+            height: 40px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--dark);
+            letter-spacing: -1px;
+        }
+
+        nav {
+            display: none; /* Hidden on mobile */
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-left: 20px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        @media (min-width: 768px) {
+            nav { display: block; }
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: 140px 20px 80px;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .hero-container { grid-template-columns: 1fr 1fr; text-align: left; }
+            .hero { padding: 180px 20px 100px; }
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            /* box-shadow: 0 20px 40px rgba(0,0,0,0.1); */
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .tagline {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: #666;
+        }
+
+        .hero-bullets {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        .hero-bullets li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+        }
+
+        .hero-bullets li::before {
+            content: '✓';
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 18px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 69, 0, 0.3);
+        }
+
+        /* --- Sections General --- */
+        section {
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--dark);
+        }
+
+        .section-title .divider {
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            margin: 15px auto;
+        }
+
+        /* --- Benefits --- */
+        #benefits {
+            background-color: white;
+        }
+
+        .benefits-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-card {
+            padding: 30px;
+            background: var(--light);
+            border-radius: 15px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .benefit-card:hover {
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .benefit-card h3 {
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        /* --- Ingredients --- */
+        #ingredients {
+            background-color: var(--light);
+        }
+
+        .ingredients-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .ingredient-item {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .ingredient-item img {
             width: 60px;
             height: 60px;
-            bottom: 40px;
-            right: 40px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 3px #999;
-            z-index: 100;
-            transition: all 0.3s ease;
+            margin-bottom: 10px;
+            object-fit: contain;
         }
-        .whatsapp-float:hover {
-            transform: scale(1.1);
+
+        .full-ingredients {
+            max-width: 800px;
+            margin: 40px auto 0;
+            font-size: 0.9rem;
+            color: #777;
+            text-align: center;
+            padding: 20px;
+            border-top: 1px dashed var(--border);
+        }
+
+        /* --- Nutrition --- */
+        .nutrition-table-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            overflow-x: auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: var(--light);
+            font-weight: 700;
+        }
+
+        /* --- Preparation --- */
+        .prep-steps {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step img {
+            width: 100%;
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+
+        .step h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        /* --- Packs --- */
+        #packs {
+            background: var(--dark);
+            color: white;
+        }
+
+        #packs .section-title h2 { color: white; }
+
+        .packs-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .pack-card {
+            background: #2a2a2a;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid #333;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pack-card.recommended {
+            border: 2px solid var(--primary);
+            transform: scale(1.05);
+            background: #333;
+        }
+
+        .badge {
+            background: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .pack-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 20px 0;
+        }
+
+        .pack-features {
+            list-style: none;
+            margin-bottom: 30px;
+            flex-grow: 1;
+        }
+
+        .pack-features li {
+            margin-bottom: 10px;
+            color: #ccc;
+        }
+
+        /* --- Business Opp --- */
+        .business-opp {
+            text-align: center;
+            background: #f0f0f0;
+            padding: 60px 20px;
+        }
+
+        .business-opp h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        footer {
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #999;
+            border-top: 1px solid var(--border);
         }
     </style>
 </head>
-<body class="text-gray-800">
+<body>
 
-    <!-- HERO SECTION -->
-    <div class="bg-gray-50">
-        <div class="container mx-auto px-6 py-16 md:py-24 text-center">
-            <h1 class="text-4xl md:text-6xl hormozi-headline mb-4">Energía Inteligente para <span class="gradient-text">Dominar tu Día</span></h1>
-            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">La única fórmula natural diseñada para darte un impulso de energía limpia, enfoque mental y vitalidad, sin el nerviosismo ni la caída del café.</p>
-            <div class="flex justify-center">
-                <a href="https://wa.me/56933394706?text=¡Hola!%20Quiero%20comprar%20E-BOOST%20con%20la%20oferta%20de%20lanzamiento." target="_blank" class="main-cta-btn text-white font-bold text-xl py-4 px-10 rounded-lg inline-flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mr-3" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.61 15.31 3.45 16.74L2.06 21.94L7.45 20.55C8.82 21.32 10.39 21.72 12.04 21.72C17.5 21.72 21.95 17.27 21.95 11.81C21.95 6.35 17.5 2 12.04 2ZM17.46 15.53C17.21 15.82 16.26 16.3 15.92 16.44C15.58 16.58 15.11 16.59 14.77 16.45C14.43 16.31 13.62 16.03 12.66 15.13C11.51 14.04 10.82 12.72 10.63 12.43C10.44 12.14 10.58 11.97 10.72 11.83C10.84 11.71 11.01 11.5 11.19 11.29C11.37 11.08 11.42 10.94 11.51 10.75C11.61 10.56 11.56 10.37 11.47 10.18L11.01 9.03C10.82 8.56 10.63 8.63 10.47 8.63C10.31 8.64 10.02 8.71 9.77 8.96C9.52 9.21 8.94 9.72 8.94 10.79C8.94 11.86 9.79 12.82 9.93 12.96C10.07 13.1 11.57 15.54 13.98 16.5C14.54 16.73 14.96 16.89 15.29 16.98C15.82 17.11 16.46 17.06 16.88 16.65C17.36 16.19 17.65 15.53 17.65 15.53C17.65 15.53 17.52 15.24 17.46 15.53Z"/></svg>
-                    ¡QUIERO MI E-BOOST AHORA!
-                </a>
+    <header>
+        <div class="header-container">
+            <div class="logo-area">
+                <img src="Imagenes/LOGO.png" alt="FWP Logo" class="logo-img" onerror="this.style.display='none'">
+                <span class="logo-text">E-BOOST</span>
             </div>
-            <p class="text-sm text-gray-500 mt-4">Oferta de lanzamiento + Envío GRATIS. ¡No te quedes fuera!</p>
+            <nav>
+                <a href="#benefits">Beneficios</a>
+                <a href="#ingredients">Ingredientes</a>
+                <a href="#nutrition">Nutrición</a>
+                <a href="#preparation">Preparación</a>
+                <a href="#packs">Comprar</a>
+            </nav>
         </div>
-    </div>
+    </header>
 
-    <!-- PROBLEMA / AGITACIÓN SECTION -->
-    <div class="container mx-auto px-6 py-16 md:py-20 text-center">
-         <h2 class="text-3xl md:text-4xl font-bold mb-4">¿Te sientes atrapado en el ciclo de la fatiga?</h2>
-         <p class="text-lg text-gray-600 max-w-3xl mx-auto">Te levantas cansado, dependes de una taza de café tras otra solo para funcionar, y a mediodía tu concentración desaparece. <span class="font-bold">No estás solo/a.</span> Es el agotamiento moderno, pero la solución no es más cafeína.</p>
-    </div>
-
-    <!-- SOLUCIÓN / BENEFICIOS SECTION -->
-    <div class="bg-gray-50">
-        <div class="container mx-auto px-6 py-16 md:py-24">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <img src="https://raw.githubusercontent.com/marcelocerpa/bienestar-nortino/main/Imagenes/E-BOOST.png" alt="Caja de E-Boost energizante" class="rounded-lg shadow-2xl mx-auto">
-                </div>
-                <div>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6">El combustible <span class="gradient-text">inteligente</span> que tu cuerpo pide.</h2>
-                    <p class="text-lg text-gray-600 mb-8">E-Boost combina 3 de los energizantes naturales más potentes del mundo para darte una energía sostenida, sin los efectos negativos del café.</p>
-                    <ul class="space-y-4">
-                        <li class="flex items-start"><span class="checkmark text-2xl mr-3">✓</span><div><strong class="text-gray-900">Guaraná:</strong> Libera energía de forma gradual, manteniendo tu mente alerta y activa por más tiempo.</div></li>
-                        <li class="flex items-start"><span class="checkmark text-2xl mr-3">✓</span><div><strong class="text-gray-900">Té Negro:</strong> Mejora el enfoque y la concentración, permitiéndote rendir al máximo en tus tareas.</div></li>
-                        <li class="flex items-start"><span class="checkmark text-2xl mr-3">✓</span><div><strong class="text-gray-900">Yerba Mate:</strong> Aporta una sensación de bienestar y vitalidad, combatiendo la fatiga física y mental.</div></li>
-                    </ul>
-                </div>
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <p class="tagline">Potencia, Enfoque y Energía</p>
+                <h1>Activa tu máximo rendimiento</h1>
+                <p class="hero-description">E-BOOST es una bebida especialmente diseñada para activar tu energía gracias a su blend de aminoácidos BCAA e ingredientes naturales poderosos.</p>
+                <ul class="hero-bullets">
+                    <li>Energía saludable potenciadora</li>
+                    <li>Mejora la actitud positiva</li>
+                    <li>Elimina fatiga y burnout</li>
+                    <li>Incremento de enfoque y concentración</li>
+                </ul>
+                <a href="#packs" class="btn">Obtener E-BOOST Ahora</a>
+            </div>
+            <div class="hero-image">
+                <img src="PRODUCT_MAIN_IMAGE_URL" alt="E-BOOST Product Box" onerror="this.src='https://via.placeholder.com/500x500?text=E-BOOST+PRODUCT'">
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- GRAND SLAM OFFER SECTION -->
-    <div class="container mx-auto px-6 py-16 md:py-24">
-        <div class="text-center max-w-4xl mx-auto">
-            <h2 class="text-4xl md:text-5xl hormozi-headline mb-4">Una Oferta de Lanzamiento Irresistible</h2>
-            <p class="text-lg text-gray-600 mb-12">No solo te llevas el energizante natural más completo. Recibirás un paquete de valor incalculable diseñado para transformar tus niveles de energía y productividad.</p>
+    <section id="benefits">
+        <div class="section-title">
+            <h2>¿Por qué elegir E-BOOST?</h2>
+            <div class="divider"></div>
         </div>
-        <div class="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-lg shadow-xl border border-gray-100">
-            <h3 class="text-2xl font-bold text-center mb-8">Esto es todo lo que obtienes hoy:</h3>
-            <div class="space-y-5">
-                <div class="p-4 bg-gray-50 rounded-lg value-stack-item">
-                    <div class="flex justify-between items-center">
-                        <p class="font-semibold text-lg">Componente Guaraná</p>
-                        <p class="font-bold text-lg text-gray-700">Valor: $25.000 CLP</p>
-                    </div>
-                </div>
-                <div class="p-4 bg-gray-50 rounded-lg value-stack-item">
-                    <div class="flex justify-between items-center">
-                        <p class="font-semibold text-lg">Componente Té Negro</p>
-                        <p class="font-bold text-lg text-gray-700">Valor: $20.000 CLP</p>
-                    </div>
-                </div>
-                <div class="p-4 bg-gray-50 rounded-lg value-stack-item">
-                    <div class="flex justify-between items-center">
-                        <p class="font-semibold text-lg">Componente Yerba Mate</p>
-                        <p class="font-bold text-lg text-gray-700">Valor: $25.000 CLP</p>
-                    </div>
-                </div>
-                <div class="p-4 bg-orange-50 rounded-lg value-stack-item border-orange-400">
-                    <div class="flex justify-between items-center">
-                        <p class="font-semibold text-lg"><span class="text-orange-600">BONO #1:</span> Guía Digital "Cómo Mantener Energía Alta sin Café"</p>
-                        <p class="font-bold text-lg text-gray-700">GRATIS</p>
-                    </div>
-                </div>
-                <div class="p-4 bg-orange-50 rounded-lg value-stack-item border-orange-400">
-                    <div class="flex justify-between items-center">
-                        <p class="font-semibold text-lg"><span class="text-orange-600">BONO #2:</span> Acceso a Comunidad VIP</p>
-                        <p class="font-bold text-lg text-gray-700">GRATIS</p>
-                    </div>
-                </div>
-                 <div class="p-4 bg-orange-50 rounded-lg value-stack-item border-orange-400">
-                    <div class="flex justify-between items-center">
-                        <p class="font-semibold text-lg"><span class="text-orange-600">BONO #3:</span> Envío a todo Chile</p>
-                        <p class="font-bold text-lg text-gray-700">GRATIS</p>
-                    </div>
-                </div>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <h3>Adiós al Cansancio</h3>
+                <p>Ingredientes como el Guaraná y el Té Negro ayudan a reducir drásticamente la sensación de fatiga física y mental.</p>
             </div>
-            <div class="text-center mt-10">
-                <p class="text-xl line-through text-gray-500">Valor Total: <span class="font-bold">$70.000 CLP</span></p>
-                <p class="text-2xl md:text-4xl font-bold mt-2">Llévalo todo por solo:</p>
-                <p class="text-5xl md:text-7xl hormozi-headline gradient-text my-4">$40.000 CLP</p>
-                <a href="https://wa.me/56933394706?text=¡Hola!%20Quiero%20aprovechar%20la%20oferta%20de%20lanzamiento%20de%20E-BOOST%20por%20$39.990%20con%20envío%20gratis." target="_blank" class="main-cta-btn text-white font-bold text-xl py-4 px-10 rounded-lg inline-flex items-center w-full md:w-auto justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mr-3" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.61 15.31 3.45 16.74L2.06 21.94L7.45 20.55C8.82 21.32 10.39 21.72 12.04 21.72C17.5 21.72 21.95 17.27 21.95 11.81C21.95 6.35 17.5 2 12.04 2ZM17.46 15.53C17.21 15.82 16.26 16.3 15.92 16.44C15.58 16.58 15.11 16.59 14.77 16.45C14.43 16.31 13.62 16.03 12.66 15.13C11.51 14.04 10.82 12.72 10.63 12.43C10.44 12.14 10.58 11.97 10.72 11.83C10.84 11.71 11.01 11.5 11.19 11.29C11.37 11.08 11.42 10.94 11.51 10.75C11.61 10.56 11.56 10.37 11.47 10.18L11.01 9.03C10.82 8.56 10.63 8.63 10.47 8.63C10.31 8.64 10.02 8.71 9.77 8.96C9.52 9.21 8.94 9.72 8.94 10.79C8.94 11.86 9.79 12.82 9.93 12.96C10.07 13.1 11.57 15.54 13.98 16.5C14.54 16.73 14.96 16.89 15.29 16.98C15.82 17.11 16.46 17.06 16.88 16.65C17.36 16.19 17.65 15.53 17.65 15.53C17.65 15.53 17.52 15.24 17.46 15.53Z"/></svg>
-                    ¡SÍ, QUIERO MI OFERTA AHORA!
-                </a>
-                <p class="text-sm text-gray-500 mt-2">Costo de envío GRATIS solo por lanzamiento.</p>
+            <div class="benefit-card">
+                <h3>Foco Láser</h3>
+                <p>Favorece el incremento de la concentración para superar los desafíos más exigentes de tu rutina diaria.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Recuperación BCAA</h3>
+                <p>Contiene Valina, Leucina e Isoleucina para apoyar tus músculos y metabolismo.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Sin Azúcar</h3>
+                <p>Fórmula premium endulzada con Stevia, sin azúcares añadidos para una energía limpia.</p>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- TESTIMONIALS SECTION -->
-    <div class="bg-gray-50">
-        <div class="container mx-auto px-6 py-16 md:py-24">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Lo que nuestros clientes dicen...</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Testimonio 1 -->
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <img src="https://placehold.co/80x80/E0E0E0/000000?text=M.G." alt="Foto de cliente" class="w-20 h-20 rounded-full mx-auto mb-4">
-                    <p class="text-gray-600 mb-4">"Como programador, la concentración es clave. E-Boost me da el enfoque que necesito sin ponerme nervioso como el café. Es un cambio de juego para mi productividad."</p>
-                    <p class="font-bold text-right">- Matías G., Santiago</p>
-                </div>
-                <!-- Testimonio 2 -->
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <img src="https://placehold.co/80x80/E0E0E0/000000?text=P.L." alt="Foto de clienta" class="w-20 h-20 rounded-full mx-auto mb-4">
-                    <p class="text-gray-600 mb-4">"Dejé el café por la acidez y encontré E-Boost. Me da la energía para mis mañanas de gimnasio y para aguantar todo el día con mis hijos. ¡Me encanta el sabor a mandarina!"</p>
-                    <p class="font-bold text-right">- Paula L., Antofagasta</p>
-                </div>
-                <!-- Testimonio 3 -->
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <img src="https://placehold.co/80x80/E0E0E0/000000?text=F.R." alt="Foto de cliente" class="w-20 h-20 rounded-full mx-auto mb-4">
-                    <p class="text-gray-600 mb-4">"Estaba escéptico, pero funciona. Siento una energía mucho más estable durante el día, sin la caída brusca de las bebidas energéticas. Lo recomiendo 100%."</p>
-                    <p class="font-bold text-right">- Felipe R., Concepción</p>
-                </div>
+    <section id="ingredients">
+        <div class="section-title">
+            <h2>Ingredientes Naturales</h2>
+            <div class="divider"></div>
+        </div>
+        <div class="ingredients-container">
+            <div class="ingredient-item">
+                <img src="https://cdn-icons-png.flaticon.com/512/3062/3062143.png" alt="Guaraná">
+                <p><strong>Guaraná</strong></p>
+            </div>
+            <div class="ingredient-item">
+                <img src="https://cdn-icons-png.flaticon.com/512/3534/3534354.png" alt="Té Negro">
+                <p><strong>Té Negro</strong></p>
+            </div>
+            <div class="ingredient-item">
+                <img src="https://cdn-icons-png.flaticon.com/512/9123/9123284.png" alt="Yerba Mate">
+                <p><strong>Yerba Mate</strong></p>
+            </div>
+            <div class="ingredient-item">
+                <img src="https://cdn-icons-png.flaticon.com/512/1047/1047600.png" alt="BCAA">
+                <p><strong>BCAAs</strong></p>
+            </div>
+            <div class="ingredient-item">
+                <img src="https://cdn-icons-png.flaticon.com/512/628/628283.png" alt="Mandarina">
+                <p><strong>Mandarina</strong></p>
             </div>
         </div>
-    </div>
-    
-    <!-- FINAL CTA -->
-    <div class="bg-orange-600 text-white" style="background-color: #F58220;">
-        <div class="container mx-auto px-6 py-16 md:py-24 text-center">
-            <h2 class="text-3xl md:text-5xl font-bold mb-4">¿Listo para Desbloquear tu Máximo Potencial?</h2>
-            <p class="text-lg md:text-xl text-orange-100 max-w-3xl mx-auto mb-8">Cada día que pasas con fatiga es un día que no rindes al 100%. Toma el control de tu energía ahora.</p>
-            <a href="https://wa.me/56933394706?text=¡Hola!%20Estoy%20listo%20para%20comprar%20E-BOOST%20y%20dominar%20mi%20día." target="_blank" class="main-cta-btn bg-white text-orange-600 font-bold text-xl py-4 px-10 rounded-lg inline-flex items-center transform transition-transform hover:scale-105">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mr-3" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.61 15.31 3.45 16.74L2.06 21.94L7.45 20.55C8.82 21.32 10.39 21.72 12.04 21.72C17.5 21.72 21.95 17.27 21.95 11.81C21.95 6.35 17.5 2 12.04 2ZM17.46 15.53C17.21 15.82 16.26 16.3 15.92 16.44C15.58 16.58 15.11 16.59 14.77 16.45C14.43 16.31 13.62 16.03 12.66 15.13C11.51 14.04 10.82 12.72 10.63 12.43C10.44 12.14 10.58 11.97 10.72 11.83C10.84 11.71 11.01 11.5 11.19 11.29C11.37 11.08 11.42 10.94 11.51 10.75C11.61 10.56 11.56 10.37 11.47 10.18L11.01 9.03C10.82 8.56 10.63 8.63 10.47 8.63C10.31 8.64 10.02 8.71 9.77 8.96C9.52 9.21 8.94 9.72 8.94 10.79C8.94 11.86 9.79 12.82 9.93 12.96C10.07 13.1 11.57 15.54 13.98 16.5C14.54 16.73 14.96 16.89 15.29 16.98C15.82 17.11 16.46 17.06 16.88 16.65C17.36 16.19 17.65 15.53 17.65 15.53C17.65 15.53 17.52 15.24 17.46 15.53Z"/></svg>
-                PEDIR MI E-BOOST AHORA
-            </a>
+        <div class="full-ingredients">
+            <strong>Lista completa:</strong> Harina de mandarina, fibra de bamboo, sabor mandarina, ácido cítrico, Blend NRG (vitamina D, E, Magnesio, Valina, Leucina, Isoleucina), Mix vitamínico (B1, B2, B6, B3, B12, B5, Biotina, Folato, C, A, Hierro, Yodo, Zinc), Guaraná, Té Negro, Yerba Mate, Goma Xantana, Algarrobo, Stevia y Curcumina.
         </div>
-    </div>
+    </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-gray-800 text-white">
-        <div class="container mx-auto px-6 py-6 text-center text-sm">
-            <p>&copy; 2024 FWP E-Boost. Todos los derechos reservados.</p>
-            <p class="text-gray-400 mt-2">Este producto no está destinado a diagnosticar, tratar, curar o prevenir ninguna enfermedad. Consulta a tu médico antes de consumir cualquier suplemento.</p>
+    <section id="nutrition">
+        <div class="section-title">
+            <h2>Información Nutricional</h2>
+            <div class="divider"></div>
         </div>
+        <div class="nutrition-table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nutriente</th>
+                        <th>Por 100g</th>
+                        <th>Por Porción (7g)</th>
+                        <th>%DDR</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Valor Energético</td><td>385 kcal</td><td>27 kcal</td><td>1%</td></tr>
+                    <tr><td>Proteínas</td><td>21.0 mg</td><td>1.5 mg</td><td>0%</td></tr>
+                    <tr><td>Grasas Totales</td><td>0 g</td><td>0 g</td><td>0%</td></tr>
+                    <tr><td>Carbohidratos</td><td>10 g</td><td>1 g</td><td>0%</td></tr>
+                    <tr><td>Fibra Dietética</td><td>0 g</td><td>0 g</td><td>0%</td></tr>
+                    <tr><td>Vitamina C</td><td>328.4 mg</td><td>23 mg</td><td>115%</td></tr>
+                    <tr><td>Vitamina B12</td><td>27.2 ug</td><td>1.9 ug</td><td>190%</td></tr>
+                    <tr><td>Magnesio</td><td>3795 mg</td><td>265.7 mg</td><td>89%</td></tr>
+                    <tr><td>Zinc</td><td>56.4 mg</td><td>4 mg</td><td>104%</td></tr>
+                    <tr><td>Leucina</td><td>2805 mg</td><td>196.4 mg</td><td>10%</td></tr>
+                </tbody>
+            </table>
+            <p style="font-size: 0.7rem; margin-top: 15px; color: #999;">* Porciones por envase: 28. % DDR basado en un adulto promedio.</p>
+        </div>
+    </section>
+
+    <section id="preparation">
+        <div class="section-title">
+            <h2>Cómo Prepararlo</h2>
+            <div class="divider"></div>
+        </div>
+        <div class="prep-steps">
+            <div class="step">
+                <img src="PREPARATION_STEP_1_IMAGE_URL" alt="Step 1" onerror="this.src='https://cdn-icons-png.flaticon.com/512/625/625624.png'">
+                <h4>1. Agrega</h4>
+                <p>Vierte 1 sachet de E-BOOST (7g) en un vaso o botella.</p>
+            </div>
+            <div class="step">
+                <img src="PREPARATION_STEP_2_IMAGE_URL" alt="Step 2" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3100/3100566.png'">
+                <h4>2. Mezcla</h4>
+                <p>Agrega 200 ml de agua fría o a temperatura ambiente.</p>
+            </div>
+            <div class="step">
+                <img src="PREPARATION_STEP_3_IMAGE_URL" alt="Step 3" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2442/2442006.png'">
+                <h4>3. Disfruta</h4>
+                <p>Remueve por unos segundos y siente la energía natural.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="packs">
+        <div class="section-title">
+            <h2>Elige tu Pack</h2>
+            <div class="divider"></div>
+        </div>
+        <div class="packs-grid">
+            <div class="pack-card">
+                <div class="pack-name">Pack Inicio</div>
+                <div class="pack-price">$39.990</div>
+                <ul class="pack-features">
+                    <li>1 Unidad de E-BOOST</li>
+                    <li>28 Porciones totales</li>
+                    <li>Envío a todo Chile</li>
+                </ul>
+                <a href="MP_LINK_PACK_INICIO" class="btn">Comprar Ahora</a>
+            </div>
+
+            <div class="pack-card recommended">
+                <div class="badge">MÁS POPULAR</div>
+                <div class="pack-name">Pack Recomendado</div>
+                <div class="pack-price">$82.980</div>
+                <ul class="pack-features">
+                    <li>2 Unidades de E-BOOST</li>
+                    <li>56 Porciones totales</li>
+                    <li>Descuento Especial</li>
+                    <li>Envío Gratis</li>
+                </ul>
+                <a href="MP_LINK_PACK_RECOMENDADO" class="btn">Comprar Ahora</a>
+            </div>
+
+            <div class="pack-card">
+                <div class="pack-name">Máximo Ahorro</div>
+                <div class="pack-price">$122.970</div>
+                <ul class="pack-features">
+                    <li>3 Unidades de E-BOOST</li>
+                    <li>84 Porciones totales</li>
+                    <li>Mejor precio por unidad</li>
+                    <li>Envío VIP Gratis</li>
+                </ul>
+                <a href="MP_LINK_PACK_MAXIMO_AHORRO" class="btn">Comprar Ahora</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="business-opp">
+        <h3>¿Quieres generar ingresos recomendando este producto?</h3>
+        <p style="margin-bottom: 30px;">Únete a nuestra red de Embajadores FWP y emprende con nosotros.</p>
+        <a href="https://wa.me/56942781056?text=Hola%20%F0%9F%91%8B%2C%20llegu%C3%A9%20desde%20la%20p%C3%A1gina%20del%20producto.%20Me%20interesa%20saber%20m%C3%A1s%20sobre%20c%C3%B3mo%20generar%20ingresos%20recomend%C3%A1ndolo.%20%C2%BFPodr%C3%ADas%20orientarme%3F" class="whatsapp-btn">
+            Hablar con un asesor por WhatsApp
+        </a>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 FWP Chile. Formulated by Doctors. Premium Quality Ingredients.</p>
+        <p style="margin-top: 10px; max-width: 600px; margin-left: auto; margin-right: auto;">
+            Recomendado para mayores de 18 años. Mujeres embarazadas o en lactancia deben consultar a su médico. Este producto no es un medicamento.
+        </p>
     </footer>
-
-    <!-- Botón Flotante de WhatsApp -->
-    <a href="https://wa.me/56933394706?text=¡Hola!%20Me%20interesa%20el%20E-BOOST%20y%20quisiera%20más%20información." class="whatsapp-float" target="_blank">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 m-auto mt-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.61 15.31 3.45 16.74L2.06 21.94L7.45 20.55C8.82 21.32 10.39 21.72 12.04 21.72C17.5 21.72 21.95 17.27 21.95 11.81C21.95 6.35 17.5 2 12.04 2ZM17.46 15.53C17.21 15.82 16.26 16.3 15.92 16.44C15.58 16.58 15.11 16.59 14.77 16.45C14.43 16.31 13.62 16.03 12.66 15.13C11.51 14.04 10.82 12.72 10.63 12.43C10.44 12.14 10.58 11.97 10.72 11.83C10.84 11.71 11.01 11.5 11.19 11.29C11.37 11.08 11.42 10.94 11.51 10.75C11.61 10.56 11.56 10.37 11.47 10.18L11.01 9.03C10.82 8.56 10.63 8.63 10.47 8.63C10.31 8.64 10.02 8.71 9.77 8.96C9.52 9.21 8.94 9.72 8.94 10.79C8.94 11.86 9.79 12.82 9.93 12.96C10.07 13.1 11.57 15.54 13.98 16.5C14.54 16.73 14.96 16.89 15.29 16.98C15.82 17.11 16.46 17.06 16.88 16.65C17.36 16.19 17.65 15.53 17.65 15.53C17.65 15.53 17.52 15.24 17.46 15.53Z"/></svg>
-    </a>
 
 </body>
 </html>
