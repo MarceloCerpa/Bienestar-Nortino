@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bienestar Nortino | Resultados Reales</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;900&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    h1, h2, h3, .btn-font { font-family: 'Outfit', sans-serif; }
+    .text-balance { text-wrap: balance; }
+
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .hero-pattern {
+      background-color: #000;
+      background-image: radial-gradient(at 0% 0%, hsla(339,83%,49%,0.15) 0, transparent 50%), 
+                        radial-gradient(at 100% 100%, hsla(84,65%,59%,0.15) 0, transparent 50%);
+    }
+
+    .card-product {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .card-product:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-pink': '#e91e63',
+            'brand-lime': '#84cc16',
+            'brand-orange': '#f97316',
+            'brand-teal': '#26a69a',
+            'dark-main': '#0f172a',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-white text-dark-main antialiased">
+
+<!-- HEADER -->
+<header class="glass-nav sticky top-0 z-50">
+  <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <a href="#" class="flex items-center group">
+      <img src="Imagenes/logo.png" class="h-20 w-auto mr-3">
+      <span class="text-xl font-black uppercase">Bienestar Nortino</span>
+    </a>
+
+    <ul class="hidden md:flex space-x-10 text-sm font-bold uppercase text-gray-600">
+      <li><a href="#productos" class="hover:text-brand-pink">Productos</a></li>
+      <li><a href="#negocio" class="hover:text-brand-pink">Negocio</a></li>
+      <li>
+        <a href="https://wa.me/56942781056?text=Hola,%20quiero%20información" 
+        class="px-5 py-2 border-2 border-dark-main rounded-full hover:bg-dark-main hover:text-white">
+        Contacto
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero-pattern text-white pt-24 pb-32">
+  <div class="container mx-auto px-6 text-center max-w-5xl">
+
+    <h1 class="text-5xl md:text-7xl font-black mb-8 leading-[0.9]">
+      MENOS EXCUSAS,<br>MÁS RESULTADOS
+    </h1>
+
+    <p class="text-lg md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto">
+      No necesitas más fuerza de voluntad. Necesitas un sistema que te ayude a avanzar incluso cuando no tienes ganas.
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-5 justify-center">
+      <a href="https://wa.me/56942781056?text=Hola,%20quiero%20empezar%20mi%20transformación" 
+      class="bg-brand-lime text-dark-main px-10 py-5 rounded-2xl font-black text-xl hover:scale-105 transition">
+        HABLAR POR WHATSAPP
+      </a>
+      <a href="#productos" 
+      class="bg-white/10 px-10 py-5 rounded-2xl font-black text-xl border border-white/20">
+        VER PRODUCTOS
+      </a>
+    </div>
+
+    <p class="mt-8 text-sm text-gray-400">
+      Personas reales en Chile ya están usando este sistema
+    </p>
+
+  </div>
+</section>
+
+<!-- PRODUCTOS -->
+<section id="productos" class="py-24">
+  <div class="container mx-auto px-6 max-w-6xl">
+
+    <h2 class="text-4xl font-black mb-4 text-center">
+      Elige tu objetivo
+    </h2>
+    <p class="text-center text-gray-500 mb-12">Despacho en 24–48 hrs · Pago con tarjeta, débito o transferencia</p>
+
+    <!-- 24BURN+ DESTACADO ANCHO COMPLETO -->
+    <a href="/24burn-plus" class="card-product block mb-6 bg-dark-main p-6 rounded-3xl border-2 border-lime-500 relative">
+      <div class="flex items-center gap-6">
+        <img src="Imagenes/24burn+.png" class="w-20 h-20 object-contain flex-shrink-0 rounded-2xl" alt="24BURN+">
+        <div class="flex-1">
+          <div class="flex items-center gap-3 mb-1">
+            <h3 class="text-2xl font-black text-white">24BURN+</h3>
+            <span class="bg-lime-500 text-black text-xs font-bold px-2 py-1 rounded-full">🔥 NUEVO</span>
+          </div>
+          <p class="text-gray-400 text-sm mb-3">Fórmula mejorada · Alcachofa, Espárrago, Brócoli, Té Verde y más · Control de peso</p>
+          <div class="flex items-center gap-3 flex-wrap">
+            <span class="text-xl font-black text-brand-lime">$39.990</span>
+            <span class="text-sm text-gray-500 line-through">$44.990</span>
+            <span class="text-xs text-lime-300 bg-lime-900/50 border border-lime-700 px-2 py-1 rounded-full">Precio especial solo Junio</span>
+          </div>
+          <p class="text-xs text-gray-500 mt-1">o 3x $13.330 sin interés</p>
+        </div>
+        <span class="hidden md:block text-xs font-bold text-brand-lime border border-brand-lime px-2 py-1 rounded-full flex-shrink-0">Ver →</span>
+      </div>
+    </a>
+
+    <!-- GRILLA 2x2 -->
+    <div class="grid md:grid-cols-2 gap-6">
+
+      <!-- RENOVA -->
+      <a href="/renova" class="card-product bg-white p-6 rounded-3xl border flex items-center gap-6 relative">
+        <img src="Imagenes/renova.png" class="w-20 h-20 object-contain flex-shrink-0">
+        <div class="flex-1">
+          <h3 class="text-xl font-black">RENÖVA+</h3>
+          <p class="text-gray-600 text-xs mb-3">Piel, cabello y bienestar desde adentro</p>
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="text-lg font-black text-brand-pink">$49.990</span>
+            <span class="text-xs text-gray-400 bg-gray-100 px-2 py-1 rounded-full">21 porciones</span>
+          </div>
+          <p class="text-xs text-gray-400 mt-1">o 3x $16.663 sin interés</p>
+        </div>
+        <span class="absolute top-4 right-4 text-xs font-bold text-brand-pink border border-brand-pink px-2 py-1 rounded-full">Ver →</span>
+      </a>
+
+      <!-- 24BURN -->
+      <a href="/24burn" class="card-product bg-white p-6 rounded-3xl border flex items-center gap-6 relative">
+        <img src="Imagenes/24burn.png" class="w-20 h-20 object-contain flex-shrink-0">
+        <div class="flex-1">
+          <h3 class="text-xl font-black">24BURN</h3>
+          <p class="text-gray-600 text-xs mb-3">Apoyo para control de peso</p>
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="text-lg font-black text-brand-lime">$35.990</span>
+            <span class="text-xs text-gray-400 bg-gray-100 px-2 py-1 rounded-full">33 porciones</span>
+          </div>
+          <p class="text-xs text-gray-400 mt-1">o 3x $11.996 sin interés</p>
+        </div>
+        <span class="absolute top-4 right-4 text-xs font-bold text-brand-lime border border-brand-lime px-2 py-1 rounded-full">Ver →</span>
+      </a>
+
+      <!-- E-BOOST -->
+      <a href="/e-boost" class="card-product bg-white p-6 rounded-3xl border flex items-center gap-6 relative">
+        <img src="Imagenes/e-boost.png" class="w-20 h-20 object-contain flex-shrink-0">
+        <div class="flex-1">
+          <h3 class="text-xl font-black">E-BOOST</h3>
+          <p class="text-gray-600 text-xs mb-3">Energía y enfoque diario</p>
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="text-lg font-black text-brand-orange">$39.990</span>
+            <span class="text-xs text-gray-400 bg-gray-100 px-2 py-1 rounded-full">28 porciones</span>
+          </div>
+          <p class="text-xs text-gray-400 mt-1">o 3x $13.330 sin interés</p>
+        </div>
+        <span class="absolute top-4 right-4 text-xs font-bold text-brand-orange border border-brand-orange px-2 py-1 rounded-full">Ver →</span>
+      </a>
+
+      <!-- LIV -->
+      <a href="/liv" class="card-product bg-white p-6 rounded-3xl border flex items-center gap-6 relative">
+        <img src="Imagenes/liv.png" class="w-20 h-20 object-contain flex-shrink-0">
+        <div class="flex-1">
+          <h3 class="text-xl font-black">LIV</h3>
+          <p class="text-gray-600 text-xs mb-3">Digestión y bienestar</p>
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="text-lg font-black text-brand-teal">$49.990</span>
+            <span class="text-xs text-gray-400 bg-gray-100 px-2 py-1 rounded-full">28 porciones</span>
+          </div>
+          <p class="text-xs text-gray-400 mt-1">o 3x $16.663 sin interés</p>
+        </div>
+        <span class="absolute top-4 right-4 text-xs font-bold text-brand-teal border border-brand-teal px-2 py-1 rounded-full">Ver →</span>
+      </a>
+
+    </div>
+
+    <!-- CTA COMBOS -->
+    <div class="mt-12 bg-dark-main text-white rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <h3 class="text-2xl font-black mb-1">¿Quieres resultados más rápidos?</h3>
+        <p class="text-gray-400">Combina productos y acelera tu proceso. Los combos tienen descuento especial.</p>
+      </div>
+      <a href="/combos" class="bg-brand-lime text-dark-main px-8 py-4 rounded-2xl font-black text-lg whitespace-nowrap hover:scale-105 transition">
+        VER COMBOS
+      </a>
+    </div>
+
+    <!-- CTA AYUDA -->
+    <div class="text-center mt-12">
+      <p class="text-lg mb-6 text-gray-500">¿No sabes cuál elegir?</p>
+      <a href="https://wa.me/56942781056?text=Hola,%20necesito%20ayuda%20para%20elegir" 
+      class="bg-brand-pink text-white px-10 py-5 rounded-2xl font-black text-xl hover:scale-105 transition">
+        TE AYUDO POR WHATSAPP
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- NEGOCIO -->
+<section id="negocio" class="py-24 bg-dark-main text-white text-center">
+  <div class="container mx-auto px-6 max-w-4xl">
+
+    <h2 class="text-4xl font-black mb-8">
+      Haz que tu salud pague tus cuentas
+    </h2>
+
+    <p class="text-xl text-gray-400 mb-10">
+      Consume con descuento y genera ingresos recomendando lo que usas.
+    </p>
+
+    <a href="https://wa.me/56942781056?text=Hola,%20quiero%20información%20del%20negocio" 
+    class="bg-white text-dark-main px-10 py-5 rounded-2xl font-black text-xl">
+      CONOCER EL NEGOCIO
+    </a>
+
+  </div>
+</section>
+
+</main>
+
+<!-- BOTÓN FLOTANTE -->
+<a href="https://wa.me/56942781056?text=Hola,%20quiero%20información" 
+class="fixed bottom-6 right-6 bg-green-500 text-white px-6 py-4 rounded-full shadow-lg font-bold z-50">
+  WhatsApp
+</a>
+
+</body>
+</html>
