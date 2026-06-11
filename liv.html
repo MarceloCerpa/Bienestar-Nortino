@@ -9,14 +9,14 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="LIV | Digestión y bienestar · Bienestar Nortino">
   <meta property="og:description" content="Menos hinchazón, mejor digestión. 28 porciones. Entrega en 24-48 hrs en Antofagasta.">
-  <meta property="og:image" content="https://www.bienestarnortino.com/Imagenes/og-liv.jpg">
+  <meta property="og:image" content="https://www.bienestarnortino.com/Imagenes/og-liv.png">
   <meta property="og:url" content="https://www.bienestarnortino.com/liv">
   <meta property="og:site_name" content="Bienestar Nortino">
   <meta property="og:locale" content="es_CL">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="LIV | Digestión y bienestar · Bienestar Nortino">
   <meta name="twitter:description" content="Menos hinchazón, mejor digestión. 28 porciones. Entrega en 24-48 hrs en Antofagasta.">
-  <meta name="twitter:image" content="https://www.bienestarnortino.com/Imagenes/og-liv.jpg">
+  <meta name="twitter:image" content="https://www.bienestarnortino.com/Imagenes/og-liv.png">
   <!-- End SEO -->
   <title>LIV | Digestión y bienestar · Bienestar Nortino</title>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -26,13 +26,19 @@
   <style>
     body { font-family: 'Inter', sans-serif; }
     h1, h2, h3 { font-family: 'Outfit', sans-serif; }
+    .card-pack { transition: all 0.2s ease; cursor: pointer; }
+    .card-pack:hover { transform: translateY(-4px); }
+    .card-pack.selected { border-color: #26a69a; box-shadow: 0 0 0 2px #26a69a; }
     .btn-main { transition: transform 0.2s ease; }
     .btn-main:hover { transform: scale(1.03); }
-    .avatar-initials { width: 40px; height: 40px; border-radius: 50%; background-color: #1f2937; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.875rem; flex-shrink: 0; }
-    .tachado { text-decoration: line-through; }
-    @keyframes pulse-soft { 0%,100%{opacity:1} 50%{opacity:.7} }
-    .pulse { animation: pulse-soft 2s infinite; }
+    .avatar-img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+    .avatar-initials { width: 40px; height: 40px; border-radius: 50%; background-color: #134e4a; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.875rem; flex-shrink: 0; }
+    .teal-400 { color: #26a69a; }
+    .bg-teal { background-color: #26a69a; }
+    .border-teal { border-color: #26a69a; }
+    .bg-teal-dark { background-color: #0f3d3a; }
   </style>
+
   <!-- Meta Pixel -->
   <script>
   !function(f,b,e,v,n,t,s)
@@ -57,7 +63,7 @@
   <nav class="container mx-auto px-6 py-4 flex justify-between items-center max-w-5xl">
     <a href="/" class="text-sm font-bold text-gray-400 hover:text-white">← Bienestar Nortino</a>
     <a href="https://wa.me/56942781056?text=Hola,%20quiero%20LIV"
-       class="bg-teal-500 text-white px-5 py-2 rounded-full text-sm font-bold btn-main">
+       class="text-white px-5 py-2 rounded-full text-sm font-bold btn-main bg-teal">
       Pedir por WhatsApp
     </a>
   </nav>
@@ -65,7 +71,7 @@
 
 <!-- HERO -->
 <section class="pt-20 pb-10 px-6 text-center max-w-4xl mx-auto">
-  <span class="inline-block bg-teal-900/50 text-teal-300 border-teal-800 text-xs font-bold px-4 py-2 rounded-full mb-6 border">
+  <span class="inline-block text-xs font-bold px-4 py-2 rounded-full mb-6 border bg-teal-dark border-teal" style="color:#5eead4">
     🌿 Bienestar desde adentro
   </span>
   <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
@@ -74,112 +80,114 @@
   <p class="text-xl text-gray-400 mb-10 max-w-xl mx-auto">
     Hinchazón, pesadez o malestar después de comer no es normal. Tu sistema digestivo puede funcionar mucho mejor.
   </p>
-  <img src="Imagenes/liv.png" class="w-56 mx-auto mb-6 drop-shadow-2xl" alt="LIV">
-  <div class="inline-flex items-center gap-2 bg-gray-900 border border-gray-700 rounded-full px-5 py-2 text-sm text-gray-300">
-    <span class="text-teal-400">🛡️</span>
-    Satisfacción garantizada o te devolvemos tu dinero
-  </div>
+  <img src="Imagenes/liv.png" class="w-56 mx-auto mb-10 drop-shadow-2xl">
 </section>
 
 <!-- CARD DE COMPRA -->
 <section class="px-6 pb-16 max-w-2xl mx-auto">
   <div class="bg-gray-900 rounded-3xl border border-gray-700 overflow-hidden">
-    <div class="bg-gradient-to-r from-teal-900/60 to-black p-6 border-b border-gray-700">
+
+    <div class="p-6 border-b border-gray-700" style="background: linear-gradient(to right, #0f3d3a99, black)">
       <h2 class="text-2xl font-black mb-1">LIV</h2>
       <p class="text-gray-400 text-sm">Digestión y bienestar · 28 porciones · 1 scoop al día</p>
     </div>
+
     <div class="p-6">
+
+      <!-- BENEFICIOS -->
       <div class="grid grid-cols-2 gap-3 mb-6">
-        <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-teal-400">✓</span> Mejor digestión</div>
-        <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-teal-400">✓</span> Menos hinchazón</div>
-        <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-teal-400">✓</span> Bienestar general</div>
-        <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-teal-400">✓</span> Fácil de tomar</div>
+        <div class="flex items-center gap-2 text-sm text-gray-300"><span class="teal-400">✓</span> Mejor digestión</div>
+        <div class="flex items-center gap-2 text-sm text-gray-300"><span class="teal-400">✓</span> Menos hinchazón</div>
+        <div class="flex items-center gap-2 text-sm text-gray-300"><span class="teal-400">✓</span> Bienestar general</div>
+        <div class="flex items-center gap-2 text-sm text-gray-300"><span class="teal-400">✓</span> Fácil de tomar</div>
       </div>
+
       <hr class="border-gray-700 mb-6">
+
+      <!-- VALUE STACK -->
       <div class="mb-6">
-        <p class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">Hoy tu pedido incluye</p>
+        <p class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-3">¿Qué incluye tu pedido?</p>
         <div class="space-y-3">
-          <div class="flex justify-between items-center">
-            <span class="flex items-center gap-2 text-sm text-gray-300">
-              <span class="text-teal-400">📦</span> LIV · 28 porciones
-            </span>
-            <span class="text-white font-bold text-sm">$49.990</span>
+          <div class="flex justify-between items-center text-sm">
+            <span class="flex items-center gap-2 text-gray-300"><span class="teal-400">📦</span> LIV (28 porciones)</span>
+            <span class="text-gray-300 font-bold">$49.990</span>
           </div>
-          <div class="flex justify-between items-center">
-            <span class="flex items-center gap-2 text-sm text-gray-300">
-              <span class="text-teal-400">💬</span> Asesoría personalizada 1:1
-            </span>
-            <div class="text-right">
-              <span class="text-gray-500 text-xs tachado">$15.000</span>
-              <span class="text-teal-400 font-bold text-xs ml-1">Gratis</span>
-            </div>
+          <div class="flex justify-between items-center text-sm">
+            <span class="flex items-center gap-2 text-gray-300"><span class="teal-400">💬</span> Asesoría personalizada WhatsApp</span>
+            <span class="font-bold text-xs teal-400">Gratis</span>
           </div>
-          <div class="flex justify-between items-center">
-            <span class="flex items-center gap-2 text-sm text-gray-300">
-              <span class="text-teal-400">📋</span> Guía de hábitos digestivos
-            </span>
-            <div class="text-right">
-              <span class="text-gray-500 text-xs tachado">$12.000</span>
-              <span class="text-teal-400 font-bold text-xs ml-1">Gratis</span>
-            </div>
+          <div class="flex justify-between items-center text-sm">
+            <span class="flex items-center gap-2 text-gray-300"><span class="teal-400">📋</span> Guía de uso + hábitos digestivos</span>
+            <span class="font-bold text-xs teal-400">Gratis</span>
           </div>
-          <div class="flex justify-between items-center">
-            <span class="flex items-center gap-2 text-sm text-gray-300">
-              <span class="text-teal-400">📋</span> Asesoría personalizada 1:1
-            </span>
-            <div class="text-right">
-              <span class="text-gray-500 text-xs tachado">$15.000</span>
-              <span class="text-teal-400 font-bold text-xs ml-1">Gratis</span>
-            </div>
-          </div>
-          <div class="flex justify-between items-center">
-            <span class="flex items-center gap-2 text-sm text-gray-300">
-              <span class="text-teal-400">📋</span> Despacho en 24–48 hrs
-            </span>
-            <div class="text-right">
-              <span class="text-gray-500 text-xs tachado">$3.990</span>
-              <span class="text-teal-400 font-bold text-xs ml-1">Gratis</span>
-            </div>
-          </div>
-        </div>
-        <div class="mt-4 pt-4 border-t border-gray-700">
-          <div class="flex justify-between items-center mb-1">
-            <span class="text-xs text-gray-500">Valor total del paquete</span>
-            <span class="text-gray-500 text-sm tachado">$80.980</span>
-          </div>
-          <div class="flex justify-between items-center">
-            <span class="text-sm font-bold text-white">Tu precio hoy</span>
-            <span class="text-2xl font-black text-teal-400">$49.990</span>
-          </div>
-          <p class="text-xs text-gray-500 mt-1 text-right">o 3x $16.663 sin interés · Mercado Pago</p>
         </div>
       </div>
-      <div class="mb-3">
-        <a href="https://wa.me/56942781056?text=Hola,%20quiero%20pedir%20LIV%20(%2449.990)"
-           class="btn-main flex items-center justify-center gap-2 w-full bg-teal-500 text-white py-4 rounded-2xl font-black text-lg">
+
+      <hr class="border-gray-700 mb-6">
+
+      <!-- PACKS -->
+      <div class="mb-6">
+        <p class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">Elige tu pack</p>
+        <p class="text-xs text-gray-500 mb-4">Los resultados se ven en 60–90 días. Más unidades = mayor descuento oficial.</p>
+        <div class="grid grid-cols-3 gap-3">
+
+          <div class="card-pack bg-gray-800 border-2 border-gray-700 rounded-2xl p-4 text-center"
+               onclick="selectPack(this, 49990, '1 unidad · Precio base')">
+            <p class="text-xs text-gray-400 mb-1">1 unidad</p>
+            <p class="text-base font-black">$49.990</p>
+            <p class="text-xs text-gray-500 mt-1">Precio base</p>
+          </div>
+
+          <div class="card-pack bg-gray-800 border-2 border-teal rounded-2xl p-4 text-center relative selected"
+               onclick="selectPack(this, 139972, 'Pack 4 unidades · 30% descuento')">
+            <span class="absolute -top-3 left-1/2 -translate-x-1/2 text-white text-xs font-bold px-2 py-1 rounded-full whitespace-nowrap bg-teal">Popular</span>
+            <p class="text-xs text-gray-400 mb-1">Pack 4</p>
+            <p class="text-base font-black">$139.972</p>
+            <p class="text-xs mt-1 font-bold teal-400">30% off</p>
+          </div>
+
+          <div class="card-pack bg-gray-800 border-2 border-gray-700 rounded-2xl p-4 text-center"
+               onclick="selectPack(this, 233935, 'Pack 7 unidades · 35% descuento')">
+            <p class="text-xs text-gray-400 mb-1">Pack 7</p>
+            <p class="text-base font-black">$233.935</p>
+            <p class="text-xs text-green-400 mt-1 font-bold">35% off</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PRECIO Y CUOTAS -->
+      <div class="mb-4">
+        <div class="flex items-baseline gap-3 mb-1">
+          <span class="text-3xl font-black teal-400" id="price-display">$139.972</span>
+          <span class="text-sm text-gray-500" id="pack-label">Pack 4 unidades · 30% descuento</span>
+        </div>
+        <p class="text-sm text-gray-400">o <span class="text-white font-bold" id="cuotas-display">3x $46.657</span> sin interés con <span class="text-white font-bold">Mercado Pago</span></p>
+      </div>
+
+      <!-- BOTÓN -->
+      <div class="mb-4">
+        <a id="btn-whatsapp"
+           href="https://wa.me/56942781056?text=Hola%2C%20quiero%20Pack%204%20unidades%20%C2%B7%2030%25%20descuento%20de%20LIV%20(%24139.972)"
+           class="btn-main flex items-center justify-center gap-2 w-full text-white py-4 rounded-2xl font-black text-lg bg-teal">
           💬 Quiero este pack
         </a>
       </div>
-      <div class="mb-4">
-        <button id="btn-pagar-mp"
-          onclick="pagarConMP(49990, 'LIV · Bienestar Nortino')"
-          class="btn-main flex items-center justify-center gap-2 w-full bg-blue-600 hover:bg-blue-500 text-white py-4 rounded-2xl font-black text-lg transition-colors">
-          💳 Pagar ahora con Mercado Pago
-        </button>
-      </div>
-      <div class="flex items-center justify-center gap-2 text-xs text-gray-500 mb-4">
-        <span>🔒</span><span>Pago seguro ·</span>
+
+      <!-- MÉTODOS DE PAGO -->
+      <div class="flex items-center justify-center gap-2 text-xs text-gray-500">
+        <span>🔒</span>
+        <span>Pago seguro con</span>
         <span class="bg-blue-600 text-white px-2 py-0.5 rounded font-bold text-xs">MP</span>
         <span>Débito · Crédito · WebPay · Cuotas</span>
       </div>
-      <div class="bg-teal-900/20 border-teal-800/50 border rounded-xl p-4 text-center">
-        <p class="text-teal-400 font-black text-sm mb-1">🛡️ Garantía de satisfacción</p>
-        <p class="text-gray-400 text-xs">Si en 30 días no notas resultados, te devolvemos tu dinero. Sin preguntas, sin letra chica.</p>
-      </div>
+
     </div>
   </div>
+
+  <!-- URGENCIA -->
   <div class="mt-4 bg-amber-900/30 border border-amber-700 rounded-xl p-4 flex items-center gap-3">
-    <span class="text-amber-400 text-xl pulse">⏰</span>
+    <span class="text-amber-400 text-xl">⏰</span>
     <p class="text-sm text-gray-300"><strong class="text-white">Disponible en Antofagasta.</strong> Despacho en 24–48 hrs. Pide hoy y empieza esta semana.</p>
   </div>
 </section>
@@ -188,7 +196,7 @@
 <section class="py-16 text-center border-t border-gray-800 px-6">
   <p class="text-2xl md:text-3xl font-black max-w-3xl mx-auto leading-tight">
     Cuando tu digestión funciona bien,<br>
-    <span class="text-teal-400">tu cuerpo entero lo agradece.</span>
+    <span class="teal-400">tu cuerpo entero lo agradece.</span>
   </p>
 </section>
 
@@ -196,7 +204,6 @@
 <section class="py-20 px-6 text-center bg-gray-900">
   <h2 class="text-4xl font-black mb-12">Lo que vas a notar</h2>
   <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-
     <div class="bg-black p-8 rounded-2xl border border-gray-800">
       <p class="text-5xl mb-4">🌿</p>
       <h3 class="text-lg font-black mb-2">Mejor digestión</h3>
@@ -219,19 +226,18 @@
 <section class="py-20 px-6 text-center max-w-3xl mx-auto">
   <h2 class="text-4xl font-black mb-10">Cómo usarlo</h2>
   <div class="grid md:grid-cols-3 gap-6">
-
     <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800">
-      <p class="text-3xl font-black text-teal-400 mb-3">01</p>
+      <p class="text-3xl font-black teal-400 mb-3">01</p>
       <p class="font-bold mb-1">1 scoop al día</p>
       <p class="text-sm text-gray-400">Mézclalo con agua o jugo. Simple y rápido.</p>
     </div>
     <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800">
-      <p class="text-3xl font-black text-teal-400 mb-3">02</p>
+      <p class="text-3xl font-black teal-400 mb-3">02</p>
       <p class="font-bold mb-1">Úsalo todos los días</p>
       <p class="text-sm text-gray-400">La constancia hace la diferencia. Intégralo a tu rutina.</p>
     </div>
     <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800">
-      <p class="text-3xl font-black text-teal-400 mb-3">03</p>
+      <p class="text-3xl font-black teal-400 mb-3">03</p>
       <p class="font-bold mb-1">Nota los cambios</p>
       <p class="text-sm text-gray-400">Digestión más liviana en 2 a 4 semanas de uso continuo.</p>
     </div>
@@ -243,26 +249,19 @@
   <div class="max-w-4xl mx-auto">
     <h2 class="text-4xl font-black text-center mb-12">Lo que dicen en Antofagasta</h2>
     <div class="grid md:grid-cols-2 gap-6">
-
       <div class="bg-black rounded-2xl p-6 border border-gray-800">
         <div class="flex items-center gap-3 mb-4">
           <div class="avatar-initials">PM</div>
-          <div>
-            <p class="font-bold text-sm">Pamela M.</p>
-            <p class="text-yellow-400 text-xs">★★★★★</p>
-          </div>
+          <div><p class="font-bold text-sm">Pamela M.</p><p class="text-yellow-400 text-xs">★★★★★</p></div>
         </div>
         <p class="text-gray-400 text-sm leading-relaxed">"Siempre terminaba hinchada después de almorzar. Con LIV eso desapareció en pocas semanas. Es parte de mi rutina diaria."</p>
       </div>
       <div class="bg-black rounded-2xl p-6 border border-gray-800">
         <div class="flex items-center gap-3 mb-4">
           <div class="avatar-initials">AL</div>
-          <div>
-            <p class="font-bold text-sm">Andrés L.</p>
-            <p class="text-yellow-400 text-xs">★★★★★</p>
-          </div>
+          <div><p class="font-bold text-sm">Andrés L.</p><p class="text-yellow-400 text-xs">★★★★★</p></div>
         </div>
-        <p class="text-gray-400 text-sm leading-relaxed">"No creía que algo así fuera a funcionar, pero el cambio en mi digestión fue notorio. Ya voy por el segundo mes."</p>
+        <p class="text-gray-400 text-sm leading-relaxed">"No creía que algo así fuera a funcionar, pero el cambio en mi digestión fue notorio. Pedí el pack de 4 y ya voy por el segundo."</p>
       </div>
     </div>
   </div>
@@ -278,15 +277,15 @@
     </div>
     <div class="border border-gray-800 rounded-xl p-5">
       <p class="font-bold mb-2">¿Puedo pagar en cuotas?</p>
-      <p class="text-gray-400 text-sm">Sí. Con Mercado Pago puedes pagar en 3 cuotas sin interés. También aceptamos WebPay, débito y transferencia.</p>
+      <p class="text-gray-400 text-sm">Sí. Con Mercado Pago puedes pagar en 3 cuotas sin interés con tarjeta de crédito o débito. También aceptamos WebPay y transferencia.</p>
     </div>
     <div class="border border-gray-800 rounded-xl p-5">
       <p class="font-bold mb-2">¿En cuánto tiempo veo resultados?</p>
-      <p class="text-gray-400 text-sm">La mayoría nota cambios entre 4 y 8 semanas de uso constante. Recuerda que tienes garantía de 30 días.</p>
+      <p class="text-gray-400 text-sm">La mayoría nota mejoras en la digestión en las primeras 2 a 4 semanas de uso constante.</p>
     </div>
     <div class="border border-gray-800 rounded-xl p-5">
-      <p class="font-bold mb-2">¿Cómo funciona la garantía?</p>
-      <p class="text-gray-400 text-sm">Si en 30 días de uso no notas ningún resultado, te devolvemos tu dinero. Solo escríbenos por WhatsApp.</p>
+      <p class="font-bold mb-2">¿Qué pasa si quiero más información antes de comprar?</p>
+      <p class="text-gray-400 text-sm">Escríbeme directo por WhatsApp y te explico todo según tu objetivo. Sin compromiso.</p>
     </div>
   </div>
 </section>
@@ -294,62 +293,43 @@
 <!-- CTA FINAL -->
 <section class="py-20 px-6 text-center bg-gray-900 border-t border-gray-800">
   <h2 class="text-4xl font-black mb-4">Tu cuerpo merece sentirse bien.</h2>
-  <p class="text-2xl text-teal-400 font-black mb-8">Empieza hoy.</p>
+  <p class="text-2xl font-black mb-8 teal-400">Empieza hoy.</p>
   <a href="https://wa.me/56942781056?text=Hola,%20quiero%20LIV"
-     class="btn-main inline-block bg-teal-500 text-white px-14 py-6 rounded-2xl font-black text-2xl mb-4">
+     class="btn-main inline-block text-white px-14 py-6 rounded-2xl font-black text-2xl mb-4 bg-teal">
     💬 QUIERO EMPEZAR HOY
   </a>
-  <p class="text-gray-500 text-sm mt-4">Despacho 24–48 hrs · Garantía 30 días · Pago seguro</p>
-</section>
-
-<!-- SECCIÓN EMPRENDEDOR -->
-<section class="py-20 px-6 border-t border-gray-800">
-  <div class="max-w-2xl mx-auto text-center">
-    <span class="inline-block bg-white/5 text-gray-400 text-xs font-bold px-4 py-2 rounded-full mb-6 border border-gray-700">
-      Para distribuidores
-    </span>
-    <h2 class="text-3xl font-black mb-4">¿Quieres vender LIV?</h2>
-    <p class="text-gray-400 mb-8">Si te interesa generar ingresos distribuyendo nuestros productos, escríbenos. Tenemos packs especiales con descuentos exclusivos para emprendedores.</p>
-    <a href="https://wa.me/56942781056?text=Hola,%20quiero%20información%20sobre%20como%20distribuir%20LIV"
-       class="btn-main inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white px-8 py-4 rounded-2xl font-black text-base">
-      🚀 Quiero ser distribuidor
-    </a>
-  </div>
+  <p class="text-gray-500 text-sm mt-4">Despacho en 24–48 hrs · Pago seguro</p>
 </section>
 
 <!-- BOTÓN FLOTANTE -->
-<a href="https://wa.me/56942781056?text=Hola,%20quiero%20información%20sobre%20LIV"
-   class="fixed bottom-6 right-6 flex items-center gap-2 bg-green-500 hover:bg-green-400 text-white px-5 py-4 rounded-full font-bold shadow-xl z-50 transition-all hover:scale-105"
-   aria-label="Contactar por WhatsApp">
-  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-  WhatsApp
-</a>
+
 
 <script>
-async function pagarConMP(precio, descripcion) {
-  const btn = document.getElementById('btn-pagar-mp');
-  const originalText = btn.innerHTML;
-  btn.innerHTML = '⏳ Procesando...';
-  btn.disabled = true;
-  try {
-    const res = await fetch('/.netlify/functions/crear-pago', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ precio, descripcion })
+  function selectPack(el, price, label) {
+    document.querySelectorAll('.card-pack').forEach(function(c) {
+      c.classList.remove('selected', 'border-teal');
+      c.classList.add('border-gray-700');
     });
-    const data = await res.json();
-    if (data.init_point) {
-      window.location.href = data.init_point;
-    } else {
-      throw new Error('Sin init_point');
-    }
-  } catch(e) {
-    btn.innerHTML = originalText;
-    btn.disabled = false;
-    alert('Hubo un problema. Por favor escríbenos por WhatsApp.');
+    el.classList.add('selected', 'border-teal');
+    el.classList.remove('border-gray-700');
+    document.getElementById('price-display').textContent = '$' + price.toLocaleString('es-CL');
+    document.getElementById('pack-label').textContent = label;
+    document.getElementById('cuotas-display').textContent = '3x $' + Math.round(price / 3).toLocaleString('es-CL');
+    var msg = 'Hola, quiero ' + label + ' de LIV ($' + price.toLocaleString('es-CL') + ')';
+    document.getElementById('btn-whatsapp').href = 'https://wa.me/56942781056?text=' + encodeURIComponent(msg);
   }
-}
 </script>
+
+
+<!-- WhatsApp flotante contextualizado -->
+<a href="https://wa.me/56942781056?text=Hola%2C%20quiero%20información%20sobre%20LIV"
+   class="fixed bottom-6 right-6 flex items-center gap-2 bg-green-500 hover:bg-green-400 text-white px-5 py-4 rounded-full font-bold shadow-xl z-50 transition-all hover:scale-105"
+   aria-label="Contactar por WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+  WhatsApp
+</a>
 
 </body>
 </html>
