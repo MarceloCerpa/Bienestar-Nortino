@@ -8,15 +8,15 @@
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="website">
   <meta property="og:title" content="24BURN+ | Rendimiento y quema de grasa · Bienestar Nortino">
-  <meta property="og:description" content="Fórmula avanzada para quienes entrenan. Precio especial Junio $39.990. Entrega en 24-48 hrs en Antofagasta.">
-  <meta property="og:image" content="https://www.bienestarnortino.com/Imagenes/og-24burn-plus.png">
+  <meta property="og:description" content="Fórmula avanzada para quienes entrenan. Activa metabolismo, potencia rendimiento y acelera recuperación. Precio especial Junio $39.990.">
+  <meta property="og:image" content="https://www.bienestarnortino.com/Imagenes/og-24burn-plus.jpg">
   <meta property="og:url" content="https://www.bienestarnortino.com/24burn-plus">
   <meta property="og:site_name" content="Bienestar Nortino">
   <meta property="og:locale" content="es_CL">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="24BURN+ | Rendimiento y quema de grasa · Bienestar Nortino">
-  <meta name="twitter:description" content="Fórmula avanzada para quienes entrenan. Precio especial Junio $39.990.">
-  <meta name="twitter:image" content="https://www.bienestarnortino.com/Imagenes/og-24burn-plus.png">
+  <meta name="twitter:description" content="Fórmula avanzada para quienes entrenan. Activa metabolismo, potencia rendimiento y acelera recuperación. Precio especial Junio $39.990.">
+  <meta name="twitter:image" content="https://www.bienestarnortino.com/Imagenes/og-24burn-plus.jpg">
   <!-- End SEO -->
   <title>24BURN+ | Rendimiento y quema de grasa · Bienestar Nortino</title>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -26,13 +26,15 @@
   <style>
     body { font-family: 'Inter', sans-serif; }
     h1, h2, h3 { font-family: 'Outfit', sans-serif; }
+    .card-pack { transition: all 0.2s ease; cursor: pointer; }
+    .card-pack:hover { transform: translateY(-4px); }
+    .card-pack.selected { border-color: #84cc16; box-shadow: 0 0 0 2px #84cc16; }
     .btn-main { transition: transform 0.2s ease; }
     .btn-main:hover { transform: scale(1.03); }
-    .avatar-initials { width: 40px; height: 40px; border-radius: 50%; background-color: #1a2e05; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.875rem; flex-shrink: 0; }
-    .tachado { text-decoration: line-through; }
-    @keyframes pulse-soft { 0%,100%{opacity:1} 50%{opacity:.7} }
-    .pulse { animation: pulse-soft 2s infinite; }
+    .avatar-initials { width: 40px; height: 40px; border-radius: 50%; background-color: #365314; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.875rem; flex-shrink: 0; }
+    .avatar-img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
   </style>
+
   <!-- Meta Pixel -->
   <script>
   !function(f,b,e,v,n,t,s)
@@ -49,6 +51,9 @@
   <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=1024648849532029&ev=PageView&noscript=1"/></noscript>
   <!-- End Meta Pixel -->
+<script>
+    const mp = new MercadoPago('APP_USR-5026f11e-c82a-497e-a749-1baac0961e65', { locale: 'es-CL' });
+  </script>
 </head>
 <body class="bg-black text-white">
 
@@ -65,12 +70,12 @@
 
 <!-- HERO -->
 <section class="pt-16 pb-10 px-6 text-center max-w-4xl mx-auto">
-  <div class="flex justify-center gap-2 mb-5 flex-wrap">
+  <div class="flex justify-center gap-2 mb-5">
     <span class="inline-block bg-lime-900/50 text-lime-300 text-xs font-bold px-4 py-2 rounded-full border border-lime-800">
       🔥 NUEVO · Lanzamiento Junio 2026
     </span>
-    <span class="inline-block bg-lime-500 text-black text-xs font-bold px-3 py-2 rounded-full pulse">
-      Precio especial $39.990 solo Junio
+    <span class="inline-block bg-lime-500 text-black text-xs font-bold px-3 py-2 rounded-full">
+      Precio especial $39.990
     </span>
   </div>
   <h1 class="text-5xl md:text-7xl font-black mb-4 leading-tight">
@@ -79,11 +84,7 @@
   <p class="text-xl text-gray-400 mb-8 max-w-xl mx-auto">
     Fórmula diseñada para quienes entrenan. Activa tu metabolismo, potencia tu rendimiento y acelera tu recuperación — todo en un sachet.
   </p>
-  <img src="Imagenes/24burn+.png" class="w-52 mx-auto mb-6 drop-shadow-2xl" alt="24BURN+">
-  <div class="inline-flex items-center gap-2 bg-gray-900 border border-gray-700 rounded-full px-5 py-2 text-sm text-gray-300">
-    <span class="text-lime-400">🛡️</span>
-    Satisfacción garantizada o te devolvemos tu dinero
-  </div>
+  <img src="Imagenes/24burn+.png" class="w-52 mx-auto mb-8 drop-shadow-2xl" alt="24BURN+">
 </section>
 
 <!-- CARD DE COMPRA -->
@@ -100,7 +101,7 @@
 
     <div class="p-6">
 
-      <!-- BENEFICIOS -->
+      <!-- BENEFICIOS PRINCIPALES -->
       <div class="grid grid-cols-2 gap-3 mb-6">
         <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-lime-400">✓</span> Activa el metabolismo</div>
         <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-lime-400">✓</span> Potencia el rendimiento</div>
@@ -110,7 +111,7 @@
         <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-lime-400">✓</span> Formato sachet práctico</div>
       </div>
 
-      <!-- INGREDIENTES -->
+      <!-- INGREDIENTES DESTACADOS -->
       <div class="mb-6 bg-lime-900/20 border border-lime-800/40 rounded-xl p-4">
         <p class="text-xs font-bold text-lime-400 uppercase tracking-widest mb-3">Ingredientes clave</p>
         <div class="grid grid-cols-3 gap-2">
@@ -129,97 +130,143 @@
 
       <hr class="border-gray-700 mb-6">
 
-      <!-- VALUE STACK -->
+            <!-- VALUE STACK -->
       <div class="mb-6">
-        <p class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">Hoy tu pedido incluye</p>
-        <div class="space-y-3">
+        <p class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-3">Hoy tu pedido incluye</p>
+        <div class="divide-y divide-gray-800">
 
-          <div class="flex justify-between items-center">
+          <div class="flex justify-between items-center py-2">
             <span class="flex items-center gap-2 text-sm text-gray-300">
-              <span class="text-lime-400">📦</span> 24BURN+ Doypack · 28 porciones
+              <span class="text-lime-400">📦</span> 24BURN+ Doypack · 28 porciones · Té Limón
             </span>
-            <span class="text-white font-bold text-sm">$39.990</span>
+            <span class="text-white font-bold text-sm shrink-0 ml-2">$39.990</span>
           </div>
 
-          <div class="flex justify-between items-center">
+          <div class="flex justify-between items-center py-2">
             <span class="flex items-center gap-2 text-sm text-gray-300">
-              <span class="text-lime-400">💬</span> Asesoría personalizada 1:1
+              <span class="text-lime-400">📋</span> Guía de Rendimiento + Recuperación 8 semanas
             </span>
-            <div class="text-right">
-              <span class="text-gray-500 text-xs tachado">$15.000</span>
+            <div class="text-right shrink-0 ml-2">
+              <span class="text-gray-500 text-xs line-through">$19.900</span>
               <span class="text-lime-400 font-bold text-xs ml-1">Gratis</span>
             </div>
           </div>
 
-          <div class="flex justify-between items-center">
+          <div class="flex justify-between items-center py-2">
             <span class="flex items-center gap-2 text-sm text-gray-300">
-              <span class="text-lime-400">📋</span> Guía de entrenamiento + nutrición
+              <span class="text-lime-400">🏋️</span> Plan de entrenamiento específico para atletas
             </span>
-            <div class="text-right">
-              <span class="text-gray-500 text-xs tachado">$12.000</span>
+            <div class="text-right shrink-0 ml-2">
+              <span class="text-gray-500 text-xs line-through">$15.000</span>
               <span class="text-lime-400 font-bold text-xs ml-1">Gratis</span>
             </div>
           </div>
 
-          <div class="flex justify-between items-center">
+          <div class="flex justify-between items-center py-2">
             <span class="flex items-center gap-2 text-sm text-gray-300">
-              <span class="text-lime-400">🚚</span> Despacho en 24–48 hrs
+              <span class="text-lime-400">💬</span> Seguimiento personalizado 30 días WhatsApp
             </span>
-            <div class="text-right">
-              <span class="text-gray-500 text-xs tachado">$3.990</span>
+            <div class="text-right shrink-0 ml-2">
+              <span class="text-gray-500 text-xs line-through">$25.000</span>
+              <span class="text-lime-400 font-bold text-xs ml-1">Gratis</span>
+            </div>
+          </div>
+
+          <div class="flex justify-between items-center py-2">
+            <span class="flex items-center gap-2 text-sm text-gray-300">
+              <span class="text-lime-400">🚚</span> Despacho en 24–48 hrs Antofagasta
+            </span>
+            <div class="text-right shrink-0 ml-2">
+              <span class="text-gray-500 text-xs line-through">$4.990</span>
               <span class="text-lime-400 font-bold text-xs ml-1">Gratis</span>
             </div>
           </div>
 
         </div>
 
-        <!-- PRECIO FINAL -->
-        <div class="mt-4 pt-4 border-t border-gray-700">
+        <!-- TOTAL PERCIBIDO -->
+        <div class="mt-4 pt-3 border-t border-gray-700">
           <div class="flex justify-between items-center mb-1">
             <span class="text-xs text-gray-500">Valor total del paquete</span>
-            <span class="text-gray-500 text-sm tachado">$70.980</span>
-          </div>
-          <div class="flex justify-between items-center mb-1">
-            <span class="text-sm font-bold text-white">Precio especial Junio</span>
-            <span class="text-2xl font-black text-lime-400">$39.990</span>
+            <span class="text-gray-500 text-sm line-through">$104.880</span>
           </div>
           <div class="flex justify-between items-center">
-            <span class="text-xs text-gray-500">Precio regular desde Julio</span>
-            <span class="text-gray-500 text-sm tachado">$44.990</span>
+            <span class="text-sm font-bold text-white">Tu precio hoy</span>
+            <span class="text-2xl font-black text-lime-400">$39.990</span>
           </div>
-          <p class="text-xs text-gray-500 mt-2 text-right">o 3x $13.330 sin interés · Mercado Pago</p>
+          <p class="text-xs text-gray-500 mt-1 text-right">o 3x $13.330 sin interés · Mercado Pago</p>
         </div>
       </div>
 
-      <!-- BOTÓN WHATSAPP -->
-      <div class="mb-3">
-        <a href="https://wa.me/56942781056?text=Hola,%20quiero%20pedir%2024BURN%2B%20(%2439.990)"
+
+
+      <hr class="border-gray-700 mb-6">
+
+      <!-- PACKS -->
+      <div class="mb-6">
+        <p class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">Elige tu pack</p>
+        <p class="text-xs text-gray-500 mb-4">Resultados visibles en 60–90 días. Más unidades = mayor descuento oficial.</p>
+        <div class="grid grid-cols-3 gap-3">
+
+          <div class="card-pack bg-gray-800 border-2 border-gray-700 rounded-2xl p-4 text-center"
+               onclick="selectPack(this, 39990, '1 unidad · Precio base')">
+            <p class="text-xs text-gray-400 mb-1">1 unidad</p>
+            <p class="text-base font-black">$39.990</p>
+            <p class="text-xs text-gray-500 mt-1">Precio base</p>
+          </div>
+
+          <div class="card-pack bg-gray-800 border-2 border-lime-500 rounded-2xl p-4 text-center relative selected"
+               onclick="selectPack(this, 259935, 'Pack 10 unidades · 35% descuento')">
+            <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-lime-500 text-black text-xs font-bold px-2 py-1 rounded-full whitespace-nowrap">Popular</span>
+            <p class="text-xs text-gray-400 mb-1">Pack 10</p>
+            <p class="text-base font-black">$259.935</p>
+            <p class="text-xs text-lime-400 mt-1 font-bold">35% off</p>
+          </div>
+
+          <div class="card-pack bg-gray-800 border-2 border-gray-700 rounded-2xl p-4 text-center"
+               onclick="selectPack(this, 431892, 'Pack 18 unidades · 40% descuento')">
+            <p class="text-xs text-gray-400 mb-1">Pack 18</p>
+            <p class="text-base font-black">$431.892</p>
+            <p class="text-xs text-green-400 mt-1 font-bold">40% off</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PRECIO Y CUOTAS -->
+      <div class="mb-4">
+        <div class="flex items-baseline gap-3 mb-1">
+          <span class="text-3xl font-black text-lime-400" id="price-display">$259.935</span>
+          <span class="text-sm text-gray-500" id="pack-label">Pack 10 unidades · 35% descuento</span>
+        </div>
+        <p class="text-sm text-gray-400">o <span class="text-white font-bold" id="cuotas-display">3x $86.645</span> sin interés con <span class="text-white font-bold">Mercado Pago</span></p>
+      </div>
+
+      <!-- BOTÓN -->
+      <div class="mb-4">
+        <a id="btn-whatsapp"
+           href="https://wa.me/56942781056?text=Hola%2C%20quiero%20Pack%2010%20unidades%20%C2%B7%2035%25%20descuento%20de%2024BURN%2B%20(%24259.935)"
            class="btn-main flex items-center justify-center gap-2 w-full bg-lime-500 text-black py-4 rounded-2xl font-black text-lg">
           💬 Quiero este pack
         </a>
       </div>
 
       <!-- BOTÓN MERCADO PAGO -->
-      <div class="mb-4">
+      <div class="mb-3">
         <button id="btn-pagar-mp"
-          onclick="pagarConMP(39990, '24BURN+ · Bienestar Nortino')"
+          onclick="pagarConMP(window.currentMPPrice || 259935, window.currentMPLabel || '24BURN+ · Pack 10 unidades')"
           class="btn-main flex items-center justify-center gap-2 w-full bg-blue-600 hover:bg-blue-500 text-white py-4 rounded-2xl font-black text-lg transition-colors">
           💳 Pagar ahora con Mercado Pago
         </button>
       </div>
+      <p class="text-xs text-center text-gray-500 mb-4">Tarjeta de crédito · Débito · WebPay · Hasta 3 cuotas sin interés</p>
 
       <!-- MÉTODOS DE PAGO -->
-      <div class="flex items-center justify-center gap-2 text-xs text-gray-500 mb-4">
+      <div class="flex items-center justify-center gap-2 text-xs text-gray-500">
         <span>🔒</span>
-        <span>Pago seguro ·</span>
+        <span>Pago seguro con</span>
         <span class="bg-blue-600 text-white px-2 py-0.5 rounded font-bold text-xs">MP</span>
         <span>Débito · Crédito · WebPay · Cuotas</span>
-      </div>
-
-      <!-- GARANTÍA -->
-      <div class="bg-lime-900/20 border border-lime-800/50 rounded-xl p-4 text-center">
-        <p class="text-lime-400 font-black text-sm mb-1">🛡️ Garantía de satisfacción</p>
-        <p class="text-gray-400 text-xs">Si en 30 días no notas resultados, te devolvemos tu dinero. Sin preguntas, sin letra chica.</p>
       </div>
 
     </div>
@@ -227,12 +274,12 @@
 
   <!-- URGENCIA LANZAMIENTO -->
   <div class="mt-4 bg-lime-900/30 border border-lime-700 rounded-xl p-4 flex items-center gap-3">
-    <span class="text-lime-400 text-xl pulse">⚡</span>
-    <p class="text-sm text-gray-300"><strong class="text-white">Precio de lanzamiento $39.990 solo durante Junio.</strong> Desde Julio vuelve a $44.990. Pide ahora.</p>
+    <span class="text-lime-400 text-xl">⚡</span>
+    <p class="text-sm text-gray-300"><strong class="text-white">Precio de lanzamiento $39.990 solo durante Junio.</strong> Precio regular $44.990. Pide ahora y aprovecha.</p>
   </div>
 
   <div class="mt-3 bg-amber-900/30 border border-amber-700 rounded-xl p-4 flex items-center gap-3">
-    <span class="text-amber-400 text-xl pulse">⏰</span>
+    <span class="text-amber-400 text-xl">⏰</span>
     <p class="text-sm text-gray-300"><strong class="text-white">Disponible en Antofagasta.</strong> Despacho en 24–48 hrs.</p>
   </div>
 
@@ -272,7 +319,7 @@
     <div class="bg-black p-8 rounded-2xl border border-gray-800 text-left">
       <p class="text-3xl mb-4">💪</p>
       <h3 class="text-lg font-black mb-2 text-lime-400">Rendimiento físico</h3>
-      <p class="text-gray-400 text-sm">Potencia tu entrenamiento para que des más en cada sesión, sin agotarte antes de tiempo.</p>
+      <p class="text-gray-400 text-sm">Potencia tu entrenamiento para entrenar más fuerte y con mayor energía en cada sesión.</p>
     </div>
     <div class="bg-black p-8 rounded-2xl border border-gray-800 text-left">
       <p class="text-3xl mb-4">⚡</p>
@@ -282,7 +329,7 @@
     <div class="bg-black p-8 rounded-2xl border border-gray-800 text-left">
       <p class="text-3xl mb-4">🛡️</p>
       <h3 class="text-lg font-black mb-2 text-lime-400">Estado antioxidante</h3>
-      <p class="text-gray-400 text-sm">Protege tu cuerpo del estrés oxidativo diario para rendir más y sentirte mejor.</p>
+      <p class="text-gray-400 text-sm">Eleva tu protección antioxidante para cuidar tu cuerpo del estrés oxidativo diario.</p>
     </div>
   </div>
 </section>
@@ -320,14 +367,14 @@
           <div class="avatar-initials">KM</div>
           <div><p class="font-bold text-sm">Karen M.</p><p class="text-yellow-400 text-xs">★★★★★</p></div>
         </div>
-        <p class="text-gray-400 text-sm leading-relaxed">"Lo empecé a tomar antes de entrenar y la diferencia en energía es notable. Me recupero mucho más rápido entre sesiones."</p>
+        <p class="text-gray-400 text-sm leading-relaxed">"Lo empecé a tomar antes de entrenar y la diferencia en energía es brutal. Me recupero mucho más rápido entre sesiones."</p>
       </div>
       <div class="bg-black rounded-2xl p-6 border border-gray-800">
         <div class="flex items-center gap-3 mb-4">
           <div class="avatar-initials">RP</div>
           <div><p class="font-bold text-sm">Rodrigo P.</p><p class="text-yellow-400 text-xs">★★★★★</p></div>
         </div>
-        <p class="text-gray-400 text-sm leading-relaxed">"La fórmula nueva se siente diferente al 24BURN original. Más energía en el gym y menos dolor muscular al día siguiente."</p>
+        <p class="text-gray-400 text-sm leading-relaxed">"Pensé que era igual al 24BURN normal pero la fórmula nueva se siente diferente. Más energía en el gym y menos dolor al día siguiente."</p>
       </div>
     </div>
   </div>
@@ -346,16 +393,12 @@
       <p class="text-gray-400 text-sm">Idealmente 30 minutos antes de entrenar. Si no entrenas ese día, puedes tomarlo en la mañana igual para aprovechar sus beneficios metabólicos.</p>
     </div>
     <div class="border border-gray-800 rounded-xl p-5">
-      <p class="font-bold mb-2">¿Cómo funciona la garantía?</p>
-      <p class="text-gray-400 text-sm">Si en 30 días de uso no notas resultados, te devolvemos tu dinero. Solo escríbenos por WhatsApp. Sin preguntas, sin letra chica.</p>
+      <p class="font-bold mb-2">¿Puedo pagar en cuotas?</p>
+      <p class="text-gray-400 text-sm">Sí. Con Mercado Pago puedes pagar en 3 cuotas sin interés. También aceptamos débito, WebPay y transferencia.</p>
     </div>
     <div class="border border-gray-800 rounded-xl p-5">
       <p class="font-bold mb-2">¿Hasta cuándo el precio de lanzamiento?</p>
-      <p class="text-gray-400 text-sm">El precio especial de $39.990 es válido durante todo Junio 2026. Desde Julio vuelve al precio oficial de $44.990.</p>
-    </div>
-    <div class="border border-gray-800 rounded-xl p-5">
-      <p class="font-bold mb-2">¿Puedo pagar en cuotas?</p>
-      <p class="text-gray-400 text-sm">Sí. Con Mercado Pago puedes pagar en 3 cuotas sin interés. También aceptamos débito, WebPay y transferencia.</p>
+      <p class="text-gray-400 text-sm">El precio especial de $39.990 es válido durante todo Junio 2026. Después vuelve al precio oficial de $44.990.</p>
     </div>
   </div>
 </section>
@@ -368,26 +411,33 @@
      class="btn-main inline-block bg-lime-500 text-black px-14 py-6 rounded-2xl font-black text-2xl mb-4">
     💬 QUIERO EMPEZAR HOY
   </a>
-  <p class="text-gray-500 text-sm mt-4">Despacho 24–48 hrs · Garantía 30 días · Precio especial solo Junio</p>
-</section>
-
-<!-- SECCIÓN EMPRENDEDOR -->
-<section class="py-20 px-6 border-t border-gray-800">
-  <div class="max-w-2xl mx-auto text-center">
-    <span class="inline-block bg-white/5 text-gray-400 text-xs font-bold px-4 py-2 rounded-full mb-6 border border-gray-700">
-      Para distribuidores
-    </span>
-    <h2 class="text-3xl font-black mb-4">¿Quieres vender 24BURN+?</h2>
-    <p class="text-gray-400 mb-8">Si te interesa generar ingresos distribuyendo nuestros productos, escríbenos. Tenemos packs especiales con descuentos exclusivos para emprendedores.</p>
-    <a href="https://wa.me/56942781056?text=Hola,%20quiero%20información%20sobre%20como%20distribuir%2024BURN%2B"
-       class="btn-main inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white px-8 py-4 rounded-2xl font-black text-base">
-      🚀 Quiero ser distribuidor
-    </a>
-  </div>
+  <p class="text-gray-500 text-sm mt-4">Despacho en 24–48 hrs · Precio especial solo Junio · Pago seguro</p>
 </section>
 
 <!-- BOTÓN FLOTANTE -->
-<a href="https://wa.me/56942781056?text=Hola,%20quiero%20información%20sobre%2024BURN%2B"
+
+
+<script>
+  function selectPack(el, price, label) {
+    document.querySelectorAll('.card-pack').forEach(function(c) {
+      c.classList.remove('selected', 'border-lime-500');
+      c.classList.add('border-gray-700');
+    });
+    el.classList.add('selected', 'border-lime-500');
+    el.classList.remove('border-gray-700');
+    window.currentMPPrice = price;
+    window.currentMPLabel = label;
+    document.getElementById('price-display').textContent = '$' + price.toLocaleString('es-CL');
+    document.getElementById('pack-label').textContent = label;
+    document.getElementById('cuotas-display').textContent = '3x $' + Math.round(price / 3).toLocaleString('es-CL');
+    var msg = 'Hola, quiero ' + label + ' de 24BURN+ ($' + price.toLocaleString('es-CL') + ')';
+    document.getElementById('btn-whatsapp').href = 'https://wa.me/56942781056?text=' + encodeURIComponent(msg);
+  }
+</script>
+
+
+<!-- WhatsApp flotante contextualizado -->
+<a href="https://wa.me/56942781056?text=Hola%2C%20quiero%20información%20sobre%2024BURN%2B"
    class="fixed bottom-6 right-6 flex items-center gap-2 bg-green-500 hover:bg-green-400 text-white px-5 py-4 rounded-full font-bold shadow-xl z-50 transition-all hover:scale-105"
    aria-label="Contactar por WhatsApp">
   <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -396,19 +446,26 @@
   WhatsApp
 </a>
 
+
+
+
+
 <script>
 async function pagarConMP(precio, descripcion) {
   const btn = document.getElementById('btn-pagar-mp');
   const originalText = btn.innerHTML;
   btn.innerHTML = '⏳ Procesando...';
   btn.disabled = true;
+
   try {
     const res = await fetch('/.netlify/functions/crear-pago', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ precio, descripcion })
     });
+
     const data = await res.json();
+
     if (data.init_point) {
       window.location.href = data.init_point;
     } else {
@@ -417,7 +474,7 @@ async function pagarConMP(precio, descripcion) {
   } catch(e) {
     btn.innerHTML = originalText;
     btn.disabled = false;
-    alert('Hubo un problema. Por favor escríbenos por WhatsApp.');
+    alert('Hubo un problema al procesar el pago. Por favor escríbenos por WhatsApp.');
   }
 }
 </script>
