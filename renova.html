@@ -51,52 +51,7 @@
   src="https://www.facebook.com/tr?id=1024648849532029&ev=PageView&noscript=1"/></noscript>
   <!-- End Meta Pixel -->
 
-  <style id="modal-envio-css">
-    #modal-envio-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.85);
-      z-index: 9999;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem;
-    }
-    #modal-envio-overlay.active { display: flex; }
-    #modal-envio-box {
-      background: #111827;
-      border-radius: 16px;
-      width: 100%;
-      max-width: 420px;
-      max-height: 90vh;
-      overflow-y: auto;
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-    .modal-input {
-      width: 100%;
-      background: #1f2937;
-      border: 0.5px solid #374151;
-      border-radius: 8px;
-      padding: 9px 11px;
-      font-size: 13px;
-      color: #f9fafb;
-      box-sizing: border-box;
-      outline: none;
-      font-family: inherit;
-    }
-    .modal-input:focus { border-color: #6b7280; }
-    .modal-label {
-      font-size: 11px;
-      color: #6b7280;
-      font-weight: 600;
-      display: block;
-      margin-bottom: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-    .modal-field { display: flex; flex-direction: column; }
-    .modal-grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  </style>
+  
 </head>
 <body class="bg-black text-white">
 
@@ -379,30 +334,112 @@
 
 
 
-<script id="modal-envio-js">
-var _mpPrecio = 0;
-var _mpNombre = '';
 
+
+<div id="modal-envio-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-titulo" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;align-items:center;justify-content:center;padding:1rem;">
+  <div style="background:#111827;border-radius:16px;width:100%;max-width:420px;max-height:90vh;overflow-y:auto;border:1px solid rgba(255,255,255,0.1);">
+
+    <div style="background:#ec4899;padding:1rem 1.25rem;border-radius:16px 16px 0 0;display:flex;align-items:center;justify-content:space-between;">
+      <div>
+        <p style="font-size:11px;font-weight:600;color:#500724;margin:0;text-transform:uppercase;letter-spacing:0.05em;">Antes de pagar</p>
+        <p id="modal-titulo" style="font-size:16px;font-weight:800;color:#500724;margin:0;">¿Dónde enviamos tu pedido?</p>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div style="background:#500724;border-radius:8px;padding:4px 10px;">
+          <p style="font-size:13px;font-weight:700;color:#ec4899;margin:0;">$49.990</p>
+        </div>
+        <button onclick="cerrarModal()" style="background:none;border:none;color:#500724;font-size:20px;cursor:pointer;line-height:1;padding:2px 4px;" aria-label="Cerrar">✕</button>
+      </div>
+    </div>
+
+    <div style="padding:1.25rem;display:flex;flex-direction:column;gap:12px;">
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+        <div>
+          <label style="font-size:11px;color:#6b7280;font-weight:600;display:block;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.04em;" for="m-nombre">Nombre *</label>
+          <input style="width:100%;background:#1f2937;border:0.5px solid #374151;border-radius:8px;padding:9px 11px;font-size:13px;color:#f9fafb;box-sizing:border-box;outline:none;font-family:inherit;" id="m-nombre" type="text" placeholder="Tu nombre">
+        </div>
+        <div>
+          <label style="font-size:11px;color:#6b7280;font-weight:600;display:block;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.04em;" for="m-apellido">Apellido *</label>
+          <input style="width:100%;background:#1f2937;border:0.5px solid #374151;border-radius:8px;padding:9px 11px;font-size:13px;color:#f9fafb;box-sizing:border-box;outline:none;font-family:inherit;" id="m-apellido" type="text" placeholder="Tu apellido">
+        </div>
+      </div>
+
+      <div>
+        <label style="font-size:11px;color:#6b7280;font-weight:600;display:block;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.04em;" for="m-telefono">WhatsApp *</label>
+        <div style="position:relative;">
+          <span style="position:absolute;left:11px;top:50%;transform:translateY(-50%);font-size:13px;color:#6b7280;">+56</span>
+          <input style="width:100%;background:#1f2937;border:0.5px solid #374151;border-radius:8px;padding:9px 11px 9px 38px;font-size:13px;color:#f9fafb;box-sizing:border-box;outline:none;font-family:inherit;" id="m-telefono" type="tel" placeholder="9 1234 5678">
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+        <div>
+          <label style="font-size:11px;color:#6b7280;font-weight:600;display:block;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.04em;" for="m-region">Región *</label>
+          <select style="width:100%;background:#1f2937;border:0.5px solid #374151;border-radius:8px;padding:9px 11px;font-size:13px;color:#f9fafb;box-sizing:border-box;outline:none;font-family:inherit;appearance:none;" id="m-region">
+            <option value="">Selecciona</option>
+            <option value="Antofagasta" selected>Antofagasta</option>
+            <option value="Metropolitana">Metropolitana</option>
+            <option value="Valparaíso">Valparaíso</option>
+            <option value="Biobío">Biobío</option>
+            <option value="La Araucanía">La Araucanía</option>
+            <option value="Atacama">Atacama</option>
+            <option value="Coquimbo">Coquimbo</option>
+            <option value="O'Higgins">O'Higgins</option>
+            <option value="Maule">Maule</option>
+            <option value="Ñuble">Ñuble</option>
+            <option value="Los Ríos">Los Ríos</option>
+            <option value="Los Lagos">Los Lagos</option>
+            <option value="Aysén">Aysén</option>
+            <option value="Magallanes">Magallanes</option>
+            <option value="Tarapacá">Tarapacá</option>
+            <option value="Arica y Parinacota">Arica y Parinacota</option>
+          </select>
+        </div>
+        <div>
+          <label style="font-size:11px;color:#6b7280;font-weight:600;display:block;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.04em;" for="m-ciudad">Ciudad *</label>
+          <input style="width:100%;background:#1f2937;border:0.5px solid #374151;border-radius:8px;padding:9px 11px;font-size:13px;color:#f9fafb;box-sizing:border-box;outline:none;font-family:inherit;" id="m-ciudad" type="text" placeholder="Tu ciudad">
+        </div>
+      </div>
+
+      <div>
+        <label style="font-size:11px;color:#6b7280;font-weight:600;display:block;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.04em;" for="m-direccion">Dirección de envío *</label>
+        <input style="width:100%;background:#1f2937;border:0.5px solid #374151;border-radius:8px;padding:9px 11px;font-size:13px;color:#f9fafb;box-sizing:border-box;outline:none;font-family:inherit;" id="m-direccion" type="text" placeholder="Calle, número, depto/casa">
+      </div>
+
+      <div>
+        <label style="font-size:11px;color:#6b7280;font-weight:600;display:block;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.04em;" for="m-extra">Info adicional (opcional)</label>
+        <textarea style="width:100%;background:#1f2937;border:0.5px solid #374151;border-radius:8px;padding:9px 11px;font-size:13px;color:#f9fafb;box-sizing:border-box;outline:none;font-family:inherit;resize:none;" id="m-extra" rows="2" placeholder="Ej: timbre 3, portón azul, horario de recepción..."></textarea>
+      </div>
+
+      <div style="background:#1f2937;border-radius:8px;padding:10px 12px;display:flex;align-items:flex-start;gap:8px;">
+        <span style="color:#ec4899;font-size:15px;margin-top:1px;flex-shrink:0;">ℹ</span>
+        <p style="font-size:11px;color:#6b7280;margin:0;line-height:1.5;">Tus datos van directamente a Bienestar Nortino para coordinar el envío. No se comparten con terceros.</p>
+      </div>
+
+      <button onclick="confirmarYPagar(49990, 'Renöva+')" style="width:100%;background:#ec4899;color:#500724;border:none;border-radius:10px;padding:13px;font-size:15px;font-weight:800;cursor:pointer;font-family:inherit;">
+        🔒 Continuar al pago seguro
+      </button>
+
+      <p style="text-align:center;font-size:11px;color:#4b5563;margin:0;">Pago seguro con Mercado Pago · Tarjeta · Débito · WebPay · Cuotas</p>
+
+    </div>
+  </div>
+</div>
+
+<script>
 function abrirModal(precio, nombre) {
-  _mpPrecio = precio;
-  _mpNombre = nombre;
-  document.getElementById('modal-envio-overlay').classList.add('active');
+  var el = document.getElementById('modal-envio-overlay');
+  el.style.display = 'flex';
   document.body.style.overflow = 'hidden';
 }
-
 function cerrarModal() {
-  document.getElementById('modal-envio-overlay').classList.remove('active');
+  document.getElementById('modal-envio-overlay').style.display = 'none';
   document.body.style.overflow = '';
 }
-
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') cerrarModal();
 });
-
-document.getElementById('modal-envio-overlay').addEventListener('click', function(e) {
-  if (e.target === this) cerrarModal();
-});
-
 function confirmarYPagar(precio, nombreProducto) {
   var nombre   = document.getElementById('m-nombre').value.trim();
   var apellido = document.getElementById('m-apellido').value.trim();
@@ -411,12 +448,10 @@ function confirmarYPagar(precio, nombreProducto) {
   var ciudad   = document.getElementById('m-ciudad').value.trim();
   var direccion= document.getElementById('m-direccion').value.trim();
   var extra    = document.getElementById('m-extra').value.trim();
-
   if (!nombre || !apellido || !telefono || !region || !ciudad || !direccion) {
-    alert('Por favor completa todos los campos obligatorios antes de continuar.');
+    alert('Por favor completa todos los campos obligatorios (*) antes de continuar.');
     return;
   }
-
   var msg = '🛒 NUEVO PEDIDO — ' + nombreProducto + '\n'
     + '━━━━━━━━━━━━━━━━\n'
     + '👤 ' + nombre + ' ' + apellido + '\n'
@@ -426,20 +461,13 @@ function confirmarYPagar(precio, nombreProducto) {
     + (extra ? '📝 ' + extra + '\n' : '')
     + '━━━━━━━━━━━━━━━━\n'
     + '💰 Total: $' + precio.toLocaleString('es-CL');
-
-  var waUrl = 'https://wa.me/56942781056?text=' + encodeURIComponent(msg);
-  window.open(waUrl, '_blank');
-
+  window.open('https://wa.me/56942781056?text=' + encodeURIComponent(msg), '_blank');
   cerrarModal();
   setTimeout(function() { procesarPagoMP(precio, nombreProducto); }, 800);
 }
-
 async function procesarPagoMP(precio, descripcion) {
   var btn = document.getElementById('btn-pagar-mp');
-  if (btn) {
-    btn.innerHTML = '⏳ Procesando...';
-    btn.disabled = true;
-  }
+  if (btn) { btn.innerHTML = '⏳ Procesando...'; btn.disabled = true; }
   try {
     var res = await fetch('/.netlify/functions/crear-pago', {
       method: 'POST',
@@ -449,12 +477,10 @@ async function procesarPagoMP(precio, descripcion) {
     var data = await res.json();
     if (data.init_point) {
       window.location.href = data.init_point;
-    } else {
-      throw new Error('Sin init_point');
-    }
+    } else { throw new Error('Sin init_point'); }
   } catch(e) {
     if (btn) { btn.innerHTML = '💳 Pagar ahora con Mercado Pago'; btn.disabled = false; }
-    alert('Hubo un problema al procesar el pago. Ya te enviamos un mensaje por WhatsApp para coordinar.');
+    alert('Hubo un problema. Ya te enviamos un WhatsApp para coordinar.');
   }
 }
 </script>
