@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- SEO & OG Tags -->
   <meta name="description" content="Energía sostenida sin bajones. 28 porciones. Entrega en 24-48 hrs en Antofagasta.">
@@ -49,6 +50,53 @@
   <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=1024648849532029&ev=PageView&noscript=1"/></noscript>
   <!-- End Meta Pixel -->
+
+  <style id="modal-envio-css">
+    #modal-envio-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    #modal-envio-overlay.active { display: flex; }
+    #modal-envio-box {
+      background: #111827;
+      border-radius: 16px;
+      width: 100%;
+      max-width: 420px;
+      max-height: 90vh;
+      overflow-y: auto;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .modal-input {
+      width: 100%;
+      background: #1f2937;
+      border: 0.5px solid #374151;
+      border-radius: 8px;
+      padding: 9px 11px;
+      font-size: 13px;
+      color: #f9fafb;
+      box-sizing: border-box;
+      outline: none;
+      font-family: inherit;
+    }
+    .modal-input:focus { border-color: #6b7280; }
+    .modal-label {
+      font-size: 11px;
+      color: #6b7280;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .modal-field { display: flex; flex-direction: column; }
+    .modal-grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  </style>
 </head>
 <body class="bg-black text-white">
 
@@ -165,7 +213,7 @@
       </div>
       <div class="mb-4">
         <button id="btn-pagar-mp"
-          onclick="pagarConMP(39990, 'E-Boost · Bienestar Nortino')"
+          onclick="abrirModal(39990, 'E-Boost')"
           class="btn-main flex items-center justify-center gap-2 w-full bg-blue-600 hover:bg-blue-500 text-white py-4 rounded-2xl font-black text-lg transition-colors">
           💳 Pagar ahora con Mercado Pago
         </button>
@@ -328,31 +376,87 @@
   WhatsApp
 </a>
 
-<script>
-async function pagarConMP(precio, descripcion) {
-  const btn = document.getElementById('btn-pagar-mp');
-  const originalText = btn.innerHTML;
-  btn.innerHTML = '⏳ Procesando...';
-  btn.disabled = true;
+
+
+
+<script id="modal-envio-js">
+var _mpPrecio = 0;
+var _mpNombre = '';
+
+function abrirModal(precio, nombre) {
+  _mpPrecio = precio;
+  _mpNombre = nombre;
+  document.getElementById('modal-envio-overlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function cerrarModal() {
+  document.getElementById('modal-envio-overlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') cerrarModal();
+});
+
+document.getElementById('modal-envio-overlay').addEventListener('click', function(e) {
+  if (e.target === this) cerrarModal();
+});
+
+function confirmarYPagar(precio, nombreProducto) {
+  var nombre   = document.getElementById('m-nombre').value.trim();
+  var apellido = document.getElementById('m-apellido').value.trim();
+  var telefono = document.getElementById('m-telefono').value.trim();
+  var region   = document.getElementById('m-region').value;
+  var ciudad   = document.getElementById('m-ciudad').value.trim();
+  var direccion= document.getElementById('m-direccion').value.trim();
+  var extra    = document.getElementById('m-extra').value.trim();
+
+  if (!nombre || !apellido || !telefono || !region || !ciudad || !direccion) {
+    alert('Por favor completa todos los campos obligatorios antes de continuar.');
+    return;
+  }
+
+  var msg = '🛒 NUEVO PEDIDO — ' + nombreProducto + '\n'
+    + '━━━━━━━━━━━━━━━━\n'
+    + '👤 ' + nombre + ' ' + apellido + '\n'
+    + '📱 +56 ' + telefono + '\n'
+    + '📍 ' + direccion + '\n'
+    + '🏙️ ' + ciudad + ', ' + region + '\n'
+    + (extra ? '📝 ' + extra + '\n' : '')
+    + '━━━━━━━━━━━━━━━━\n'
+    + '💰 Total: $' + precio.toLocaleString('es-CL');
+
+  var waUrl = 'https://wa.me/56942781056?text=' + encodeURIComponent(msg);
+  window.open(waUrl, '_blank');
+
+  cerrarModal();
+  setTimeout(function() { procesarPagoMP(precio, nombreProducto); }, 800);
+}
+
+async function procesarPagoMP(precio, descripcion) {
+  var btn = document.getElementById('btn-pagar-mp');
+  if (btn) {
+    btn.innerHTML = '⏳ Procesando...';
+    btn.disabled = true;
+  }
   try {
-    const res = await fetch('/.netlify/functions/crear-pago', {
+    var res = await fetch('/.netlify/functions/crear-pago', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ precio, descripcion })
+      body: JSON.stringify({ precio: precio, descripcion: descripcion })
     });
-    const data = await res.json();
+    var data = await res.json();
     if (data.init_point) {
       window.location.href = data.init_point;
     } else {
       throw new Error('Sin init_point');
     }
   } catch(e) {
-    btn.innerHTML = originalText;
-    btn.disabled = false;
-    alert('Hubo un problema. Por favor escríbenos por WhatsApp.');
+    if (btn) { btn.innerHTML = '💳 Pagar ahora con Mercado Pago'; btn.disabled = false; }
+    alert('Hubo un problema al procesar el pago. Ya te enviamos un mensaje por WhatsApp para coordinar.');
   }
 }
 </script>
-
 </body>
 </html>
