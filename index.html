@@ -2,7 +2,6 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <!-- SEO & OG Tags -->
   <meta name="description" content="Suplementos para control de peso, energía, digestión y belleza. Entrega en 24-48 hrs en Antofagasta. Pago con tarjeta, débito o transferencia.">
@@ -10,14 +9,14 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Bienestar Nortino | Suplementos reales en Antofagasta">
   <meta property="og:description" content="Suplementos para control de peso, energía, digestión y belleza. Entrega en 24-48 hrs en Antofagasta. Pago con tarjeta, débito o transferencia.">
-  <meta property="og:image" content="https://www.bienestarnortino.com/Imagenes/og-index.png">
+  <meta property="og:image" content="https://www.bienestarnortino.com/Imagenes/og-index.jpg">
   <meta property="og:url" content="https://www.bienestarnortino.com/">
   <meta property="og:site_name" content="Bienestar Nortino">
   <meta property="og:locale" content="es_CL">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Bienestar Nortino | Suplementos reales en Antofagasta">
   <meta name="twitter:description" content="Suplementos para control de peso, energía, digestión y belleza. Entrega en 24-48 hrs en Antofagasta. Pago con tarjeta, débito o transferencia.">
-  <meta name="twitter:image" content="https://www.bienestarnortino.com/Imagenes/og-index.png">
+  <meta name="twitter:image" content="https://www.bienestarnortino.com/Imagenes/og-index.jpg">
   <!-- End SEO -->
   <title>Bienestar Nortino | Suplementos reales en Antofagasta</title>
 
@@ -113,8 +112,17 @@
 <main>
 
 <!-- HERO -->
-<section class="hero-pattern text-white pt-24 pb-32">
-  <div class="container mx-auto px-6 text-center max-w-5xl">
+<section class="hero-pattern text-white pt-24 pb-32 relative overflow-hidden">
+
+  <!-- VIDEO DE FONDO -->
+  <video autoplay muted loop playsinline
+    class="absolute inset-0 w-full h-full object-cover opacity-60 pointer-events-none"
+    poster="Imagenes/renova.png">
+    <source src="renova-hero.mp4" type="video/mp4">
+  </video>
+  <div class="absolute inset-0 bg-black/30 pointer-events-none"></div>
+
+  <div class="container mx-auto px-6 text-center max-w-5xl relative z-10">
 
     <h1 class="text-5xl md:text-7xl font-black mb-8 leading-[0.9]">
       MENOS EXCUSAS,<br>MÁS RESULTADOS
@@ -237,7 +245,18 @@
 
     </div>
 
-      <!-- CTA AYUDA -->
+    <!-- CTA COMBOS -->
+    <div class="mt-12 bg-dark-main text-white rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <h3 class="text-2xl font-black mb-1">¿Quieres resultados más rápidos?</h3>
+        <p class="text-gray-400">Combina productos y acelera tu proceso. Los combos tienen descuento especial.</p>
+      </div>
+      <a href="/combos" class="bg-brand-lime text-dark-main px-8 py-4 rounded-2xl font-black text-lg whitespace-nowrap hover:scale-105 transition">
+        VER COMBOS
+      </a>
+    </div>
+
+    <!-- CTA AYUDA -->
     <div class="text-center mt-12">
       <p class="text-lg mb-6 text-gray-500">¿No sabes cuál elegir?</p>
       <a href="https://wa.me/56942781056?text=Hola,%20necesito%20ayuda%20para%20elegir" 
